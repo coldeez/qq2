@@ -11,7 +11,7 @@ import java.util.Set;
  */
 public class Main {
 
- static public int PushkaTurnOn = 0;
+  static public int PushkaTurnOn = 0;
   static public int PerenoskaOn = 0;
   static public int AccumlyatorOn = 0;
   static public int SvetShitok = 0;
@@ -86,10 +86,10 @@ public class Main {
     WaitForDeviceOn(serialPort, "VideoOk", VideoOk);
     WaitForDeviceOn(serialPort, "ButtonShkafOk", ButtonShkafOk);
     TurnOnDevice(serialPort, "ShkafOpen", "ShkafOpen", ShkafOpen);
-    WaitForDevicesOn(serialPort, ("RukaOk","KeyOk", KeyOk));
+    WaitForDevicesOn(serialPort, ("RukaOk","KeyOk"), KeyOk);
     TurnOnDevice(serialPort, "DoorShluzOneOpen", "DoorShluzOneOpen", DoorShluzOneOpen);
     WaitForDeviceOn(serialPort, "DoorShluzOneClose", DoorShluzOneClose);
-    WaitForDevicesOn(serialPort, ("ShluzButtonInsideOk","ShluzButtonOutsideOk",ShluzButtonOutsideOk);
+    WaitForDevicesOn(serialPort, ("ShluzButtonInsideOk","ShluzButtonOutsideOk"),ShluzButtonOutsideOk);
     TurnOnDevice(serialPort, "DoorShluzOneBlock", "DoorShluzOneBlock", DoorShluzOneBlock);
     TurnOnDevice(serialPort, "DoorShluzTwoOpen", "DoorShluzTwoOpen", DoorShluzTwoOpen);
     WaitForDeviceOn(serialPort, "SuperComputersModulesOk", SuperComputersModulesOk);
@@ -118,15 +118,15 @@ public class Main {
   }
 
 
-  private void WaitForDevicesOn(SerialPort serialPort, Set<String> devices) throws SerialPortException {
+  private void WaitForDevicesOn(SerialPort serialPort, Set<String> devices, int button) throws SerialPortException {
     Set<String> readDevices = Collections.emptySet();
-    while (devices != readDevices) {
+    while (devices != readDevices button == 1) {
       readDevices.add(serialPort.readString());
     }
   }
 
-  private void WaitForDeviceOn(SerialPort serialPort, String otvet) throws SerialPortException {
-    while (serialPort.readString() != otvet ) {
+  private void WaitForDeviceOn(SerialPort serialPort, String otvet, int button) throws SerialPortException {
+    while (serialPort.readString() != otvet  || button == 1 ) {
          }
   }
 
@@ -175,47 +175,42 @@ public class Main {
    * Created by kosty on 02.08.2016.
    */
   public static class Arktika {
-      private JButton button1;
-      private JButton button2;
-      private JButton button3;
-      private JButton button4;
-      private JButton button5;
-      private JButton button6;
-      private JButton button7;
-      private JButton button8;
-      private JButton button9;
-      private JButton button10;
-      private JButton button11;
-      private JButton button12;
-      private JButton button13;
-      private JButton button14;
-      private JButton button15;
-      private JButton button16;
-      private JButton button17;
-      private JButton button18;
-      private JButton button19;
-      private JButton button20;
-      private JButton button21;
-      private JButton button22;
-      private JButton button23;
-      private JButton button24;
-      private JButton button25;
-      private JButton button26;
-      private JButton button27;
-      private JButton button28;
-      private JButton button29;
-      private JButton button30;
-      private JButton button31;
-      private JButton button32;
-      private JButton button33;
-      private JButton button34;
-      private JButton button35;
-      private JButton button36;
-      private JButton button37;
-      private JButton button38;
-      private JButton button39;
+      private JButton PushkaTurnOn;
+    private JButton button10;
+    private JButton button1;
+    private JButton button2;
+    private JButton button3;
+    private JButton button4;
+    private JButton button5;
+    private JButton button6;
+    private JButton button7;
+    private JButton button8;
+    private JButton button9;
+    private JButton button11;
+    private JButton button12;
+    private JButton button13;
+    private JButton button14;
+    private JButton button15;
+    private JButton button16;
+    private JButton button17;
+    private JButton button18;
+    private JButton button19;
+    private JButton button20;
+    private JButton button21;
+    private JButton button22;
+    private JButton button23;
+    private JButton button24;
+    private JButton button25;
+    private JButton button26;
+    private JButton button27;
+    private JButton button28;
+    private JButton button29;
+    private JButton button30;
+    private JButton button31;
+    private JButton button32;
+    private JButton button33;
 
-      public Arktika() {
+    public Arktika() {
           button10.addActionListener(new ActionListener() {
               @Override
               public void actionPerformed(ActionEvent e) {
