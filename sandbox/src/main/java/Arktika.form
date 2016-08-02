@@ -8,76 +8,76 @@
     <properties/>
     <border type="none"/>
     <children>
-      <component id="a2efe" class="javax.swing.JButton" binding="button1" default-binding="true">
+      <component id="a2efe" class="javax.swing.JButton" binding="pushkaTurnOnButton" default-binding="true">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="PushkaTurnOn"/>
         </properties>
       </component>
-      <component id="2821c" class="javax.swing.JButton" binding="button2" default-binding="true">
+      <component id="2821c" class="javax.swing.JButton" binding="perenoskaOnButton" default-binding="true">
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="PerenoskaOn"/>
         </properties>
       </component>
-      <component id="ffe3" class="javax.swing.JButton" binding="button3" default-binding="true">
+      <component id="ffe3" class="javax.swing.JButton" binding="accumlyatorOnButton" default-binding="true">
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="AccumlyatorOn"/>
         </properties>
       </component>
-      <component id="9f61c" class="javax.swing.JButton" binding="button4" default-binding="true">
+      <component id="9f61c" class="javax.swing.JButton" binding="svetShitokButton" default-binding="true">
         <constraints>
           <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="SvetShitok"/>
         </properties>
       </component>
-      <component id="d6c1b" class="javax.swing.JButton" binding="button5" default-binding="true">
+      <component id="d6c1b" class="javax.swing.JButton" binding="kartaActivateButton" default-binding="true">
         <constraints>
           <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="KartaActivate"/>
         </properties>
       </component>
-      <component id="8a94d" class="javax.swing.JButton" binding="button6" default-binding="true">
+      <component id="8a94d" class="javax.swing.JButton" binding="tumblersReadyButton" default-binding="true">
         <constraints>
           <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="TumblersReady"/>
         </properties>
       </component>
-      <component id="4eca" class="javax.swing.JButton" binding="button7" default-binding="true">
+      <component id="4eca" class="javax.swing.JButton" binding="svetVezdeOnButton" default-binding="true">
         <constraints>
           <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="SvetVezdeOn"/>
         </properties>
       </component>
-      <component id="1218f" class="javax.swing.JButton" binding="button8" default-binding="true">
+      <component id="1218f" class="javax.swing.JButton" binding="schitivatelKartiActivateButton" default-binding="true">
         <constraints>
           <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="SchitivatelKartiActivate"/>
         </properties>
       </component>
-      <component id="25d4d" class="javax.swing.JButton" binding="button9" default-binding="true">
+      <component id="25d4d" class="javax.swing.JButton" binding="kapsulaOpenButton" default-binding="true">
         <constraints>
           <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="KapsulaOpen"/>
         </properties>
       </component>
       <component id="1dbfa" class="javax.swing.JButton" binding="button10" default-binding="true">
@@ -85,191 +85,215 @@
           <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="TimersOn"/>
         </properties>
       </component>
-      <component id="77c32" class="javax.swing.JButton" binding="button11" default-binding="true">
+      <component id="77c32" class="javax.swing.JButton" binding="schitivatelOnButton" default-binding="true">
         <constraints>
           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="SchitivatelOn"/>
         </properties>
       </component>
-      <component id="338f7" class="javax.swing.JButton" binding="button12" default-binding="true">
+      <component id="338f7" class="javax.swing.JButton" binding="planshetLaunchButton" default-binding="true">
         <constraints>
           <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="PlanshetLaunch"/>
         </properties>
       </component>
-      <component id="a391c" class="javax.swing.JButton" binding="button13" default-binding="true">
+      <component id="a391c" class="javax.swing.JButton" binding="planshetCodeOnButton" default-binding="true">
         <constraints>
           <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="PlanshetCodeOn"/>
         </properties>
       </component>
-      <component id="b8b1d" class="javax.swing.JButton" binding="button14" default-binding="true">
+      <component id="b8b1d" class="javax.swing.JButton" binding="doorOpenButton" default-binding="true">
         <constraints>
           <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="DoorOpen"/>
         </properties>
       </component>
-      <component id="24c30" class="javax.swing.JButton" binding="button15" default-binding="true">
+      <component id="24c30" class="javax.swing.JButton" binding="videoOkButton" default-binding="true">
         <constraints>
           <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="VideoOk"/>
         </properties>
       </component>
-      <component id="89d4a" class="javax.swing.JButton" binding="button16" default-binding="true">
+      <component id="89d4a" class="javax.swing.JButton" binding="buttonShkafOkButton" default-binding="true">
         <constraints>
           <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="ButtonShkafOk"/>
         </properties>
       </component>
-      <component id="5a69" class="javax.swing.JButton" binding="button17" default-binding="true">
+      <component id="5a69" class="javax.swing.JButton" binding="shkafOpenButton" default-binding="true">
         <constraints>
           <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="ShkafOpen"/>
         </properties>
       </component>
-      <component id="5528f" class="javax.swing.JButton" binding="button18" default-binding="true">
+      <component id="5528f" class="javax.swing.JButton" binding="keyOkButton" default-binding="true">
         <constraints>
           <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="KeyOk"/>
         </properties>
       </component>
-      <component id="a4cb6" class="javax.swing.JButton" binding="button19" default-binding="true">
+      <component id="a4cb6" class="javax.swing.JButton" binding="doorShluzOneOpenButton" default-binding="true">
         <constraints>
           <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="DoorShluzOneOpen"/>
         </properties>
       </component>
-      <component id="ffbf4" class="javax.swing.JButton" binding="button20" default-binding="true">
+      <component id="ffbf4" class="javax.swing.JButton" binding="doorShluzOneCloseButton" default-binding="true">
         <constraints>
           <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="DoorShluzOneClose"/>
         </properties>
       </component>
-      <component id="44786" class="javax.swing.JButton" binding="button21" default-binding="true">
+      <component id="44786" class="javax.swing.JButton" binding="shluzButtonOutsideOkButton" default-binding="true">
         <constraints>
           <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="ShluzButtonOutsideOk"/>
         </properties>
       </component>
-      <component id="c5088" class="javax.swing.JButton" binding="button22" default-binding="true">
+      <component id="c5088" class="javax.swing.JButton" binding="doorShluzOneBlockButton" default-binding="true">
         <constraints>
           <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="DoorShluzOneBlock"/>
         </properties>
       </component>
-      <component id="66241" class="javax.swing.JButton" binding="button23" default-binding="true">
+      <component id="66241" class="javax.swing.JButton" binding="doorShluzTwoOpenButton" default-binding="true">
         <constraints>
           <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="DoorShluzTwoOpen"/>
         </properties>
       </component>
-      <component id="90a8" class="javax.swing.JButton" binding="button24" default-binding="true">
+      <component id="90a8" class="javax.swing.JButton" binding="superComputersModulesOkButton" default-binding="true">
         <constraints>
           <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="SuperComputersModulesOk"/>
         </properties>
       </component>
-      <component id="1b118" class="javax.swing.JButton" binding="button25" default-binding="true">
+      <component id="1b118" class="javax.swing.JButton" binding="yashikCloseButton" default-binding="true">
         <constraints>
           <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="YashikClose"/>
         </properties>
       </component>
-      <component id="3d0ec" class="javax.swing.JButton" binding="button26" default-binding="true">
+      <component id="3d0ec" class="javax.swing.JButton" binding="superComputerLaunchButton" default-binding="true">
         <constraints>
           <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="SuperComputerLaunch"/>
         </properties>
       </component>
-      <component id="2db93" class="javax.swing.JButton" binding="button27" default-binding="true">
+      <component id="2db93" class="javax.swing.JButton" binding="lasersOKButton" default-binding="true">
         <constraints>
           <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="LasersOK"/>
         </properties>
       </component>
-      <component id="61425" class="javax.swing.JButton" binding="button28" default-binding="true">
+      <component id="61425" class="javax.swing.JButton" binding="ventiliOkButton" default-binding="true">
         <constraints>
           <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="VentiliOk"/>
         </properties>
       </component>
-      <component id="e8fc8" class="javax.swing.JButton" binding="button29" default-binding="true">
+      <component id="e8fc8" class="javax.swing.JButton" binding="eletrichestvoOffButton" default-binding="true">
         <constraints>
           <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="EletrichestvoOff"/>
         </properties>
       </component>
-      <component id="f540b" class="javax.swing.JButton" binding="button30" default-binding="true">
+      <component id="f540b" class="javax.swing.JButton" binding="richagBrokeButton" default-binding="true">
         <constraints>
           <grid row="9" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="RichagBroke"/>
         </properties>
       </component>
-      <component id="420b5" class="javax.swing.JButton" binding="button31" default-binding="true">
+      <component id="420b5" class="javax.swing.JButton" binding="emergeSvetOkButton" default-binding="true">
         <constraints>
           <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="EmergeSvetOk"/>
         </properties>
       </component>
-      <component id="647c5" class="javax.swing.JButton" binding="button32" default-binding="true">
+      <component id="647c5" class="javax.swing.JButton" binding="dataOkButton" default-binding="true">
         <constraints>
           <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="DataOk"/>
         </properties>
       </component>
-      <component id="fd9d5" class="javax.swing.JButton" binding="button33" default-binding="true">
+      <component id="fd9d5" class="javax.swing.JButton" binding="rubilnikSuperCompOnButton" default-binding="true">
         <constraints>
           <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="RubilnikSuperCompOn"/>
+        </properties>
+      </component>
+      <component id="65923" class="javax.swing.JButton" binding="yashikSuperCompOnButton" default-binding="true">
+        <constraints>
+          <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="YashikSuperCompOn"/>
+        </properties>
+      </component>
+      <component id="b1949" class="javax.swing.JButton" binding="svetMigaetButton" default-binding="true">
+        <constraints>
+          <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="SvetMigaet"/>
+        </properties>
+      </component>
+      <component id="9b069" class="javax.swing.JButton" binding="hardDriveOkButton" default-binding="true">
+        <constraints>
+          <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="HardDriveOk"/>
         </properties>
       </component>
     </children>
