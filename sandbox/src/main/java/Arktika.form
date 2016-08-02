@@ -80,7 +80,7 @@
           <text value="KapsulaOpen"/>
         </properties>
       </component>
-      <component id="1dbfa" class="javax.swing.JButton" binding="button10" default-binding="true">
+      <component id="1dbfa" class="javax.swing.JButton" binding="timersOnButton">
         <constraints>
           <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -152,148 +152,180 @@
           <text value="KeyOk"/>
         </properties>
       </component>
-      <component id="a4cb6" class="javax.swing.JButton" binding="doorShluzOneOpenButton" default-binding="true">
+      <component id="1f729" class="javax.swing.JButton" binding="doorWinOnButton" default-binding="true">
         <constraints>
-          <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="9" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="DoorShluzOneOpen"/>
+          <text value="DoorWinOn"/>
         </properties>
       </component>
-      <component id="ffbf4" class="javax.swing.JButton" binding="doorShluzOneCloseButton" default-binding="true">
+      <component id="9b069" class="javax.swing.JButton" binding="hardDriveOkButton" default-binding="true">
         <constraints>
-          <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="8" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="DoorShluzOneClose"/>
-        </properties>
-      </component>
-      <component id="44786" class="javax.swing.JButton" binding="shluzButtonOutsideOkButton" default-binding="true">
-        <constraints>
-          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="ShluzButtonOutsideOk"/>
-        </properties>
-      </component>
-      <component id="c5088" class="javax.swing.JButton" binding="doorShluzOneBlockButton" default-binding="true">
-        <constraints>
-          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="DoorShluzOneBlock"/>
-        </properties>
-      </component>
-      <component id="66241" class="javax.swing.JButton" binding="doorShluzTwoOpenButton" default-binding="true">
-        <constraints>
-          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="DoorShluzTwoOpen"/>
-        </properties>
-      </component>
-      <component id="90a8" class="javax.swing.JButton" binding="superComputersModulesOkButton" default-binding="true">
-        <constraints>
-          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="SuperComputersModulesOk"/>
-        </properties>
-      </component>
-      <component id="1b118" class="javax.swing.JButton" binding="yashikCloseButton" default-binding="true">
-        <constraints>
-          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="YashikClose"/>
-        </properties>
-      </component>
-      <component id="3d0ec" class="javax.swing.JButton" binding="superComputerLaunchButton" default-binding="true">
-        <constraints>
-          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="SuperComputerLaunch"/>
-        </properties>
-      </component>
-      <component id="2db93" class="javax.swing.JButton" binding="lasersOKButton" default-binding="true">
-        <constraints>
-          <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="LasersOK"/>
-        </properties>
-      </component>
-      <component id="61425" class="javax.swing.JButton" binding="ventiliOkButton" default-binding="true">
-        <constraints>
-          <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="VentiliOk"/>
-        </properties>
-      </component>
-      <component id="e8fc8" class="javax.swing.JButton" binding="eletrichestvoOffButton" default-binding="true">
-        <constraints>
-          <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="EletrichestvoOff"/>
-        </properties>
-      </component>
-      <component id="f540b" class="javax.swing.JButton" binding="richagBrokeButton" default-binding="true">
-        <constraints>
-          <grid row="9" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="RichagBroke"/>
-        </properties>
-      </component>
-      <component id="420b5" class="javax.swing.JButton" binding="emergeSvetOkButton" default-binding="true">
-        <constraints>
-          <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="EmergeSvetOk"/>
-        </properties>
-      </component>
-      <component id="647c5" class="javax.swing.JButton" binding="dataOkButton" default-binding="true">
-        <constraints>
-          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="DataOk"/>
-        </properties>
-      </component>
-      <component id="fd9d5" class="javax.swing.JButton" binding="rubilnikSuperCompOnButton" default-binding="true">
-        <constraints>
-          <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="RubilnikSuperCompOn"/>
-        </properties>
-      </component>
-      <component id="65923" class="javax.swing.JButton" binding="yashikSuperCompOnButton" default-binding="true">
-        <constraints>
-          <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="YashikSuperCompOn"/>
+          <text value="HardDriveOk"/>
         </properties>
       </component>
       <component id="b1949" class="javax.swing.JButton" binding="svetMigaetButton" default-binding="true">
         <constraints>
-          <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="7" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="SvetMigaet"/>
         </properties>
       </component>
-      <component id="9b069" class="javax.swing.JButton" binding="hardDriveOkButton" default-binding="true">
+      <component id="65923" class="javax.swing.JButton" binding="yashikSuperCompOnButton" default-binding="true">
+        <constraints>
+          <grid row="6" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="YashikSuperCompOn"/>
+        </properties>
+      </component>
+      <component id="fd9d5" class="javax.swing.JButton" binding="rubilnikSuperCompOnButton" default-binding="true">
         <constraints>
           <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="HardDriveOk"/>
+          <text value="RubilnikSuperCompOn"/>
+        </properties>
+      </component>
+      <component id="647c5" class="javax.swing.JButton" binding="dataOkButton" default-binding="true">
+        <constraints>
+          <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="DataOk"/>
+        </properties>
+      </component>
+      <component id="420b5" class="javax.swing.JButton" binding="emergeSvetOkButton" default-binding="true">
+        <constraints>
+          <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="EmergeSvetOk"/>
+        </properties>
+      </component>
+      <component id="a5f3f" class="javax.swing.JButton" binding="richagOkButton" default-binding="true">
+        <constraints>
+          <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="RichagOk"/>
+        </properties>
+      </component>
+      <component id="f540b" class="javax.swing.JButton" binding="richagBrokeButton" default-binding="true">
+        <constraints>
+          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="RichagBroke"/>
+        </properties>
+      </component>
+      <component id="e8fc8" class="javax.swing.JButton" binding="eletrichestvoOffButton" default-binding="true">
+        <constraints>
+          <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="EletrichestvoOff"/>
+        </properties>
+      </component>
+      <component id="61425" class="javax.swing.JButton" binding="ventiliOkButton" default-binding="true">
+        <constraints>
+          <grid row="9" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="VentiliOk"/>
+        </properties>
+      </component>
+      <component id="2db93" class="javax.swing.JButton" binding="lasersOKButton" default-binding="true">
+        <constraints>
+          <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="LasersOK"/>
+        </properties>
+      </component>
+      <component id="3d0ec" class="javax.swing.JButton" binding="superComputerLaunchButton" default-binding="true">
+        <constraints>
+          <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="SuperComputerLaunch"/>
+        </properties>
+      </component>
+      <component id="1b118" class="javax.swing.JButton" binding="yashikCloseButton" default-binding="true">
+        <constraints>
+          <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="YashikClose"/>
+        </properties>
+      </component>
+      <component id="90a8" class="javax.swing.JButton" binding="superComputersModulesOkButton" default-binding="true">
+        <constraints>
+          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="SuperComputersModulesOk"/>
+        </properties>
+      </component>
+      <component id="66241" class="javax.swing.JButton" binding="doorShluzTwoOpenButton" default-binding="true">
+        <constraints>
+          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="DoorShluzTwoOpen"/>
+        </properties>
+      </component>
+      <component id="c5088" class="javax.swing.JButton" binding="doorShluzOneBlockButton" default-binding="true">
+        <constraints>
+          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="DoorShluzOneBlock"/>
+        </properties>
+      </component>
+      <component id="44786" class="javax.swing.JButton" binding="shluzButtonOutsideOkButton" default-binding="true">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="ShluzButtonOutsideOk"/>
+        </properties>
+      </component>
+      <component id="b4f39" class="javax.swing.JButton" binding="shluzButtonInsideOkButton" default-binding="true">
+        <constraints>
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="ShluzButtonInsideOk"/>
+        </properties>
+      </component>
+      <component id="ffbf4" class="javax.swing.JButton" binding="doorShluzOneCloseButton" default-binding="true">
+        <constraints>
+          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="DoorShluzOneClose"/>
+        </properties>
+      </component>
+      <component id="a4cb6" class="javax.swing.JButton" binding="doorShluzOneOpenButton" default-binding="true">
+        <constraints>
+          <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="DoorShluzOneOpen"/>
+        </properties>
+      </component>
+      <component id="20b55" class="javax.swing.JButton" binding="rukaOkButton" default-binding="true">
+        <constraints>
+          <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="RukaOk"/>
         </properties>
       </component>
     </children>

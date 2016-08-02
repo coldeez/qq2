@@ -47,6 +47,10 @@ public class Main {
   static public int YashikSuperCompOn = 0;
   static public int SvetMigaet = 0;
   static public int HardDriveOk = 0;
+  static public int RichagOk = 0;
+  static public int DoorWinOn = 0;
+  static public int ShluzButtonInsideOk = 0;
+  static public int RukaOk = 0;
 
   public void init() throws SerialPortException {
 
@@ -86,10 +90,10 @@ public class Main {
     WaitForDeviceOn(serialPort, "VideoOk", VideoOk);
     WaitForDeviceOn(serialPort, "ButtonShkafOk", ButtonShkafOk);
     TurnOnDevice(serialPort, "ShkafOpen", "ShkafOpen", ShkafOpen);
-    WaitForDevicesOn(serialPort, ("RukaOk","KeyOk"), KeyOk);
+    WaitForDevicesOn(serialPort, ("RukaOk","KeyOk"), KeyOk, RukaOk);
     TurnOnDevice(serialPort, "DoorShluzOneOpen", "DoorShluzOneOpen", DoorShluzOneOpen);
     WaitForDeviceOn(serialPort, "DoorShluzOneClose", DoorShluzOneClose);
-    WaitForDevicesOn(serialPort, ("ShluzButtonInsideOk","ShluzButtonOutsideOk"),ShluzButtonOutsideOk);
+    WaitForDevicesOn(serialPort, ("ShluzButtonInsideOk","ShluzButtonOutsideOk"),ShluzButtonOutsideOk, ShluzButtonInsideOk);
     TurnOnDevice(serialPort, "DoorShluzOneBlock", "DoorShluzOneBlock", DoorShluzOneBlock);
     TurnOnDevice(serialPort, "DoorShluzTwoOpen", "DoorShluzTwoOpen", DoorShluzTwoOpen);
     WaitForDeviceOn(serialPort, "SuperComputersModulesOk", SuperComputersModulesOk);
@@ -104,7 +108,7 @@ public class Main {
     PlayAudioThree();
 /*    ChangeImageTouch();*/
     TurnOnDevice(serialPort, "RichagBroke", "RichagBroke", RichagBroke);
-    WaitForDeviceOn(serialPort, "RichagOk");
+    WaitForDeviceOn(serialPort, "RichagOk", RichagOk);
     TurnOnDevice(serialPort, "EmergeSvetOk", "EmergeSvetOk", EmergeSvetOk);
     PlayAudioFour();
 /*    ChangeImageFive();*/
@@ -118,9 +122,9 @@ public class Main {
   }
 
 
-  private void WaitForDevicesOn(SerialPort serialPort, Set<String> devices, int button) throws SerialPortException {
+  private void WaitForDevicesOn(SerialPort serialPort, Set<String> devices, int button1, int button2) throws SerialPortException {
     Set<String> readDevices = Collections.emptySet();
-    while (devices != readDevices button == 1) {
+    while (devices != readDevices || (button1 == 1 && button2 == 1)) {
       readDevices.add(serialPort.readString());
     }
   }
@@ -175,8 +179,7 @@ public class Main {
    * Created by kosty on 02.08.2016.
    */
   public static class Arktika {
-      private JButton PushkaTurnOn;
-    private JButton button10;
+    private JButton timersOnButton;
     private JButton pushkaTurnOnButton;
     private JButton perenoskaOnButton;
     private JButton accumlyatorOnButton;
@@ -212,14 +215,254 @@ public class Main {
     private JButton yashikSuperCompOnButton;
     private JButton svetMigaetButton;
     private JButton hardDriveOkButton;
+    private JButton doorWinOnButton;
+    private JButton richagOkButton;
+    private JButton shluzButtonInsideOkButton;
+    private JButton rukaOkButton;
 
     public Arktika() {
-          button10.addActionListener(new ActionListener() {
+      pushkaTurnOnButton.addActionListener(new ActionListener() {
               @Override
               public void actionPerformed(ActionEvent e) {
                   PushkaTurnOn = 1;
               }
           });
+      perenoskaOnButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          PerenoskaOn  = 1;
+        }
+      });
+      accumlyatorOnButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          AccumlyatorOn = 1;
+        }
+      });
+      svetShitokButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          SvetShitok = 1;
+        }
+      });
+      kartaActivateButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          KartaActivate = 1;
+        }
+      });
+      tumblersReadyButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          TumblersReady = 1;
+        }
+      });
+      svetVezdeOnButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          SvetVezdeOn = 1;
+        }
+      });
+      schitivatelKartiActivateButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          SchitivatelKartiActivate = 1;
+        }
+      });
+      kapsulaOpenButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          KapsulaOpen = 1;
+        }
+      });
+      timersOnButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          TimersOn = 1;
+        }
+      });
+      schitivatelOnButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          SchitivatelOn= 1;
+        }
+      });
+      planshetLaunchButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          PlanshetLaunch = 1;
+        }
+      });
+      planshetCodeOnButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          PlanshetCodeOn = 1;
+        }
+      });
+      doorOpenButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          DoorOpen = 1;
+        }
+      });
+      videoOkButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          VideoOk = 1;
+        }
+      });
+      buttonShkafOkButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          ButtonShkafOk = 1;
+        }
+      });
+      shkafOpenButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          ShkafOpen = 1;
+        }
+      });
+      keyOkButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          KeyOk = 1;
+        }
+      });
+      doorShluzOneOpenButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          DoorShluzOneOpen = 1;
+        }
+      });
+      doorShluzOneCloseButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          DoorShluzOneClose = 1;
+        }
+      });
+      shluzButtonOutsideOkButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          ShluzButtonOutsideOk = 1;
+        }
+      });
+      doorShluzOneBlockButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          DoorShluzOneBlock = 1;
+        }
+      });
+      doorShluzTwoOpenButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          DoorShluzTwoOpen = 1;
+        }
+      });
+      superComputersModulesOkButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          SuperComputersModulesOk = 1;
+        }
+      });
+      yashikCloseButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          YashikClose = 1;
+        }
+      });
+      superComputerLaunchButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          SuperComputerLaunch = 1;
+        }
+      });
+      lasersOKButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          LasersOK = 1;
+        }
+      });
+      ventiliOkButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          VentiliOk = 1;
+        }
+      });
+      eletrichestvoOffButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          EletrichestvoOff = 1;
+        }
+      });
+      richagBrokeButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          RichagBroke = 1;
+        }
+      });
+      richagOkButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          RichagOk = 1;
+        }
+      });
+      emergeSvetOkButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          EmergeSvetOk = 1;
+        }
+      });
+      dataOkButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          DataOk = 1;
+        }
+      });
+      rubilnikSuperCompOnButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          RubilnikSuperCompOn = 1;
+        }
+      });
+      yashikSuperCompOnButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          YashikSuperCompOn = 1;
+        }
+      });
+      svetMigaetButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          SvetMigaet = 1;
+        }
+      });
+      hardDriveOkButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          HardDriveOk = 1;
+        }
+      });
+      doorWinOnButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          DoorWinOn = 1;
+        }
+      });
+      rukaOkButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          RukaOk = 1;
+        }
+      });
+      shluzButtonInsideOkButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          ShluzButtonInsideOk = 1;
+        }
+      });
+
+
       }
   }
 }
