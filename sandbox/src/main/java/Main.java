@@ -4,6 +4,7 @@ import jssc.SerialPortException;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.util.Collections;
 import java.util.Set;
 /**
@@ -51,35 +52,37 @@ public class Main {
   static public int DoorWinOn = 0;
   static public int ShluzButtonInsideOk = 0;
   static public int RukaOk = 0;
+  static public int StartQuestOk = 0;
+  static public int ResetQuestOk = 0;
 
-  public void init() throws SerialPortException {
 
-    SerialPort serialPort = new SerialPort("COM1");
+  public static void main(String[] args) throws SerialPortException, IOException {
+
+
+    SerialPort serialPort = new SerialPort("COM3");
     try {
+      serialPort.getPortName();
       serialPort.openPort();//Open serial port
       serialPort.setParams(SerialPort.BAUDRATE_9600,
               SerialPort.DATABITS_8,
               SerialPort.STOPBITS_1,
               SerialPort.PARITY_NONE);//Set params. Also you can set params by this string: serialPort.setParams(9600, 8, 1, 0);
-      serialPort.closePort();//Close serial port
-    }
-    catch (SerialPortException ex) {
+
+    } catch (SerialPortException ex) {
       System.out.println(ex);
     }
 
-
-
-    serialPort.writeString("StartQuest");
-    serialPort.writeString("ResetQuest");
+    ResetQuest(serialPort, "ResetQuest", "ResetQuest", ResetQuestOk);
+    StartQuest(serialPort, "StartQuest", "StartQuest", StartQuestOk);
     SystemPause(4000);
-    TurnOnDevice(serialPort, "PushkaTurnOn", "PushkaTurnOn",PushkaTurnOn );
-    PlayAudioOne();
-    TurnOnDevice(serialPort, "PerenoskaOn", "PerenoskaOn",PerenoskaOn);
-    WaitForDeviceOn(serialPort,"AccumlyatorOn", AccumlyatorOn);
-    TurnOnDevice(serialPort, "SvetShitok","SvetShitok",SvetShitok);
-    TurnOnDevice(serialPort,"KartaActivate", "KartaActivate", KartaActivate);
+    TurnOnDevice(serialPort, "PushkaTurnOn", "PushkaTurnOn", PushkaTurnOn);
+    PlayAudio(1);
+    TurnOnDevice(serialPort, "PerenoskaOn", "PerenoskaOn", PerenoskaOn);
+    WaitForDeviceOn(serialPort, "AccumlyatorOn", AccumlyatorOn);
+    TurnOnDevice(serialPort, "SvetShitok", "SvetShitok", SvetShitok);
+    TurnOnDevice(serialPort, "KartaActivate", "KartaActivate", KartaActivate);
     WaitForDeviceOn(serialPort, "TumblersReady", TumblersReady);
-    TurnOnDevice(serialPort, "SvetVezdeOn", "SvetVezdeOn",SvetVezdeOn);
+    TurnOnDevice(serialPort, "SvetVezdeOn", "SvetVezdeOn", SvetVezdeOn);
     TurnOnDevice(serialPort, "SchitivatelKartiActivate", "SchitivatelKartiActivate", SchitivatelKartiActivate);
     TurnOnDevice(serialPort, "KapsulaOpen", "KapsulaOpen", KapsulaOpen);
     TurnOnDevice(serialPort, "TimersOn", "TimersOn", TimersOn);
@@ -90,35 +93,41 @@ public class Main {
     WaitForDeviceOn(serialPort, "VideoOk", VideoOk);
     WaitForDeviceOn(serialPort, "ButtonShkafOk", ButtonShkafOk);
     TurnOnDevice(serialPort, "ShkafOpen", "ShkafOpen", ShkafOpen);
-    WaitForDevicesOn(serialPort, ("RukaOk","KeyOk"), KeyOk, RukaOk);
+/*    WaitForDevicesOn(serialPort, ("RukaOk","KeyOk"), KeyOk, RukaOk);*/
     TurnOnDevice(serialPort, "DoorShluzOneOpen", "DoorShluzOneOpen", DoorShluzOneOpen);
     WaitForDeviceOn(serialPort, "DoorShluzOneClose", DoorShluzOneClose);
-    WaitForDevicesOn(serialPort, ("ShluzButtonInsideOk","ShluzButtonOutsideOk"),ShluzButtonOutsideOk, ShluzButtonInsideOk);
+/*    WaitForDevicesOn(serialPort, ("ShluzButtonInsideOk","ShluzButtonOutsideOk"),ShluzButtonOutsideOk, ShluzButtonInsideOk);*/
     TurnOnDevice(serialPort, "DoorShluzOneBlock", "DoorShluzOneBlock", DoorShluzOneBlock);
     TurnOnDevice(serialPort, "DoorShluzTwoOpen", "DoorShluzTwoOpen", DoorShluzTwoOpen);
     WaitForDeviceOn(serialPort, "SuperComputersModulesOk", SuperComputersModulesOk);
     WaitForDeviceOn(serialPort, "YashikClose", YashikClose);
     TurnOnDevice(serialPort, "SuperComputerLaunch", "SuperComputerLaunch", SuperComputerLaunch);
-    PlayAudioTwo();
+    PlayAudio(2);
 /*    ChangeImageTwo();*/
     WaitForDeviceOn(serialPort, "LasersOK", LasersOK);
 /*    ChangeImageThree();*/
     WaitForDeviceOn(serialPort, "VentiliOk", VentiliOk);
     TurnOnDevice(serialPort, "EletrichestvoOff", "EletrichestvoOff", EletrichestvoOff);
-    PlayAudioThree();
+    PlayAudio(3);
 /*    ChangeImageTouch();*/
     TurnOnDevice(serialPort, "RichagBroke", "RichagBroke", RichagBroke);
     WaitForDeviceOn(serialPort, "RichagOk", RichagOk);
     TurnOnDevice(serialPort, "EmergeSvetOk", "EmergeSvetOk", EmergeSvetOk);
-    PlayAudioFour();
+    PlayAudio(4);
 /*    ChangeImageFive();*/
     WaitForDeviceOn(serialPort, "DataOk", DataOk);
     WaitForDeviceOn(serialPort, "RubilnikSuperCompOn", RubilnikSuperCompOn);
     TurnOnDevice(serialPort, "YashikSuperCompOn", "YashikSuperCompOn", YashikSuperCompOn);
     TurnOnDevice(serialPort, "SvetMigaet", "SvetMigaet", SvetMigaet);
     WaitForDeviceOn(serialPort, "HardDriveOk", HardDriveOk);
-    PlayAudioFive();
+    PlayAudio(5);
     TurnOnDevice(serialPort, "DoorWinOn", "DoorWinOn", DoorWinOn);
+    serialPort.closePort();//Close serial port
+  }
+
+  private static void PlayAudio(int s) throws IOException {
+
+    Runtime.getRuntime().exec("cmd /c start C:\\bats\\audio"+ s + ".bat");
   }
 
 
@@ -129,12 +138,12 @@ public class Main {
     }
   }
 
-  private void WaitForDeviceOn(SerialPort serialPort, String otvet, int button) throws SerialPortException {
+  private static void WaitForDeviceOn(SerialPort serialPort, String otvet, int button) throws SerialPortException {
     while (serialPort.readString() != otvet  || button == 1 ) {
          }
   }
 
-  private void TurnOnDevice(SerialPort serialPort, String zapros, String otvet, int button) throws SerialPortException {
+  private static void TurnOnDevice(SerialPort serialPort, String zapros, String otvet, int button) throws SerialPortException {
     while (serialPort.readString() != otvet || button == 1) {
       serialPort.writeString(zapros);
     }
@@ -143,13 +152,25 @@ public class Main {
 
   }
 
-  public void ResetQuest(SerialPort serialPort) {
-    serialPort.writeString();
+  public static void ResetQuest(SerialPort serialPort, String zapros, String otvet, int button) throws SerialPortException {
+    while (serialPort.readString() != otvet || button == 1) {
+      serialPort.writeString(zapros);
+    }
+  }
+
+  public static void StartQuest(SerialPort serialPort, String zapros, String otvet, int button) throws SerialPortException, IOException {
+    startWMP();
+    while (serialPort.readString() != otvet || button == 1) {
+      serialPort.writeString(zapros);
+    }
+  }
+
+  private static void startWMP() throws IOException {
+    Runtime.getRuntime().exec("cmd /c start C:\\bats\\wmp.bat");
   }
 
 
-
- static public boolean SystemPause(int n){
+  static public boolean SystemPause(int n){
    try {
      Thread.sleep(n);
    } catch (InterruptedException e) {
@@ -219,8 +240,22 @@ public class Main {
     private JButton richagOkButton;
     private JButton shluzButtonInsideOkButton;
     private JButton rukaOkButton;
+    private JButton startQuestButton;
+    private JButton resetQuestButton;
 
     public Arktika() {
+      startQuestButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          StartQuestOk = 1;
+        }
+      });
+      resetQuestButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          ResetQuestOk = 1;
+        }
+      });
       pushkaTurnOnButton.addActionListener(new ActionListener() {
               @Override
               public void actionPerformed(ActionEvent e) {
