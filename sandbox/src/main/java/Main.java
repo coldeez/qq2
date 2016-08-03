@@ -26,6 +26,13 @@ public class Main {
     new Thread(new Runnable() {
       @Override
       public void run() {
+        new TimerLabel().setVisible(true);
+      }
+    }).start();
+
+    new Thread(new Runnable() {
+      @Override
+      public void run() {
         SerialPort serialPort = new SerialPort("COM4");
         try {
           serialPort.getPortName();
