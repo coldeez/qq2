@@ -11,12 +11,12 @@ import java.io.IOException;
  */
 public class TouchPanel extends JFrame{
 
-    private JButton button1;
-    private Image pic;
+    private Timer timer;
 
 
     public TouchPanel() {
-        button1 = new JButton();
+
+        timer = new Timer(1000, new TimerTick());
         setTitle("ImagePanel");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setSize(1000, 1000);
@@ -24,27 +24,16 @@ public class TouchPanel extends JFrame{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ImageComponent component = new ImageComponent();
         add(component);
-        add(button1);
 
 
-        button1.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                Image pic = null;
-                try {
-                    pic = ImageIO.read(new File("C:\\test\\test2.jpg"));
-                    TouchPanel.setPic(pic);
-                } catch (IOException e1) {
-                    e1.printStackTrace();
-                }
-
-            }
-        });
 
    }
 
     class ImageComponent extends JComponent
     {
         private Image image;
+        private Image pic;
+
         public ImageComponent()
         {
             try
@@ -63,11 +52,33 @@ public class TouchPanel extends JFrame{
             if(image == null) return;
             g.drawImage(image, 0, 0, null);
         }
+
+        public void setPic(Image pic) {
+            this.pic = pic;
+            repaint();
+        }
+
+
          }
 
-    public void setPic(Image pic) {
-        this.pic = pic;
-        repaint();
+    class TimerTick implements ActionListener {
+
+        int countdown = 3600;
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            countdown--;
+            try {
+                component.setPic(ImageIO.read(new File("C:\\test\\test2.jpg")));
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            };
+            if (countdown == 0) {
+                timer.stop();
+            }
+        }
+
     }
+
 
 }
