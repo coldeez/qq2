@@ -15,19 +15,20 @@ public class MainForm extends JFrame {
   private JButton startQuestButton;
   private JPanel mainPanel;
 
-  public MainForm() {
-/*    setContentPane(mainPanel);*/
-    setContentPane(new BgPanel());
+  public MainForm() throws InterruptedException {
+    setContentPane(mainPanel);
     setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     setSize(1000, 1000);
-    /* important Statement */
-    setUndecorated(true);
+
+
+
 
 
     resetQuestButton.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
         Main.manager.setResetQuestOk(1);
+
 
       }
     });
@@ -42,16 +43,6 @@ public class MainForm extends JFrame {
 
   }
 
-  class BgPanel extends JPanel {
-    public void paintComponent(Graphics g) {
-      Image im = null;
-      try {
-        im = ImageIO.read(new File("C:\\test\\test.jpg"));
-      } catch (IOException e) {
-      }
-      g.drawImage(im, 0, 0, null);
-    }
-
 
   }
-}
+

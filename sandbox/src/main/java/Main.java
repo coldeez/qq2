@@ -2,12 +2,8 @@ import jssc.SerialPort;
 import jssc.SerialPortException;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.Set;
 /**
  * Created by vity on 24.07.2016.
@@ -22,6 +18,13 @@ public class Main {
     manager = new Manager();
     JFrame myWindow = new MainForm();
     myWindow.setVisible(true);
+
+    new Thread(new Runnable() {
+      @Override
+      public void run() {
+        new TouchPanel().setVisible(true);
+      }
+    }).start();
 
     new Thread(new Runnable() {
       @Override

@@ -25,6 +25,7 @@ public class TimerLabel extends JFrame {
     timeLabel.setFont(new Font("Monospaced", Font.BOLD, 80));
     timer = new Timer(1000, new TimerTick());
     start = new JButton("Start");
+
     start.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         remove(start);
