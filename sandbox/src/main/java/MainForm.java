@@ -1,6 +1,8 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -27,6 +29,7 @@ public class MainForm extends JFrame {
   private JButton button10;
   private JButton button11;
   private JButton button12;
+  private Color color;
 
   public MainForm() throws InterruptedException, IOException {
     BufferedImage myImage = ImageIO.read(new File("C:\\test\\plan.jpg"));
@@ -42,6 +45,8 @@ public class MainForm extends JFrame {
     add(startQuestButton);
     button1.setSize(100, 45);
     button1.setLocation(600, 480);
+    color = Color.RED;
+    button1.setBackground(color);
     add(button1);
     button2.setSize(100, 45);
     button2.setLocation(590, 380);
@@ -94,6 +99,20 @@ public class MainForm extends JFrame {
       @Override
       public void actionPerformed(ActionEvent e) {
         Main.manager.setStartQuestOk(1);
+      }
+    });
+
+    button1.addChangeListener(new ChangeListener() {
+      @Override
+      public void stateChanged(ChangeEvent evt) {
+          if (button1.getModel().isPressed()) {
+          if (color == Color.LIGHT_GRAY) {
+            color = Color.RED;
+          } else if (color == Color.RED) {
+            color = Color.LIGHT_GRAY;
+          }
+          button1.setBackground(color);
+        }
       }
     });
 
