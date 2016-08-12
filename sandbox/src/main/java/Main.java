@@ -36,17 +36,6 @@ public class Main {
     new Thread(new Runnable() {
       @Override
       public void run() {
-        try {
-          new test_image().setVisible(true);
-        } catch (IOException e) {
-          e.printStackTrace();
-        }
-      }
-    }).start();
-
-    new Thread(new Runnable() {
-      @Override
-      public void run() {
         SerialPort serialPort = new SerialPort("COM4");
         try {
           serialPort.getPortName();
