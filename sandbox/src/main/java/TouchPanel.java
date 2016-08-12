@@ -6,33 +6,31 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 
-/**
- * Created by kosty on 11.08.2016.
- */
+
+
+
 public class TouchPanel extends JFrame{
 
     private Timer timer;
+    private ImageComponent component;
 
 
     public TouchPanel() {
-
-        timer = new Timer(1000, new TimerTick());
         setTitle("ImagePanel");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setSize(1000, 1000);
         setUndecorated(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        ImageComponent component = new ImageComponent();
+        component = new ImageComponent();
         add(component);
 
-
-
+        timer = new Timer(1000, new TimerTick());
+        timer.start();
    }
 
     class ImageComponent extends JComponent
     {
         private Image image;
-        private Image pic;
 
         public ImageComponent()
         {
@@ -54,7 +52,7 @@ public class TouchPanel extends JFrame{
         }
 
         public void setPic(Image pic) {
-            this.pic = pic;
+            this.image = pic;
             repaint();
         }
 
@@ -68,8 +66,11 @@ public class TouchPanel extends JFrame{
         @Override
         public void actionPerformed(ActionEvent e) {
             countdown--;
+            System.out.println("TimerTick = " + countdown);
             try {
+                System.out.println("IN");
                 component.setPic(ImageIO.read(new File("C:\\test\\test2.jpg")));
+                System.out.println("DONE");
             } catch (IOException e1) {
                 e1.printStackTrace();
             };
