@@ -1,6 +1,5 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
@@ -192,6 +191,85 @@ public class MainForm extends JFrame {
         Main.manager.setStartQuestOk(1);
       }
     });
+    button13.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        Main.manager.setKartaActivate(1);
+      }
+    });
+    button2.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        Main.manager.setRadioStation(1);
+      }
+    });
+    button4.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        Main.manager.setSvetShitok(1);
+      }
+    });
+    button12.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        Main.manager.setSvetVezdeOn(1);
+      }
+    });
+    button5.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        Main.manager.setPerenoskaOn(1);
+      }
+    });
+    button14.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        Main.manager.setTimers(1);
+      }
+    });
+    button20.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        Main.manager.setKartinka3(1);
+      }
+    });
+    button6.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        Main.manager.setKartinka2(1);
+      }
+    });
+    button7.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        Main.manager.setEmergeSvetOk(1);
+      }
+    });
+    button10.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        Main.manager.setSuperComputersModulesOk(1);
+      }
+    });
+    button11.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        Main.manager.setShitokButton(1);
+      }
+    });
+    button9.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        Main.manager.setLasersOK(1);
+      }
+    });
+/*    button1.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        Main.manager.setPushkaTurnOn(1);
+      }
+    });*/
+
 
 
 
@@ -203,6 +281,8 @@ public class MainForm extends JFrame {
             color1 = Color.PINK;
           } else if (color1 == Color.PINK) {
             color1 = Color.GREEN;
+            System.out.println(Main.manager.getPushkaTurnOn() + "Wtf");
+            Main.manager.setPushkaTurnOn(1);
           }
           button1.setBackground(color1);
         }
@@ -214,7 +294,9 @@ public class MainForm extends JFrame {
         if (button2.getModel().isPressed()) {
           if (color2 == Color.GREEN) {
             color2 = Color.PINK;
+
           } else if (color2 == Color.PINK) {
+
             color2 = Color.GREEN;
           }
           button2.setBackground(color2);

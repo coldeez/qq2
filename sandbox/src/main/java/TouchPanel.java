@@ -18,7 +18,7 @@ public class TouchPanel extends JFrame{
     public TouchPanel() {
         setTitle("ImagePanel");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setSize(1000, 1000);
+        setSize(1024, 768);
         setUndecorated(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         component = new ImageComponent();

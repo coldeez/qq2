@@ -2,19 +2,17 @@
  * Created by kbal on 03.08.2016.
  */
 public class Manager {
-  private int PushkaTurnOn = 0;
-  private int PerenoskaOn = 0;
+
+
   private int AccumlyatorOn = 0;
-  private int SvetShitok = 0;
-  private int KartaActivate = 0;
+
   private int TumblersReady = 0;
-  private int SvetVezdeOn = 0;
+
   private int SchitivatelKartiActivate = 0;
   private int KapsulaOpen = 0;
   private int TimersOn = 0;
   private int SchitivatelOn = 0;
-  private int PlanshetLaunch = 0;
-  private int PlanshetCodeOn = 0;
+
   private int DoorOpen = 0;
   private int VideoOk = 0;
   private int ButtonShkafOk = 0;
@@ -25,39 +23,59 @@ public class Manager {
   private int ShluzButtonOutsideOk = 0;
   private int DoorShluzOneBlock = 0;
   private int DoorShluzTwoOpen = 0;
-  private int SuperComputersModulesOk = 0;
+
   private int YashikClose = 0;
-  private int SuperComputerLaunch = 0;
-  private int LasersOK = 0;
+
+
   private int VentiliOk = 0;
   private int EletrichestvoOff = 0;
   private int RichagBroke = 0;
-  private int EmergeSvetOk = 0;
+
   private int DataOk = 0;
   private int RubilnikSuperCompOn = 0;
   private int YashikSuperCompOn = 0;
   private int SvetMigaet = 0;
   private int HardDriveOk = 0;
-  private int RichagOk = 0;
   private int DoorWinOn = 0;
-  private int ShluzButtonInsideOk = 0;
+
+  volatile private int PushkaTurnOn = 0;
+  volatile private int Kartinka3 = 0;
+  volatile private int Kartinka2 = 0;
+  volatile private int Timers = 0;
+  volatile private int SuperComputersModulesOk = 0;
+  volatile private int PerenoskaOn = 0;
+  volatile private int SvetShitok = 0;
+  volatile private int KartaActivate = 0;
+  volatile private int SvetVezdeOn = 0;
+  volatile private int LasersOK = 0;
+  volatile private int EmergeSvetOk = 0;
+  volatile private int ShitokButton = 0;
+  volatile private int RadioStation = 0;
+
+
   private int RukaOk = 0;
+  volatile private int Audio1 = 0;
+  volatile private int Audio2 = 0;
+  volatile private int Audio3 = 0;
+  volatile private int Audio4 = 0;
+  volatile private int Audio5 = 0;
   volatile private int StartQuestOk = 0;
   volatile private int  ResetQuestOk = 0;
 
-  public int getPushkaTurnOn() {
+
+synchronized   public int getPushkaTurnOn() {
     return PushkaTurnOn;
   }
 
-  public void setPushkaTurnOn(int pushkaTurnOn) {
+synchronized   public void setPushkaTurnOn(int pushkaTurnOn) {
     PushkaTurnOn = pushkaTurnOn;
   }
 
-  public int getPerenoskaOn() {
+  synchronized public int getPerenoskaOn() {
     return PerenoskaOn;
   }
 
-  public void setPerenoskaOn(int perenoskaOn) {
+  synchronized public void setPerenoskaOn(int perenoskaOn) {
     PerenoskaOn = perenoskaOn;
   }
 
@@ -69,19 +87,19 @@ public class Manager {
     AccumlyatorOn = accumlyatorOn;
   }
 
-  public int getSvetShitok() {
+  synchronized public int getSvetShitok() {
     return SvetShitok;
   }
 
-  public void setSvetShitok(int svetShitok) {
+  synchronized public void setSvetShitok(int svetShitok) {
     SvetShitok = svetShitok;
   }
 
-  public int getKartaActivate() {
+  synchronized public int getKartaActivate() {
     return KartaActivate;
   }
 
-  public void setKartaActivate(int kartaActivate) {
+  synchronized public void setKartaActivate(int kartaActivate) {
     KartaActivate = kartaActivate;
   }
 
@@ -93,11 +111,11 @@ public class Manager {
     TumblersReady = tumblersReady;
   }
 
-  public int getSvetVezdeOn() {
+  synchronized public int getSvetVezdeOn() {
     return SvetVezdeOn;
   }
 
-  public void setSvetVezdeOn(int svetVezdeOn) {
+  synchronized public void setSvetVezdeOn(int svetVezdeOn) {
     SvetVezdeOn = svetVezdeOn;
   }
 
@@ -133,20 +151,20 @@ public class Manager {
     SchitivatelOn = schitivatelOn;
   }
 
-  public int getPlanshetLaunch() {
-    return PlanshetLaunch;
+synchronized   public int getKartinka3() {
+    return Kartinka3;
   }
 
-  public void setPlanshetLaunch(int planshetLaunch) {
-    PlanshetLaunch = planshetLaunch;
+synchronized   public void setKartinka3(int kartinka3) {
+    Kartinka3 = kartinka3;
   }
 
-  public int getPlanshetCodeOn() {
-    return PlanshetCodeOn;
+synchronized   public int getKartinka2() {
+    return Kartinka2;
   }
 
-  public void setPlanshetCodeOn(int planshetCodeOn) {
-    PlanshetCodeOn = planshetCodeOn;
+synchronized   public void setKartinka2(int kartinka2) {
+    Kartinka2 = kartinka2;
   }
 
   public int getDoorOpen() {
@@ -229,11 +247,11 @@ public class Manager {
     DoorShluzTwoOpen = doorShluzTwoOpen;
   }
 
-  public int getSuperComputersModulesOk() {
+  synchronized public int getSuperComputersModulesOk() {
     return SuperComputersModulesOk;
   }
 
-  public void setSuperComputersModulesOk(int superComputersModulesOk) {
+  synchronized public void setSuperComputersModulesOk(int superComputersModulesOk) {
     SuperComputersModulesOk = superComputersModulesOk;
   }
 
@@ -245,19 +263,19 @@ public class Manager {
     YashikClose = yashikClose;
   }
 
-  public int getSuperComputerLaunch() {
-    return SuperComputerLaunch;
+synchronized   public int getTimers() {
+    return Timers;
   }
 
-  public void setSuperComputerLaunch(int superComputerLaunch) {
-    SuperComputerLaunch = superComputerLaunch;
+synchronized   public void setTimers(int timers) {
+    Timers = timers;
   }
 
-  public int getLasersOK() {
+  synchronized public int getLasersOK() {
     return LasersOK;
   }
 
-  public void setLasersOK(int lasersOK) {
+  synchronized public void setLasersOK(int lasersOK) {
     LasersOK = lasersOK;
   }
 
@@ -285,11 +303,11 @@ public class Manager {
     RichagBroke = richagBroke;
   }
 
-  public int getEmergeSvetOk() {
+  synchronized public int getEmergeSvetOk() {
     return EmergeSvetOk;
   }
 
-  public void setEmergeSvetOk(int emergeSvetOk) {
+  synchronized public void setEmergeSvetOk(int emergeSvetOk) {
     EmergeSvetOk = emergeSvetOk;
   }
 
@@ -333,12 +351,12 @@ public class Manager {
     HardDriveOk = hardDriveOk;
   }
 
-  public int getRichagOk() {
-    return RichagOk;
+  synchronized public int getShitokButton() {
+    return ShitokButton;
   }
 
-  public void setRichagOk(int richagOk) {
-    RichagOk = richagOk;
+  synchronized public void setShitokButton(int shitokButton) {
+    ShitokButton = shitokButton;
   }
 
   public int getDoorWinOn() {
@@ -349,12 +367,12 @@ public class Manager {
     DoorWinOn = doorWinOn;
   }
 
-  public int getShluzButtonInsideOk() {
-    return ShluzButtonInsideOk;
+  synchronized public int getRadioStation() {
+    return RadioStation;
   }
 
-  public void setShluzButtonInsideOk(int shluzButtonInsideOk) {
-    ShluzButtonInsideOk = shluzButtonInsideOk;
+  synchronized public void setRadioStation(int radioStation) {
+    RadioStation = radioStation;
   }
 
   public int getRukaOk() {
