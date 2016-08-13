@@ -63,14 +63,14 @@ public class Main {
           System.out.println(ex);
         }
 
-        try {
+/*        try {
           ResetQuest(serialPort, "ResetQuest", "ResetQuest");
         } catch (SerialPortException e) {
           e.printStackTrace();
         } catch (InterruptedException e) {
           e.printStackTrace();
-        }
-        try {
+        }*/
+/*        try {
           StartQuest(serialPort, "StartQuest", "StartQuest");
         } catch (SerialPortException e) {
           e.printStackTrace();
@@ -78,134 +78,183 @@ public class Main {
           e.printStackTrace();
         } catch (InterruptedException e) {
           e.printStackTrace();
-        }
+        }*/
         SystemPause(4000);
         try {
-          TurnOnDevice(serialPort, "PushkaTurnOn", "PushkaTurnOn", manager.getPushkaTurnOn());
+          TurnOnDevice(serialPort, "PushkaTurnOn", "PushkaTurnOn1", manager.getPushkaTurnOn());
         } catch (SerialPortException e) {
           e.printStackTrace();
+        } catch (InterruptedException e) {
+          e.printStackTrace();
         }
+
         try {
           PlayAudio(1);
         } catch (IOException e) {
           e.printStackTrace();
         }
         try {
-          TurnOnDevice(serialPort, "PerenoskaOn", "PerenoskaOn", manager.getPerenoskaOn());
+          TurnOnDevice(serialPort, "PerenoskaOn", "PerenoskaOn1", manager.getPerenoskaOn());
         } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
           e.printStackTrace();
         }
         try {
-          WaitForDeviceOn(serialPort, "AccumlyatorOn", manager.getAccumlyatorOn());
+          WaitForDeviceOn(serialPort, "AccumlyatorOn1", manager.getAccumlyatorOn());
         } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
           e.printStackTrace();
         }
         try {
-          TurnOnDevice(serialPort, "SvetShitok", "SvetShitok", manager.getSvetShitok());
+          TurnOnDevice(serialPort, "SvetShitok", "SvetShitok1", manager.getSvetShitok());
         } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
           e.printStackTrace();
         }
         try {
-          TurnOnDevice(serialPort, "KartaActivate", "KartaActivate", manager.getKartaActivate());
+          TurnOnDevice(serialPort, "KartaActivate", "KartaActivate1", manager.getKartaActivate());
         } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
           e.printStackTrace();
         }
         try {
-          WaitForDeviceOn(serialPort, "TumblersReady", manager.getTumblersReady());
+          WaitForDeviceOn(serialPort, "TumblersReady1", manager.getTumblersReady());
         } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
           e.printStackTrace();
         }
         try {
-          TurnOnDevice(serialPort, "SvetVezdeOn", "SvetVezdeOn", manager.getSvetVezdeOn());
+          TurnOnDevice(serialPort, "SvetVezdeOn1", "SvetVezdeOn1", manager.getSvetVezdeOn());
         } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
           e.printStackTrace();
         }
         try {
-          TurnOnDevice(serialPort, "SchitivatelKartiActivate", "SchitivatelKartiActivate", manager.getSchitivatelKartiActivate());
+          TurnOnDevice(serialPort, "SchitivatelKartiActivate", "SchitivatelKartiActivate1", manager.getSchitivatelKartiActivate());
         } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
           e.printStackTrace();
         }
         try {
-          TurnOnDevice(serialPort, "KapsulaOpen", "KapsulaOpen", manager.getKapsulaOpen());
+          TurnOnDevice(serialPort, "KapsulaOpen", "KapsulaOpen1", manager.getKapsulaOpen());
         } catch (SerialPortException e) {
 
 
-        }
-        try {
-          TurnOnDevice(serialPort, "TimersOn", "TimersOn", manager.getTimersOn());
-        } catch (SerialPortException e) {
+        } catch (InterruptedException e) {
           e.printStackTrace();
         }
         try {
-          WaitForDeviceOn(serialPort, "SchitivatelOn", manager.getSchitivatelOn());
+          TurnOnDevice(serialPort, "TimersOn", "TimersOn1", manager.getTimersOn());
         } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
           e.printStackTrace();
         }
         try {
-          TurnOnDevice(serialPort, "PlanshetLaunch", "PlanshetLaunch", manager.getPlanshetLaunch());
+          WaitForDeviceOn(serialPort, "SchitivatelOn1", manager.getSchitivatelOn());
         } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
           e.printStackTrace();
         }
         try {
-          WaitForDeviceOn(serialPort, "PlanshetCodeOn", manager.getPlanshetCodeOn());
+          TurnOnDevice(serialPort, "PlanshetLaunch", "PlanshetLaunch1", manager.getPlanshetLaunch());
         } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
           e.printStackTrace();
         }
         try {
-          TurnOnDevice(serialPort, "DoorOpen", "DoorOpen", manager.getDoorOpen());
+          WaitForDeviceOn(serialPort, "PlanshetCodeOn1", manager.getPlanshetCodeOn());
         } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
           e.printStackTrace();
         }
         try {
-          WaitForDeviceOn(serialPort, "VideoOk", manager.getVideoOk());
+          TurnOnDevice(serialPort, "DoorOpen", "DoorOpen1", manager.getDoorOpen());
         } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
           e.printStackTrace();
         }
         try {
-          WaitForDeviceOn(serialPort, "ButtonShkafOk", manager.getButtonShkafOk());
+          WaitForDeviceOn(serialPort, "VideoOk1", manager.getVideoOk());
         } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
           e.printStackTrace();
         }
         try {
-          TurnOnDevice(serialPort, "ShkafOpen", "ShkafOpen", manager.getShkafOpen());
+          WaitForDeviceOn(serialPort, "ButtonShkafOk1", manager.getButtonShkafOk());
         } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
+        try {
+          TurnOnDevice(serialPort, "ShkafOpen", "ShkafOpen1", manager.getShkafOpen());
+        } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
           e.printStackTrace();
         }
 /*    WaitForDevicesOn(serialPort, new HashSet<String>(Arrays.asList("RukaOk", "KeyOk")), KeyOk, RukaOk);*/
         try {
-          TurnOnDevice(serialPort, "DoorShluzOneOpen", "DoorShluzOneOpen", manager.getDoorShluzOneOpen());
+          TurnOnDevice(serialPort, "DoorShluzOneOpen", "DoorShluzOneOpen1", manager.getDoorShluzOneOpen());
         } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
           e.printStackTrace();
         }
         try {
-          WaitForDeviceOn(serialPort, "DoorShluzOneClose", manager.getDoorShluzOneClose());
+          WaitForDeviceOn(serialPort, "DoorShluzOneClose1", manager.getDoorShluzOneClose());
         } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
           e.printStackTrace();
         }
 /*    WaitForDevicesOn(serialPort, ("ShluzButtonInsideOk","ShluzButtonOutsideOk"),ShluzButtonOutsideOk, ShluzButtonInsideOk);*/
         try {
-          TurnOnDevice(serialPort, "DoorShluzOneBlock", "DoorShluzOneBlock", manager.getDoorShluzOneBlock());
+          TurnOnDevice(serialPort, "DoorShluzOneBlock", "DoorShluzOneBlock1", manager.getDoorShluzOneBlock());
         } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
           e.printStackTrace();
         }
         try {
-          TurnOnDevice(serialPort, "DoorShluzTwoOpen", "DoorShluzTwoOpen", manager.getDoorShluzTwoOpen());
+          TurnOnDevice(serialPort, "DoorShluzTwoOpen", "DoorShluzTwoOpen1", manager.getDoorShluzTwoOpen());
         } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
           e.printStackTrace();
         }
         try {
-          WaitForDeviceOn(serialPort, "SuperComputersModulesOk", manager.getSuperComputersModulesOk());
+          WaitForDeviceOn(serialPort, "SuperComputersModulesOk1", manager.getSuperComputersModulesOk());
         } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
           e.printStackTrace();
         }
         try {
-          WaitForDeviceOn(serialPort, "YashikClose", manager.getYashikClose());
+          WaitForDeviceOn(serialPort, "YashikClose1", manager.getYashikClose());
         } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
           e.printStackTrace();
         }
         try {
-          TurnOnDevice(serialPort, "SuperComputerLaunch", "SuperComputerLaunch", manager.getSuperComputerLaunch());
+          TurnOnDevice(serialPort, "SuperComputerLaunch", "SuperComputerLaunch1", manager.getSuperComputerLaunch());
         } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
           e.printStackTrace();
         }
         try {
@@ -215,19 +264,25 @@ public class Main {
         }
 /*    ChangeImageTwo();*/
         try {
-          WaitForDeviceOn(serialPort, "LasersOK", manager.getLasersOK());
+          WaitForDeviceOn(serialPort, "LasersOK1", manager.getLasersOK());
         } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
           e.printStackTrace();
         }
 /*    ChangeImageThree();*/
         try {
-          WaitForDeviceOn(serialPort, "VentiliOk", manager.getVentiliOk());
+          WaitForDeviceOn(serialPort, "VentiliOk1", manager.getVentiliOk());
         } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
           e.printStackTrace();
         }
         try {
-          TurnOnDevice(serialPort, "EletrichestvoOff", "EletrichestvoOff", manager.getEletrichestvoOff());
+          TurnOnDevice(serialPort, "EletrichestvoOff", "EletrichestvoOff1", manager.getEletrichestvoOff());
         } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
           e.printStackTrace();
         }
         try {
@@ -237,18 +292,24 @@ public class Main {
         }
 /*    ChangeImageTouch();*/
         try {
-          TurnOnDevice(serialPort, "RichagBroke", "RichagBroke", manager.getRichagBroke());
+          TurnOnDevice(serialPort, "RichagBroke", "RichagBroke1", manager.getRichagBroke());
         } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
           e.printStackTrace();
         }
         try {
-          WaitForDeviceOn(serialPort, "RichagOk", manager.getRichagOk());
+          WaitForDeviceOn(serialPort, "RichagOk1", manager.getRichagOk());
         } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
           e.printStackTrace();
         }
         try {
-          TurnOnDevice(serialPort, "EmergeSvetOk", "EmergeSvetOk", manager.getEmergeSvetOk());
+          TurnOnDevice(serialPort, "EmergeSvetOk", "EmergeSvetOk1", manager.getEmergeSvetOk());
         } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
           e.printStackTrace();
         }
         try {
@@ -258,28 +319,38 @@ public class Main {
         }
 /*    ChangeImageFive();*/
         try {
-          WaitForDeviceOn(serialPort, "DataOk", manager.getDataOk());
+          WaitForDeviceOn(serialPort, "DataOk1", manager.getDataOk());
         } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
           e.printStackTrace();
         }
         try {
-          WaitForDeviceOn(serialPort, "RubilnikSuperCompOn", manager.getRubilnikSuperCompOn());
+          WaitForDeviceOn(serialPort, "RubilnikSuperCompOn1", manager.getRubilnikSuperCompOn());
         } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
           e.printStackTrace();
         }
         try {
-          TurnOnDevice(serialPort, "YashikSuperCompOn", "YashikSuperCompOn", manager.getYashikSuperCompOn());
+          TurnOnDevice(serialPort, "YashikSuperCompOn", "YashikSuperCompOn1", manager.getYashikSuperCompOn());
         } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
           e.printStackTrace();
         }
         try {
-          TurnOnDevice(serialPort, "SvetMigaet", "SvetMigaet", manager.getSvetMigaet());
+          TurnOnDevice(serialPort, "SvetMigaet", "SvetMigaet1", manager.getSvetMigaet());
         } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
           e.printStackTrace();
         }
         try {
-          WaitForDeviceOn(serialPort, "HardDriveOk", manager.getHardDriveOk());
+          WaitForDeviceOn(serialPort, "HardDriveOk1", manager.getHardDriveOk());
         } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
           e.printStackTrace();
         }
         try {
@@ -288,8 +359,10 @@ public class Main {
           e.printStackTrace();
         }
         try {
-          TurnOnDevice(serialPort, "DoorWinOn", "DoorWinOn", manager.getDoorWinOn());
+          TurnOnDevice(serialPort, "DoorWinOn", "DoorWinOn1", manager.getDoorWinOn());
         } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
           e.printStackTrace();
         }
         try {
@@ -315,18 +388,35 @@ public class Main {
     }
   }
 
-  private static void WaitForDeviceOn(SerialPort serialPort, String otvet, int button) throws SerialPortException {
-    while (serialPort.readString() != otvet  && button == 1 ) {
-         }
+  private static void WaitForDeviceOn(SerialPort serialPort, String otvet, int button) throws SerialPortException, InterruptedException {
+    String otvetSerial = "bad";
+    while (!otvetSerial.equals(otvet) && button == 0) {
+      try {
+        otvetSerial = serialPort.readString();
+        if (otvetSerial == null) {
+          otvetSerial = "bad";
+        }
+      } catch (NullPointerException e) {
+        e.printStackTrace();
+      }
+      Thread.sleep(2000);
+    }
   }
 
-  private static void TurnOnDevice(SerialPort serialPort, String zapros, String otvet, int button) throws SerialPortException {
-    while (serialPort.readString() != otvet && button == 1) {
+  private static void TurnOnDevice(SerialPort serialPort, String zapros, String otvet, int button) throws SerialPortException, InterruptedException {
+    String otvetSerial = "bad";
+    while (!otvetSerial.equals(otvet) && button == 0) {
+      try {
+        otvetSerial = serialPort.readString();
+        if (otvetSerial == null) {
+          otvetSerial = "bad";
+        }
+      } catch (NullPointerException e) {
+        e.printStackTrace();
+      }
       serialPort.writeString(zapros);
+      Thread.sleep(2000);
     }
-
-
-
   }
 
   public static void ResetQuest(SerialPort serialPort, String zapros, String otvet) throws SerialPortException, InterruptedException {
