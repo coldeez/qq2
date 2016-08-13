@@ -19,12 +19,12 @@ public class Main {
     JFrame myWindow = new MainForm();
     myWindow.setVisible(true);
 
-    new Thread(new Runnable() {
+/*    new Thread(new Runnable() {
       @Override
       public void run() {
         new TouchPanel().setVisible(true);
       }
-    }).start();
+    }).start();*/
 
     new Thread(new Runnable() {
       @Override
@@ -36,7 +36,7 @@ public class Main {
     new Thread(new Runnable() {
       @Override
       public void run() {
-        SerialPort serialPort = new SerialPort("COM4");
+        SerialPort serialPort = new SerialPort("COM1");
         try {
           serialPort.getPortName();
           serialPort.openPort();//Open serial port
@@ -70,34 +70,29 @@ public class Main {
         } catch (IOException e) {
           e.printStackTrace();
         }*/
-        SystemPause(4000);
         try {
-          Pushka(serialPort, "q");
+          DverClose(serialPort, "j");
+        } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
+        try {
+          Pushka(serialPort, "r", "q");
         } catch (SerialPortException e) {
           e.printStackTrace();
         } catch (InterruptedException e) {
           e.printStackTrace();
         }
 
-        try {
-          DverOpen(serialPort, "");
-        } catch (SerialPortException e) {
-          e.printStackTrace();
-        } catch (InterruptedException e) {
-          e.printStackTrace();
-        }
+
+
+
 
         try {
-          DverClose(serialPort, "");
-        } catch (SerialPortException e) {
-          e.printStackTrace();
-        } catch (InterruptedException e) {
-          e.printStackTrace();
-        }
-
-        try {
+          Thread.sleep(4000);
           PlayAudio(1);
-        } catch (IOException e) {
+        } catch (IOException | InterruptedException e) {
           e.printStackTrace();
         }
         try {
@@ -447,11 +442,18 @@ public class Main {
       Thread.sleep(2000);
     }
   }
-  private static void Pushka(SerialPort serialPort, String zapros) throws SerialPortException, InterruptedException {
-    while (Main.manager.getPushkaTurnOn() == 0) {
+  private static void Pushka(SerialPort serialPort, String zapros, String disconnect) throws SerialPortException, InterruptedException {
+/*    while (Main.manager.getPushkaTurnOn() == 0) {*/
+    System.out.println("1");
+      serialPort.writeString(disconnect);
+    System.out.println("2");
+      Thread.sleep(500);
+    System.out.println("3");
       serialPort.writeString(zapros);
-      Thread.sleep(20000);
-    }
+    System.out.println("4");
+
+/*    }*/
+    Thread.sleep(20000);
   }
   private static void Perenoska(SerialPort serialPort, String zapros, String otvet) throws SerialPortException, InterruptedException {
     String otvetSerial = "bad";
@@ -559,7 +561,8 @@ public class Main {
   }
   private static void DverClose(SerialPort serialPort, String otvet) throws SerialPortException, InterruptedException {
     String otvetSerial = "bad";
-    while (!otvetSerial.equals(otvet) && Main.manager.getSuperComputersModulesOk() == 0) {
+    System.out.println("dver");
+    while (!otvetSerial.contains(otvet) && Main.manager.getSuperComputersModulesOk() == 0) {
       try {
         otvetSerial = serialPort.readString();
         if (otvetSerial == null) {

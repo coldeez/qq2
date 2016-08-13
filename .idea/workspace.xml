@@ -42,8 +42,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sandbox/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+            <state relative-caret-position="217">
+              <caret line="567" column="0" selection-start-line="567" selection-start-column="0" selection-end-line="567" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -59,7 +59,7 @@
       <file leaf-file-name="MainForm.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sandbox/src/main/java/MainForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
+            <state relative-caret-position="2351">
               <caret line="229" column="33" selection-start-line="229" selection-start-column="33" selection-end-line="229" selection-end-column="33" />
               <folding>
                 <element signature="e#5296#5297#0" expanded="true" />
@@ -1336,6 +1336,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sandbox/src/main/java/Timer1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sandbox/src/main/java/MainForm.form">
       <provider selected="true" editor-type-id="ui-designer">
         <state />
@@ -1349,7 +1357,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sandbox/src/main/java/MainForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
+        <state relative-caret-position="2351">
           <caret line="229" column="33" selection-start-line="229" selection-start-column="33" selection-end-line="229" selection-end-column="33" />
           <folding>
             <element signature="e#5296#5297#0" expanded="true" />
@@ -1362,18 +1370,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sandbox/src/main/java/Timer1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sandbox/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        <state relative-caret-position="217">
+          <caret line="567" column="0" selection-start-line="567" selection-start-column="0" selection-end-line="567" selection-end-column="0" />
           <folding />
         </state>
       </provider>
