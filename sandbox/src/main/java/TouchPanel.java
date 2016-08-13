@@ -66,11 +66,8 @@ public class TouchPanel extends JFrame{
         @Override
         public void actionPerformed(ActionEvent e) {
             countdown--;
-            System.out.println("TimerTick = " + countdown);
             try {
-                System.out.println("IN");
                 component.setPic(ImageIO.read(new File("C:\\test\\test2.jpg")));
-                System.out.println("DONE");
             } catch (IOException e1) {
                 e1.printStackTrace();
             };
