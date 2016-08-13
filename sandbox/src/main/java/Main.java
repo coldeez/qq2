@@ -29,9 +29,23 @@ public class Main {
     new Thread(new Runnable() {
       @Override
       public void run() {
-        new TimerLabel().setVisible(true);
+        new Timer1().setVisible(true);
       }
     }).start();
+
+    new Thread(new Runnable() {
+      @Override
+      public void run() {
+        new Timer3().setVisible(true);
+      }
+    }).start();
+    new Thread(new Runnable() {
+      @Override
+      public void run() {
+        new Timer2().setVisible(true);
+      }
+    }).start();
+
 
     new Thread(new Runnable() {
       @Override
