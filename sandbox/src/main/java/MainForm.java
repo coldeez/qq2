@@ -212,6 +212,9 @@ public class MainForm extends JFrame {
     button12.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
+        if (Main.manager.getSvetVezdeOn() == 1) {
+          Main.manager.setSvetVezdeOn(0);
+        }
         Main.manager.setSvetVezdeOn(1);
       }
     });
@@ -224,7 +227,7 @@ public class MainForm extends JFrame {
     button14.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        Main.manager.setTimers(1);
+        Main.manager.setTimersGo(1);
       }
     });
     button20.addActionListener(new ActionListener() {
@@ -281,7 +284,6 @@ public class MainForm extends JFrame {
             color1 = Color.PINK;
           } else if (color1 == Color.PINK) {
             color1 = Color.GREEN;
-            System.out.println(Main.manager.getPushkaTurnOn() + "Wtf");
             Main.manager.setPushkaTurnOn(1);
           }
           button1.setBackground(color1);
@@ -425,6 +427,7 @@ public class MainForm extends JFrame {
       public void stateChanged(ChangeEvent evt) {
         if (button12.getModel().isPressed()) {
           if (color12 == Color.GREEN) {
+
             color12 = Color.PINK;
           } else if (color12 == Color.PINK) {
             color12 = Color.GREEN;

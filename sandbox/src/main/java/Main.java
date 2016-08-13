@@ -36,20 +36,6 @@ public class Main {
     new Thread(new Runnable() {
       @Override
       public void run() {
-        new Timer3().setVisible(true);
-      }
-    }).start();
-    new Thread(new Runnable() {
-      @Override
-      public void run() {
-        new Timer2().setVisible(true);
-      }
-    }).start();
-
-
-    new Thread(new Runnable() {
-      @Override
-      public void run() {
         SerialPort serialPort = new SerialPort("COM4");
         try {
           serialPort.getPortName();
@@ -79,14 +65,30 @@ public class Main {
         } catch (InterruptedException e) {
           e.printStackTrace();
         }*/
-        try {
+/*        try {
           PlayMainTheme();
         } catch (IOException e) {
           e.printStackTrace();
-        }
+        }*/
         SystemPause(4000);
         try {
-          Pushka(serialPort, "PushkaTurnOn", "PushkaTurnOn1");
+          Pushka(serialPort, "q");
+        } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
+
+        try {
+          DverOpen(serialPort, "");
+        } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
+
+        try {
+          DverClose(serialPort, "");
         } catch (SerialPortException e) {
           e.printStackTrace();
         } catch (InterruptedException e) {
@@ -314,6 +316,14 @@ public class Main {
           } catch (InterruptedException e) {
             e.printStackTrace();
           }
+        try {
+          SvetVezdeOff(serialPort, "SvetVezdeOff", "SveVezdeOff1");
+        } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
+
           try {
             EmergySvet(serialPort, "EmergeSvetOk", "EmergeSvetOk1");
           } catch (SerialPortException e) {
@@ -334,7 +344,7 @@ public class Main {
         } catch (InterruptedException e) {
           e.printStackTrace();
         }*/
-          try {
+/*          try {
             WaitForDeviceOn(serialPort, "RubilnikSuperCompOn1", manager.getRubilnikSuperCompOn());
           } catch (SerialPortException | InterruptedException e) {
             e.printStackTrace();
@@ -352,9 +362,10 @@ public class Main {
             e.printStackTrace();
           } catch (InterruptedException e) {
             e.printStackTrace();
-          }
+          }*/
+
           try {
-            WaitForDeviceOn(serialPort, "HardDriveOk1", manager.getHardDriveOk());
+            HardDrive(serialPort, "HardDriveOk1");
           } catch (SerialPortException e) {
             e.printStackTrace();
           } catch (InterruptedException e) {
@@ -384,6 +395,7 @@ public class Main {
   }
 
   private static void TimersOn() {
+    Main.manager.setTimersGo(1);
 
   }
 
@@ -435,19 +447,10 @@ public class Main {
       Thread.sleep(2000);
     }
   }
-  private static void Pushka(SerialPort serialPort, String zapros, String otvet) throws SerialPortException, InterruptedException {
-    String otvetSerial = "bad";
-    while (!otvetSerial.equals(otvet) && Main.manager.getPushkaTurnOn() == 0) {
-      try {
-        otvetSerial = serialPort.readString();
-        if (otvetSerial == null) {
-          otvetSerial = "bad";
-        }
-      } catch (NullPointerException e) {
-        e.printStackTrace();
-      }
+  private static void Pushka(SerialPort serialPort, String zapros) throws SerialPortException, InterruptedException {
+    while (Main.manager.getPushkaTurnOn() == 0) {
       serialPort.writeString(zapros);
-      Thread.sleep(2000);
+      Thread.sleep(20000);
     }
   }
   private static void Perenoska(SerialPort serialPort, String zapros, String otvet) throws SerialPortException, InterruptedException {
@@ -494,6 +497,20 @@ public class Main {
       serialPort.writeString(zapros);
       Thread.sleep(2000);
     }
+  }  private static void SvetVezdeOff(SerialPort serialPort, String zapros, String otvet) throws SerialPortException, InterruptedException {
+    String otvetSerial = "bad";
+    while (!otvetSerial.equals(otvet) && Main.manager.getSvetVezdeOn() == 1) {
+      try {
+        otvetSerial = serialPort.readString();
+        if (otvetSerial == null) {
+          otvetSerial = "bad";
+        }
+      } catch (NullPointerException e) {
+        e.printStackTrace();
+      }
+      serialPort.writeString(zapros);
+      Thread.sleep(2000);
+    }
   }
   private static void SvetShitok(SerialPort serialPort, String zapros, String otvet) throws SerialPortException, InterruptedException {
     String otvetSerial = "bad";
@@ -526,9 +543,51 @@ public class Main {
     }
   }
 
+  private static void DverOpen(SerialPort serialPort, String otvet) throws SerialPortException, InterruptedException {
+    String otvetSerial = "bad";
+    while (!otvetSerial.equals(otvet) && Main.manager.getSuperComputersModulesOk() == 0) {
+      try {
+        otvetSerial = serialPort.readString();
+        if (otvetSerial == null) {
+          otvetSerial = "bad";
+        }
+      } catch (NullPointerException e) {
+        e.printStackTrace();
+      }
+      Thread.sleep(2000);
+    }
+  }
+  private static void DverClose(SerialPort serialPort, String otvet) throws SerialPortException, InterruptedException {
+    String otvetSerial = "bad";
+    while (!otvetSerial.equals(otvet) && Main.manager.getSuperComputersModulesOk() == 0) {
+      try {
+        otvetSerial = serialPort.readString();
+        if (otvetSerial == null) {
+          otvetSerial = "bad";
+        }
+      } catch (NullPointerException e) {
+        e.printStackTrace();
+      }
+      Thread.sleep(2000);
+    }
+  }
   private static void Lasers(SerialPort serialPort, String otvet) throws SerialPortException, InterruptedException {
     String otvetSerial = "bad";
     while (!otvetSerial.equals(otvet) && Main.manager.getLasersOK() == 0) {
+      try {
+        otvetSerial = serialPort.readString();
+        if (otvetSerial == null) {
+          otvetSerial = "bad";
+        }
+      } catch (NullPointerException e) {
+        e.printStackTrace();
+      }
+      Thread.sleep(2000);
+    }
+  }
+  private static void HardDrive(SerialPort serialPort, String otvet) throws SerialPortException, InterruptedException {
+    String otvetSerial = "bad";
+    while (!otvetSerial.equals(otvet) && Main.manager.getHardDriveOk() == 0) {
       try {
         otvetSerial = serialPort.readString();
         if (otvetSerial == null) {

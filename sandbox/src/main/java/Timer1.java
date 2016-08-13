@@ -9,13 +9,13 @@ import java.awt.event.ActionListener;
 public class Timer1 extends JFrame{
     private JPanel panel1;
     private JLabel timerLabel1;
-    private Timer timer;
+    public Timer timer1;
 
     public Timer1() {
         add(panel1);
         panel1.setBackground(Color.BLACK);
         panel1.setLayout(new FlowLayout());
-        setTitle("Timer3");
+        setTitle("Timer1");
         setPreferredSize(new Dimension(300, 300));
         pack();
         timerLabel1.setFont(new Font("Tahoma", Font.PLAIN, 80));
@@ -23,10 +23,13 @@ public class Timer1 extends JFrame{
         timerLabel1.setBackground(Color.BLACK);
         timerLabel1.setOpaque(true);
 
-        timer = new Timer(1000, new TimerTick());
+        timer1 = new Timer(1000, new TimerTick());
         panel1.add(timerLabel1);
+/*
+        timerLabel1.setVisible(false);
+*/
 
-        timer.start();
+        timer1.start();
     }
 
 
@@ -38,13 +41,17 @@ public class Timer1 extends JFrame{
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            countdown--;
-            int mins = countdown / 60;
-            int sec = countdown % 60;
+/*            timerLabel1.setVisible(true);*/
+            if (Main.manager.getTimersGo() == 1) {
+                countdown--;
+                int mins = countdown / 60;
+                int sec = countdown % 60;
 
-            timerLabel1.setText(Integer.toString(mins) + ":" + Integer.toString(sec));
-            if (countdown == 0) {
-                timer.stop();
+                timerLabel1.setText(Integer.toString(mins) + ":" + Integer.toString(sec));
+                if (countdown == 0) {
+                    timer1.stop();
+                }
+
             }
         }
 

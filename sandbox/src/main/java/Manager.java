@@ -63,6 +63,17 @@ public class Manager {
   volatile private int  ResetQuestOk = 0;
 
 
+synchronized   public int getTimersGo() {
+    return timersGo;
+  }
+
+synchronized   public void setTimersGo(int timersGo) {
+    this.timersGo = timersGo;
+  }
+
+  volatile private int timersGo = 0;
+
+
 synchronized   public int getPushkaTurnOn() {
     return PushkaTurnOn;
   }
