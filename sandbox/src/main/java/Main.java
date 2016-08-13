@@ -84,7 +84,18 @@ public class Main {
         } catch (InterruptedException e) {
           e.printStackTrace();
         }
-
+        try {
+          Thread.sleep(3500);
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
+        try {
+          Perenoska(serialPort, "r", "s");
+        } catch (SerialPortException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
 
 
 
@@ -95,13 +106,7 @@ public class Main {
         } catch (IOException | InterruptedException e) {
           e.printStackTrace();
         }
-        try {
-          Perenoska(serialPort, "PerenoskaOn", "PerenoskaOn1");
-        } catch (SerialPortException e) {
-          e.printStackTrace();
-        } catch (InterruptedException e) {
-          e.printStackTrace();
-        }
+
 /*        try {
           WaitForDeviceOn(serialPort, "AccumlyatorOn1", manager.getAccumlyatorOn());
         } catch (SerialPortException e) {
@@ -453,22 +458,14 @@ public class Main {
     System.out.println("4");
 
 /*    }*/
-    Thread.sleep(20000);
+
   }
-  private static void Perenoska(SerialPort serialPort, String zapros, String otvet) throws SerialPortException, InterruptedException {
-    String otvetSerial = "bad";
-    while (!otvetSerial.equals(otvet) && Main.manager.getPerenoskaOn() == 0) {
-      try {
-        otvetSerial = serialPort.readString();
-        if (otvetSerial == null) {
-          otvetSerial = "bad";
-        }
-      } catch (NullPointerException e) {
-        e.printStackTrace();
-      }
-      serialPort.writeString(zapros);
-      Thread.sleep(2000);
-    }
+  private static void Perenoska(SerialPort serialPort, String zapros, String disconnect) throws SerialPortException, InterruptedException {
+    serialPort.writeString(disconnect);
+     Thread.sleep(500);
+     serialPort.writeString(zapros);
+    Thread.sleep(2000);
+
   }
   private static void Karta(SerialPort serialPort, String zapros, String otvet) throws SerialPortException, InterruptedException {
     String otvetSerial = "bad";
