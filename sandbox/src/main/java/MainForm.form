@@ -34,7 +34,7 @@
           <text value="Пушка"/>
         </properties>
       </component>
-      <component id="1fa6d" class="javax.swing.JButton" binding="button2" default-binding="true">
+      <component id="1fa6d" class="javax.swing.JButton" binding="flashDisk" default-binding="true">
         <constraints>
           <grid row="15" column="1" row-span="6" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -92,7 +92,7 @@
           <text value="Ввод кода"/>
         </properties>
       </component>
-      <component id="6f0b6" class="javax.swing.JButton" binding="button9" default-binding="true">
+      <component id="6f0b6" class="javax.swing.JButton" binding="lasers" default-binding="true">
         <constraints>
           <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -100,7 +100,7 @@
           <text value="Лазеры"/>
         </properties>
       </component>
-      <component id="a9efb" class="javax.swing.JButton" binding="button10" default-binding="true">
+      <component id="a9efb" class="javax.swing.JButton" binding="superCompModules" default-binding="true">
         <constraints>
           <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -109,7 +109,7 @@
           <toolTipText value="Суперкомьютер"/>
         </properties>
       </component>
-      <component id="70d7e" class="javax.swing.JButton" binding="button11" default-binding="true">
+      <component id="70d7e" class="javax.swing.JButton" binding="shitokButton" default-binding="true">
         <constraints>
           <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -191,7 +191,7 @@
           <toolTipText value="Картинка3"/>
         </properties>
       </component>
-      <component id="ff7e" class="javax.swing.JButton" binding="button21" default-binding="true">
+      <component id="ff7e" class="javax.swing.JButton" binding="doorClose" default-binding="true">
         <constraints>
           <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -199,7 +199,7 @@
           <text value="Дверь"/>
         </properties>
       </component>
-      <component id="9cb3b" class="javax.swing.JButton" binding="button22" default-binding="true">
+      <component id="9cb3b" class="javax.swing.JButton" binding="rubilnikSuperComp" default-binding="true">
         <constraints>
           <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -215,7 +215,7 @@
           <text value="Код"/>
         </properties>
       </component>
-      <component id="f7ccd" class="javax.swing.JButton" binding="button24" default-binding="true">
+      <component id="f7ccd" class="javax.swing.JButton" binding="ventili" default-binding="true">
         <constraints>
           <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -255,7 +255,7 @@
           <text value="Картинка 5"/>
         </properties>
       </component>
-      <component id="b434c" class="javax.swing.JButton" binding="button29" default-binding="true">
+      <component id="b434c" class="javax.swing.JButton" binding="monitorButton" default-binding="true">
         <constraints>
           <grid row="14" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>

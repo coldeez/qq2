@@ -19,16 +19,16 @@ public class MainForm extends JFrame {
   private JButton startQuestButton;
   private JPanel mainPanel;
   private JButton button1;
-  private JButton button2;
+  private JButton flashDisk;
   private JButton button3;
   private JButton button4;
   private JButton button5;
   private JButton button6;
   private JButton button7;
   private JButton button8;
-  private JButton button9;
-  private JButton button10;
-  private JButton button11;
+  private JButton lasers;
+  private JButton superCompModules;
+  private JButton shitokButton;
   private JButton button12;
   private JButton button13;
   private JButton button14;
@@ -38,15 +38,15 @@ public class MainForm extends JFrame {
   private JButton button18;
   private JButton button19;
   private JButton button20;
-  private JButton button21;
-  private JButton button22;
+  private JButton doorClose;
+  private JButton rubilnikSuperComp;
   private JButton button23;
-  private JButton button24;
+  private JButton ventili;
   private JButton button25;
   private JButton button26;
   private JButton button27;
   private JButton button28;
-  private JButton button29;
+  private JButton monitorButton;
   private Color color1;
   private Color color2;
   private Color color3;
@@ -124,16 +124,16 @@ public class MainForm extends JFrame {
     color28 = Color.PINK;
     color29 = Color.PINK;
     button1.setBackground(color1);
-    button2.setBackground(color2);
+    flashDisk.setBackground(color2);
     button3.setBackground(color3);
     button4.setBackground(color4);
     button5.setBackground(color5);
     button6.setBackground(color6);
     button7.setBackground(color7);
     button8.setBackground(color8);
-    button9.setBackground(color9);
-    button10.setBackground(color10);
-    button11.setBackground(color11);
+    lasers.setBackground(color9);
+    superCompModules.setBackground(color10);
+    shitokButton.setBackground(color11);
     button12.setBackground(color12);
     button13.setBackground(color13);
     button14.setBackground(color14);
@@ -143,22 +143,22 @@ public class MainForm extends JFrame {
     button18.setBackground(color18);
     button19.setBackground(color19);
     button20.setBackground(color20);
-    button21.setBackground(color21);
-    button22.setBackground(color22);
+    doorClose.setBackground(color21);
+    rubilnikSuperComp.setBackground(color22);
     button23.setBackground(color23);
-    button24.setBackground(color24);
+    ventili.setBackground(color24);
     button25.setBackground(color25);
     button26.setBackground(color26);
     button27.setBackground(color27);
     button28.setBackground(color28);
-    button29.setBackground(color29);
+    monitorButton.setBackground(color29);
 
     button1.setSize(100, 45);
     button1.setLocation(705, 5);
     add(button1);
-    button2.setSize(150, 45);
-    button2.setLocation(590, 380);
-    add(button2);
+    flashDisk.setSize(150, 45);
+    flashDisk.setLocation(590, 380);
+    add(flashDisk);
     button3.setSize(150, 45);
     button3.setLocation(590, 320);
     add(button3);
@@ -177,15 +177,15 @@ public class MainForm extends JFrame {
     button8.setSize(100, 45);
     button8.setLocation(354, 450);
     add(button8);
-    button9.setSize(100, 45);
-    button9.setLocation(230, 450);
-    add(button9);
-    button10.setSize(100, 45);
-    button10.setLocation(120, 330);
-    add(button10);
-    button11.setSize(100, 45);
-    button11.setLocation(10, 330);
-    add(button11);
+    lasers.setSize(100, 45);
+    lasers.setLocation(230, 450);
+    add(lasers);
+    superCompModules.setSize(100, 45);
+    superCompModules.setLocation(120, 330);
+    add(superCompModules);
+    shitokButton.setSize(100, 45);
+    shitokButton.setLocation(10, 330);
+    add(shitokButton);
     button12.setSize(100, 45);
     button12.setLocation(630, 210);
     add(button12);
@@ -214,18 +214,18 @@ public class MainForm extends JFrame {
     button20.setLocation(130, 5);
     add(button20);
 
-    button21.setSize(100, 45);
-    button21.setLocation(470, 530);
-    add(button21);
-    button22.setSize(100, 45);
-    button22.setLocation(470, 330);
-    add(button22);
+    doorClose.setSize(100, 45);
+    doorClose.setLocation(470, 530);
+    add(doorClose);
+    rubilnikSuperComp.setSize(100, 45);
+    rubilnikSuperComp.setLocation(470, 330);
+    add(rubilnikSuperComp);
     button23.setSize(100, 45);
     button23.setLocation(360, 330);
     add(button23);
-    button24.setSize(100, 45);
-    button24.setLocation(245, 330);
-    add(button24);
+    ventili.setSize(100, 45);
+    ventili.setLocation(245, 330);
+    add(ventili);
     button25.setSize(100, 45);
     button25.setLocation(460, 240);
     add(button25);
@@ -238,9 +238,9 @@ public class MainForm extends JFrame {
     button28.setSize(100, 45);
     button28.setLocation(130, 60);
     add(button28);
-    button29.setSize(100, 45);
-    button29.setLocation(350, 5);
-    add(button29);
+    monitorButton.setSize(100, 45);
+    monitorButton.setLocation(350, 5);
+    add(monitorButton);
 
 
 
@@ -267,12 +267,12 @@ public class MainForm extends JFrame {
         Main.manager.setKartaActivate(1);
       }
     });
-    button2.addActionListener(new ActionListener() {
+/*    flashDisk.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
         Main.manager.setRadioStation(1);
       }
-    });
+    });*/
     button4.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
@@ -318,24 +318,24 @@ public class MainForm extends JFrame {
         Main.manager.setEmergeSvetOk(1);
       }
     });
-    button10.addActionListener(new ActionListener() {
+/*    superCompModules.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
         Main.manager.setSuperComputersModulesOk(1);
       }
-    });
-    button11.addActionListener(new ActionListener() {
+    });*/
+/*    shitokButton.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
         Main.manager.setShitokButton(1);
       }
-    });
-    button9.addActionListener(new ActionListener() {
+    });*/
+/*    lasers.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
         Main.manager.setLasersOK(1);
       }
-    });
+    });*/
 /*    button1.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
@@ -367,18 +367,19 @@ public class MainForm extends JFrame {
         }
       }
     });
-    button2.addChangeListener(new ChangeListener() {
+    flashDisk.addChangeListener(new ChangeListener() {
       @Override
       public void stateChanged(ChangeEvent evt) {
-        if (button2.getModel().isPressed()) {
+        if (flashDisk.getModel().isPressed()) {
           if (color2 == Color.GREEN) {
             color2 = Color.PINK;
+            Main.manager.setFlashOn(0);
 
           } else if (color2 == Color.PINK) {
-
             color2 = Color.GREEN;
+            Main.manager.setFlashOn(1);
           }
-          button2.setBackground(color2);
+          flashDisk.setBackground(color2);
         }
       }
     });
@@ -460,42 +461,48 @@ public class MainForm extends JFrame {
         }
       }
     });
-    button9.addChangeListener(new ChangeListener() {
+    lasers.addChangeListener(new ChangeListener() {
       @Override
       public void stateChanged(ChangeEvent evt) {
-        if (button9.getModel().isPressed()) {
+        if (lasers.getModel().isPressed()) {
           if (color9 == Color.GREEN) {
             color9 = Color.PINK;
+            Main.manager.setLasersOK(0);
           } else if (color9 == Color.PINK) {
             color9 = Color.GREEN;
+            Main.manager.setLasersOK(1);
           }
-          button9.setBackground(color9);
+          lasers.setBackground(color9);
         }
       }
     });
-    button10.addChangeListener(new ChangeListener() {
+    superCompModules.addChangeListener(new ChangeListener() {
       @Override
       public void stateChanged(ChangeEvent evt) {
-        if (button10.getModel().isPressed()) {
+        if (superCompModules.getModel().isPressed()) {
           if (color10 == Color.GREEN) {
             color10 = Color.PINK;
+            Main.manager.setSuperComputersModulesOk(0);
           } else if (color10 == Color.PINK) {
             color10 = Color.GREEN;
+            Main.manager.setSuperComputersModulesOk(1);
           }
-          button10.setBackground(color10);
+          superCompModules.setBackground(color10);
         }
       }
     });
-    button11.addChangeListener(new ChangeListener() {
+    shitokButton.addChangeListener(new ChangeListener() {
       @Override
       public void stateChanged(ChangeEvent evt) {
-        if (button11.getModel().isPressed()) {
+        if (shitokButton.getModel().isPressed()) {
           if (color11 == Color.GREEN) {
             color11 = Color.PINK;
+            Main.manager.setShitokButton(0);
           } else if (color11 == Color.PINK) {
             color11 = Color.GREEN;
+            Main.manager.setShitokButton(1);
           }
-          button11.setBackground(color11);
+          shitokButton.setBackground(color11);
         }
       }
     });
@@ -618,27 +625,31 @@ public class MainForm extends JFrame {
       }
     });
 
-    button21.addChangeListener(new ChangeListener() {
+    doorClose.addChangeListener(new ChangeListener() {
       @Override
       public void stateChanged(ChangeEvent evt) {
-        if (button21.getModel().isPressed()) {
+        if (doorClose.getModel().isPressed()) {
           if (color21 == Color.GREEN) {
             color21 = Color.PINK;
+            Main.manager.setDoorClose(0);
           } else if (color1 == Color.PINK) {
             color21 = Color.GREEN;
+            Main.manager.setDoorClose(1);
           }
-          button21.setBackground(color21);
+          doorClose.setBackground(color21);
         }
       }
     });
-    button22.addChangeListener(new ChangeListener() {
+    rubilnikSuperComp.addChangeListener(new ChangeListener() {
       @Override
       public void stateChanged(ChangeEvent evt) {
-        if (button22.getModel().isPressed()) {
+        if (rubilnikSuperComp.getModel().isPressed()) {
           if (color22 == Color.GREEN) {
             color22 = Color.PINK;
+            Main.manager.setRubilnikSuperCompOn(0);
           } else if (color1 == Color.PINK) {
             color22 = Color.GREEN;
+            Main.manager.setRubilnikSuperCompOn(1);
           }
           button20.setBackground(color22);
         }
@@ -657,16 +668,18 @@ public class MainForm extends JFrame {
         }
       }
     });
-    button24.addChangeListener(new ChangeListener() {
+    ventili.addChangeListener(new ChangeListener() {
       @Override
       public void stateChanged(ChangeEvent evt) {
-        if (button24.getModel().isPressed()) {
+        if (ventili.getModel().isPressed()) {
           if (color24 == Color.GREEN) {
             color24 = Color.PINK;
+            Main.manager.setVentiliOk(0);
           } else if (color1 == Color.PINK) {
             color24 = Color.GREEN;
+            Main.manager.setVentiliOk(1);
           }
-          button24.setBackground(color24);
+          ventili.setBackground(color24);
         }
       }
     });
@@ -722,16 +735,18 @@ public class MainForm extends JFrame {
         }
       }
     });
-    button29.addChangeListener(new ChangeListener() {
+    monitorButton.addChangeListener(new ChangeListener() {
       @Override
       public void stateChanged(ChangeEvent evt) {
-        if (button29.getModel().isPressed()) {
+        if (monitorButton.getModel().isPressed()) {
           if (color29 == Color.GREEN) {
             color29 = Color.PINK;
+            Main.manager.setMonitorButton(0);
           } else if (color1 == Color.PINK) {
             color29 = Color.GREEN;
+            Main.manager.setMonitorButton(1);
           }
-          button29.setBackground(color29);
+          monitorButton.setBackground(color29);
         }
       }
     });

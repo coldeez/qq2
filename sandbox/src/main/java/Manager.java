@@ -5,41 +5,32 @@ public class Manager {
 
 
   private int AccumlyatorOn = 0;
-
   private int TumblersReady = 0;
-
   private int SchitivatelKartiActivate = 0;
   private int KapsulaOpen = 0;
   private int TimersOn = 0;
   private int SchitivatelOn = 0;
-
   private int DoorOpen = 0;
   private int VideoOk = 0;
   private int ButtonShkafOk = 0;
   private int ShkafOpen = 0;
   private int KeyOk = 0;
   private int DoorShluzOneOpen = 0;
-
-
   private int DoorShluzOneBlock = 0;
   private int DoorShluzTwoOpen = 0;
-
   private int YashikClose = 0;
-
-
   private int VentiliOk = 0;
   private int EletrichestvoOff = 0;
   private int RichagBroke = 0;
-
   private int DataOk = 0;
   private int RubilnikSuperCompOn = 0;
-
   private int SvetMigaet = 0;
   private int HardDriveOk = 0;
   private int DoorWinOn = 0;
+  private int RukaOk = 0;
+
 
   volatile private int doorClose = 0;
-
   volatile private int monitorButton = 0;
   volatile private int flashOn = 0;
   volatile private int PushkaTurnOn = 0;
@@ -55,8 +46,6 @@ public class Manager {
   volatile private int EmergeSvetOk = 0;
   volatile private int ShitokButton = 0;
   volatile private int RadioStation = 0;
-
-  private int RukaOk = 0;
   volatile private int Audio1 = 0;
   volatile private int Audio2 = 0;
   volatile private int Audio3 = 0;
