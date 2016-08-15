@@ -40,6 +40,7 @@ public class Main {
       public void run() {
         timer1 = new Timer1();
         timer1.setVisible(true);
+        timer1.timer1.stop();
        }
     }).start();
 
@@ -66,11 +67,13 @@ public class Main {
         } catch (InterruptedException e) {
           e.printStackTrace();
         }*/
-/*        try {
+
+        try {
           StartQuest();
         } catch (IOException e) {
           e.printStackTrace();
-        }*/
+        }
+
 
         try {
           Thread.sleep(2000);
@@ -278,7 +281,7 @@ public class Main {
     
   }
 
-  private static void YashikFlashOpen(SerialPort serialPort, String zapros, String disconnect) throws SerialPortException, InterruptedException {
+ synchronized public static void YashikFlashOpen(SerialPort serialPort, String zapros, String disconnect) throws SerialPortException, InterruptedException {
     serialPort.writeString(disconnect);
     Thread.sleep(500);
     serialPort.writeString(zapros);
@@ -301,7 +304,7 @@ public class Main {
     myWindow.getRubilnikSuperComp().setBackground(Color.GREEN);
   }
 
-  private static void SirenaOn(SerialPort serialPort, String zapros, String disconnect) throws SerialPortException, InterruptedException {
+  synchronized public static void SirenaOn(SerialPort serialPort, String zapros, String disconnect) throws SerialPortException, InterruptedException {
     serialPort.writeString(disconnect);
     Thread.sleep(500);
     serialPort.writeString(zapros);
@@ -368,7 +371,7 @@ public class Main {
 
   }
 
-  private static void ShkafPodsvetkaOn(SerialPort serialPort, String zapros, String disconnect) throws SerialPortException, InterruptedException {
+ synchronized public static void ShkafPodsvetkaOn(SerialPort serialPort, String zapros, String disconnect) throws SerialPortException, InterruptedException {
     serialPort.writeString(disconnect);
     Thread.sleep(500);
     serialPort.writeString(zapros);
@@ -478,7 +481,7 @@ public class Main {
       myWindow.getPushka().setBackground(Color.GREEN);
 
   }
-  private static void Perenoska(SerialPort serialPort, String zapros, String disconnect) throws SerialPortException, InterruptedException {
+ synchronized public static void Perenoska(SerialPort serialPort, String zapros, String disconnect) throws SerialPortException, InterruptedException {
     serialPort.writeString(disconnect);
      Thread.sleep(500);
      serialPort.writeString(zapros);
@@ -502,7 +505,7 @@ public class Main {
       Thread.sleep(2000);
     }
   }
-  private static void SvetVezdeOff(SerialPort serialPort, String zapros, String disconnect) throws SerialPortException, InterruptedException {
+  synchronized  public static void SvetVezdeOff(SerialPort serialPort, String zapros, String disconnect) throws SerialPortException, InterruptedException {
     serialPort.writeString(disconnect);
     Thread.sleep(500);
     serialPort.writeString(zapros);
@@ -541,7 +544,7 @@ public class Main {
     Main.myWindow.getDoorClose().setBackground(Color.GREEN);
   }
 
-  private static void EmergySvet(SerialPort serialPort, String zapros, String disconnect) throws SerialPortException, InterruptedException {
+ synchronized public static void EmergySvet(SerialPort serialPort, String zapros, String disconnect) throws SerialPortException, InterruptedException {
     serialPort.writeString(disconnect);
     Thread.sleep(500);
     serialPort.writeString(zapros);

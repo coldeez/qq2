@@ -360,6 +360,21 @@ public class MainForm extends JFrame {
     monitorButton.setLocation(350, 5);
     add(monitorButton);
 
+    startQuestButton.addChangeListener(new ChangeListener() {
+      @Override
+      public void stateChanged(ChangeEvent evt) {
+        if (startQuestButton.getModel().isPressed()) {
+          if (color1 == Color.GREEN) {
+            color1 = Color.PINK;
+            Main.manager.setStartQuestOk(0);
+          } else if (color1 == Color.PINK) {
+            color1 = Color.GREEN;
+            Main.manager.setStartQuestOk(1);
+          }
+          startQuestButton.setBackground(color1);
+        }
+      }
+    });
 
     pushka.addChangeListener(new ChangeListener() {
       @Override
@@ -576,9 +591,11 @@ public class MainForm extends JFrame {
         if (timers.getModel().isPressed()) {
           if (color14 == Color.GREEN) {
             color14 = Color.PINK;
+            Main.timer1.timer1.stop();
 
           } else if (color14 == Color.PINK) {
             color14 = Color.GREEN;
+
           }
           timers.setBackground(color14);
         }
