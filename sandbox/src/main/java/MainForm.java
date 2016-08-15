@@ -33,22 +33,42 @@ public class MainForm extends JFrame {
   }
 
   private JButton perenoska;
-  private JButton button6;
+
+  public JButton getImage2() {
+    return image2;
+  }
+
+  private JButton image2;
   private JButton button7;
   private JButton button8;
   private JButton lasers;
+
+  public JButton getSuperCompModules() {
+    return superCompModules;
+  }
+
   private JButton superCompModules;
   private JButton shitokButton;
   private JButton button12;
   private JButton button13;
-  private JButton button14;
+
+  public JButton getTimers() {
+    return timers;
+  }
+
+  private JButton timers;
 
   public JButton getAudio1() {
     return audio1;
   }
 
   private JButton audio1;
-  private JButton button16;
+
+  public JButton getAudio2() {
+    return audio2;
+  }
+
+  private JButton audio2;
   private JButton button17;
   private JButton button18;
   private JButton button19;
@@ -63,9 +83,19 @@ public class MainForm extends JFrame {
   private JButton button23;
   private JButton ventili;
   private JButton button25;
-  private JButton button26;
+
+  public JButton getPodsvetka() {
+    return podsvetka;
+  }
+
+  private JButton podsvetka;
   private JButton button27;
   private JButton button28;
+
+  public JButton getMonitorButton() {
+    return monitorButton;
+  }
+
   private JButton monitorButton;
   private Color color1;
   private Color color2;
@@ -148,7 +178,7 @@ public class MainForm extends JFrame {
     button3.setBackground(color3);
     button4.setBackground(color4);
     perenoska.setBackground(color5);
-    button6.setBackground(color6);
+    image2.setBackground(color6);
     button7.setBackground(color7);
     button8.setBackground(color8);
     lasers.setBackground(color9);
@@ -156,9 +186,9 @@ public class MainForm extends JFrame {
     shitokButton.setBackground(color11);
     button12.setBackground(color12);
     button13.setBackground(color13);
-    button14.setBackground(color14);
+    timers.setBackground(color14);
     audio1.setBackground(color15);
-    button16.setBackground(color16);
+    audio2.setBackground(color16);
     button17.setBackground(color17);
     button18.setBackground(color18);
     button19.setBackground(color19);
@@ -168,7 +198,7 @@ public class MainForm extends JFrame {
     button23.setBackground(color23);
     ventili.setBackground(color24);
     button25.setBackground(color25);
-    button26.setBackground(color26);
+    podsvetka.setBackground(color26);
     button27.setBackground(color27);
     button28.setBackground(color28);
     monitorButton.setBackground(color29);
@@ -188,9 +218,9 @@ public class MainForm extends JFrame {
     perenoska.setSize(100, 45);
     perenoska.setLocation(750, 150);
     add(perenoska);
-    button6.setSize(100, 45);
-    button6.setLocation(10, 5);
-    add(button6);
+    image2.setSize(100, 45);
+    image2.setLocation(10, 5);
+    add(image2);
     button7.setSize(100, 45);
     button7.setLocation(350, 240);
     add(button7);
@@ -212,15 +242,15 @@ public class MainForm extends JFrame {
 /*    button13.setSize(100, 45);
     button13.setLocation(750, 480);
     add(button13);*/
-    button14.setSize(100, 45);
-    button14.setLocation(520, 5);
-    add(button14);
+    timers.setSize(100, 45);
+    timers.setLocation(520, 5);
+    add(timers);
     audio1.setSize(100, 45);
     audio1.setLocation(1150, 50);
     add(audio1);
-    button16.setSize(100, 45);
-    button16.setLocation(1150, 120);
-    add(button16);
+    audio2.setSize(100, 45);
+    audio2.setLocation(1150, 120);
+    add(audio2);
     button17.setSize(100, 45);
     button17.setLocation(1150, 190);
     add(button17);
@@ -249,9 +279,9 @@ public class MainForm extends JFrame {
     button25.setSize(100, 45);
     button25.setLocation(460, 240);
     add(button25);
-    button26.setSize(100, 45);
-    button26.setLocation(10, 450);
-    add(button26);
+    podsvetka.setSize(100, 45);
+    podsvetka.setLocation(10, 450);
+    add(podsvetka);
     button27.setSize(100, 45);
     button27.setLocation(10, 60);
     add(button27);
@@ -308,7 +338,7 @@ public class MainForm extends JFrame {
         Main.manager.setPerenoskaOn(1);
       }
     });
-    button14.addActionListener(new ActionListener() {
+    timers.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
         Main.manager.setTimersGo(1);
@@ -320,7 +350,7 @@ public class MainForm extends JFrame {
         Main.manager.setKartinka3(1);
       }
     });
-    button6.addActionListener(new ActionListener() {
+    image2.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
         Main.manager.setKartinka2(1);
@@ -413,16 +443,16 @@ public class MainForm extends JFrame {
         }
       }
     });
-    button6.addChangeListener(new ChangeListener() {
+    image2.addChangeListener(new ChangeListener() {
       @Override
       public void stateChanged(ChangeEvent evt) {
-        if (button6.getModel().isPressed()) {
+        if (image2.getModel().isPressed()) {
           if (color6 == Color.GREEN) {
             color6 = Color.PINK;
           } else if (color6 == Color.PINK) {
             color6 = Color.GREEN;
           }
-          button6.setBackground(color6);
+          image2.setBackground(color6);
         }
       }
     });
@@ -524,16 +554,16 @@ public class MainForm extends JFrame {
         }
       }
     });
-    button14.addChangeListener(new ChangeListener() {
+    timers.addChangeListener(new ChangeListener() {
       @Override
       public void stateChanged(ChangeEvent evt) {
-        if (button14.getModel().isPressed()) {
+        if (timers.getModel().isPressed()) {
           if (color14 == Color.GREEN) {
             color14 = Color.PINK;
           } else if (color14 == Color.PINK) {
             color14 = Color.GREEN;
           }
-          button14.setBackground(color14);
+          timers.setBackground(color14);
         }
       }
     });
@@ -550,16 +580,16 @@ public class MainForm extends JFrame {
         }
       }
     });
-    button16.addChangeListener(new ChangeListener() {
+    audio2.addChangeListener(new ChangeListener() {
       @Override
       public void stateChanged(ChangeEvent evt) {
-        if (button16.getModel().isPressed()) {
+        if (audio2.getModel().isPressed()) {
           if (color16 == Color.GREEN) {
             color16 = Color.PINK;
           } else if (color16 == Color.PINK) {
             color16 = Color.GREEN;
           }
-          button16.setBackground(color16);
+          audio2.setBackground(color16);
         }
       }
     });
@@ -687,16 +717,16 @@ public class MainForm extends JFrame {
         }
       }
     });
-    button26.addChangeListener(new ChangeListener() {
+    podsvetka.addChangeListener(new ChangeListener() {
       @Override
       public void stateChanged(ChangeEvent evt) {
-        if (button26.getModel().isPressed()) {
+        if (podsvetka.getModel().isPressed()) {
           if (color26 == Color.GREEN) {
             color26 = Color.PINK;
           } else if (color1 == Color.PINK) {
             color26 = Color.GREEN;
           }
-          button26.setBackground(color26);
+          podsvetka.setBackground(color26);
         }
       }
     });

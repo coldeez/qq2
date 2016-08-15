@@ -1,7 +1,10 @@
 import jssc.SerialPort;
 import jssc.SerialPortException;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.Set;
@@ -12,26 +15,32 @@ public class Main {
 
   public static Manager manager;
   public static SerialPort serialPort;
+  public static TouchPanel touchPanel;
+  public static MainForm myWindow;
+  public static Timer1 timer1;
+
 
 
 
   public static void main(String[] args) throws SerialPortException, IOException, InterruptedException {
     manager = new Manager();
-    JFrame myWindow = new MainForm();
+    myWindow = new MainForm();
     myWindow.setVisible(true);
-
-/*    new Thread(new Runnable() {
-      @Override
-      public void run() {
-        new TouchPanel().setVisible(true);
-      }
-    }).start();*/
 
     new Thread(new Runnable() {
       @Override
       public void run() {
-        new Timer1().setVisible(true);
+        touchPanel = new TouchPanel();
+        touchPanel.setVisible(true);
       }
+    }).start();
+
+    new Thread(new Runnable() {
+      @Override
+      public void run() {
+        timer1 = new Timer1();
+        timer1.setVisible(true);
+       }
     }).start();
 
     new Thread(new Runnable() {
@@ -62,6 +71,13 @@ public class Main {
         } catch (IOException e) {
           e.printStackTrace();
         }*/
+
+        try {
+          Thread.sleep(2000);
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
+
         try {
           WaitForDverClose(serialPort, "j");
         } catch (SerialPortException | InterruptedException e) {
@@ -79,51 +95,55 @@ public class Main {
         }
 
         try {
-          PlayAudio(1);
-        } catch (IOException e) {
+          PlayAudio(1, 10000);
+        } catch (IOException | InterruptedException e) {
           e.printStackTrace();
         }
-        try {
-          Thread.sleep(3500);
-        } catch (InterruptedException e) {
-          e.printStackTrace();
-        }
+        myWindow.getAudio1().setBackground(Color.GREEN);
+
+
         try {
           Perenoska(serialPort, "r", "s");
         } catch (SerialPortException | InterruptedException e) {
           e.printStackTrace();
         }
 
-/*        ShowFirstImage();
-        TimerActivate();*/
+        TimersOn();
+        myWindow.getTimers().setBackground(Color.GREEN);
+
+
         try {
-          WaitForMonitorButton(serialPort,"a");
+          WaitForMonitorButton();
         } catch (InterruptedException e) {
           e.printStackTrace();
         }
-        try {
+
+/*        try {
           OpenShkaf(serialPort, "a", "b");
-        } catch (InterruptedException e) {
+        } catch (InterruptedException | SerialPortException e) {
           e.printStackTrace();
-        } catch (SerialPortException e) {
-          e.printStackTrace();
-        }
+        }*/
         try {
           WaitForSuperComp(serialPort, "a");
         } catch (InterruptedException e) {
           e.printStackTrace();
         }
-/*        ShowSecondImage();*/
         try {
-          PlayAudio(2);
+          ShowImage("2");
         } catch (IOException e) {
           e.printStackTrace();
         }
+        myWindow.getImage2().setBackground(Color.GREEN);
+        try {
+          PlayAudio(2, 10000);
+        } catch (IOException | InterruptedException e) {
+          e.printStackTrace();
+        }
+        myWindow.getAudio2().setBackground(Color.GREEN);
+
         try {
           ShkafPodsvetkaOn(serialPort, "a", "b");
-        } catch (SerialPortException e) {
-          e.printStackTrace();
-        } catch (InterruptedException e) {
+        } catch (SerialPortException | InterruptedException e) {
           e.printStackTrace();
         }
         try {
@@ -131,7 +151,11 @@ public class Main {
         } catch (InterruptedException e) {
           e.printStackTrace();
         }
-/*        ShowThirdImage();*/
+        try {
+          ShowImage("3");
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
         try {
           WaitForVentils(serialPort, "a");
         } catch (InterruptedException e) {
@@ -145,11 +169,17 @@ public class Main {
           e.printStackTrace();
         }
         try {
-          PlayAudio(3);
+          PlayAudio(3, 10000);
+        } catch (IOException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
+        try {
+          ShowImage("2");
         } catch (IOException e) {
           e.printStackTrace();
         }
-/*        ShowSecondImage();*/
         try {
           SetTumblers(serialPort, "a", "b");
         } catch (SerialPortException e) {
@@ -177,12 +207,18 @@ public class Main {
           e.printStackTrace();
         }
         try {
-          PlayAudio(4);
+          PlayAudio(4, 10000);
+        } catch (IOException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
+        try {
+          ShowImage("5");
         } catch (IOException e) {
           e.printStackTrace();
         }
-/*        ShowFifthImage();
-        WaitForCode();*/
+/*        WaitForCode();*/
         try {
           WaitForRubilnik(serialPort, "a");
         } catch (InterruptedException e) {
@@ -201,8 +237,10 @@ public class Main {
           e.printStackTrace();
         }
         try {
-          PlayAudio(5);
+          PlayAudio(5, 10000);
         } catch (IOException e) {
+          e.printStackTrace();
+        } catch (InterruptedException e) {
           e.printStackTrace();
         }
         try {
@@ -217,6 +255,10 @@ public class Main {
 
 
     }).start();
+  }
+
+  private static void ShowImage(String s) throws IOException {
+    touchPanel.getComponent().setPic(ImageIO.read(new File("C:\\test\\test" + s + ".png")));
   }
 
   private static void OpenDoor(SerialPort serialPort, String zapros, String disconnect) throws SerialPortException, InterruptedException {
@@ -335,6 +377,7 @@ public class Main {
     serialPort.writeString(disconnect);
     Thread.sleep(500);
     serialPort.writeString(zapros);
+    myWindow.getPodsvetka().setBackground(Color.GREEN);
   }
 
   private static void WaitForSuperComp(SerialPort serialPort, String otvet) throws InterruptedException {
@@ -350,6 +393,7 @@ public class Main {
       }
       Thread.sleep(2000);
     }
+    myWindow.getSuperCompModules().setBackground(Color.GREEN);
 
 
   }
@@ -359,33 +403,33 @@ public class Main {
     Thread.sleep(500);
     serialPort.writeString(zapros);
 
+
   }
 
-  private static void WaitForMonitorButton(SerialPort serialPort, String otvet) throws InterruptedException {
-       String otvetSerial = "bad";
-       while (!otvetSerial.contains(otvet) && Main.manager.getMonitorButton() == 0) {
-        try {
-          otvetSerial = serialPort.readString();
-          if (otvetSerial == null) {
-            otvetSerial = "bad";
-          }
-        } catch (NullPointerException | SerialPortException e) {
-          e.printStackTrace();
-        }
+  private static void WaitForMonitorButton() throws InterruptedException {
+
+       while (Main.manager.getMonitorButton() == 0) {
          Thread.sleep(2000);
+
       }
+    myWindow.getMonitorButton().setBackground(Color.GREEN);
+
   }
 
 
 
   private static void TimersOn() {
-    Main.manager.setTimersGo(1);
+
+    timer1.getTimerLabel1().setForeground(Color.RED);
+    timer1.timer1.start();
+
 
   }
 
-  private static void PlayAudio(int s) throws IOException {
+  synchronized public static void PlayAudio(int s, int n) throws IOException, InterruptedException {
 
     Runtime.getRuntime().exec("cmd /c start C:\\test\\bats\\audio"+ s + ".bat");
+    Thread.sleep(n);
   }
 
   private static void PlayMainTheme() throws IOException {
@@ -400,9 +444,10 @@ public class Main {
     }
   }
 
+
   private static void WaitForDeviceOn(SerialPort serialPort, String otvet, int button) throws SerialPortException, InterruptedException {
     String otvetSerial = "bad";
-    while (!otvetSerial.equals(otvet) && button == 0) {
+    while (!otvetSerial.contains(otvet) && button == 0) {
       try {
         otvetSerial = serialPort.readString();
         if (otvetSerial == null) {
@@ -417,7 +462,7 @@ public class Main {
 
   private static void TurnOnDevice(SerialPort serialPort, String zapros, String otvet, int button) throws SerialPortException, InterruptedException {
     String otvetSerial = "bad";
-    while (!otvetSerial.equals(otvet) && button == 0) {
+    while (!otvetSerial.contains(otvet) && button == 0) {
       System.out.println(button);
       try {
         otvetSerial = serialPort.readString();
@@ -434,10 +479,8 @@ public class Main {
   synchronized public static void Pushka(SerialPort serialPort, String zapros, String disconnect) throws SerialPortException, InterruptedException {
       serialPort.writeString(disconnect);
       Thread.sleep(500);
-    serialPort.writeString(zapros);
-
-
-/*    }*/
+      serialPort.writeString(zapros);
+      myWindow.getPushka().setBackground(Color.GREEN);
 
   }
   private static void Perenoska(SerialPort serialPort, String zapros, String disconnect) throws SerialPortException, InterruptedException {
@@ -445,12 +488,13 @@ public class Main {
      Thread.sleep(500);
      serialPort.writeString(zapros);
      Thread.sleep(2000);
+     myWindow.getPerenoska().setBackground(Color.GREEN);
 
   }
 
   private static void SvetVezde(SerialPort serialPort, String zapros, String otvet) throws SerialPortException, InterruptedException {
     String otvetSerial = "bad";
-    while (!otvetSerial.equals(otvet) && Main.manager.getSvetVezdeOn() == 0) {
+    while (!otvetSerial.contains(otvet) && Main.manager.getSvetVezdeOn() == 0) {
       try {
         otvetSerial = serialPort.readString();
         if (otvetSerial == null) {
@@ -473,7 +517,7 @@ public class Main {
 
   private static void DverOpen(SerialPort serialPort, String otvet) throws SerialPortException, InterruptedException {
     String otvetSerial = "bad";
-    while (!otvetSerial.equals(otvet) && Main.manager.getSuperComputersModulesOk() == 0) {
+    while (!otvetSerial.contains(otvet) && Main.manager.getSuperComputersModulesOk() == 0) {
       try {
         otvetSerial = serialPort.readString();
         if (otvetSerial == null) {
@@ -487,7 +531,6 @@ public class Main {
   }
   private static void WaitForDverClose(SerialPort serialPort, String otvet) throws SerialPortException, InterruptedException {
     String otvetSerial = "bad";
-    System.out.println("dver");
     while (!otvetSerial.contains(otvet) && Main.manager.getDoorClose() == 0) {
       try {
         otvetSerial = serialPort.readString();
@@ -499,6 +542,7 @@ public class Main {
       }
       Thread.sleep(2000);
     }
+    Main.myWindow.getDoorClose().setBackground(Color.GREEN);
   }
 
   private static void EmergySvet(SerialPort serialPort, String zapros, String disconnect) throws SerialPortException, InterruptedException {
@@ -509,7 +553,7 @@ public class Main {
   }
 
   public static void ResetQuest(SerialPort serialPort, String zapros, String otvet) throws SerialPortException, InterruptedException {
-    while (serialPort.readString().equals(otvet) && Main.manager.getResetQuestOk() != 0) {
+    while (serialPort.readString().contains(otvet) && Main.manager.getResetQuestOk() != 0) {
       Thread.sleep(500);
       System.out.println(manager.getResetQuestOk()+" reset");
       serialPort.writeString(zapros);

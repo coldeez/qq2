@@ -67,7 +67,7 @@
           <text value="Переноска"/>
         </properties>
       </component>
-      <component id="4f5f9" class="javax.swing.JButton" binding="button6" default-binding="true">
+      <component id="4f5f9" class="javax.swing.JButton" binding="image2" default-binding="true">
         <constraints>
           <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -134,7 +134,7 @@
           <text value="Карта"/>
         </properties>
       </component>
-      <component id="8e88a" class="javax.swing.JButton" binding="button14" default-binding="true">
+      <component id="8e88a" class="javax.swing.JButton" binding="timers" default-binding="true">
         <constraints>
           <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -150,7 +150,7 @@
           <text value="Аудио 1"/>
         </properties>
       </component>
-      <component id="69b1d" class="javax.swing.JButton" binding="button16" default-binding="true">
+      <component id="69b1d" class="javax.swing.JButton" binding="audio2" default-binding="true">
         <constraints>
           <grid row="19" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -231,7 +231,7 @@
           <text value="Сирена"/>
         </properties>
       </component>
-      <component id="7868c" class="javax.swing.JButton" binding="button26" default-binding="true">
+      <component id="7868c" class="javax.swing.JButton" binding="podsvetka" default-binding="true">
         <constraints>
           <grid row="11" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>

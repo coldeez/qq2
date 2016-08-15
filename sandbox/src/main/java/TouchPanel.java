@@ -43,7 +43,9 @@ public class TouchPanel extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 try {
                     System.out.println("before");
-                    component.setPic(ImageIO.read(new File("C:\\test\\test3.png")));
+                    component.setPic(ImageIO.read(new File("C:\\test\\test3.jpg")));
+                    Main.manager.setMonitorButton(1);
+                    button1.setVisible(false);
                     System.out.println("after");
                 } catch (IOException e1) {
                     e1.printStackTrace();
