@@ -8,7 +8,17 @@ import java.awt.event.ActionListener;
  */
 public class Timer1 extends JFrame{
     private JPanel panel1;
+
+    public JLabel getTimerLabel1() {
+        return timerLabel1;
+    }
+
+
+
     private JLabel timerLabel1;
+
+
+
     public Timer timer1;
 
     public Timer1() {
@@ -19,15 +29,13 @@ public class Timer1 extends JFrame{
         setPreferredSize(new Dimension(300, 300));
         pack();
         timerLabel1.setFont(new Font("Tahoma", Font.PLAIN, 80));
-        timerLabel1.setForeground(Color.RED);
+        timerLabel1.setForeground(Color.BLACK);
         timerLabel1.setBackground(Color.BLACK);
         timerLabel1.setOpaque(true);
 
         timer1 = new Timer(1000, new TimerTick());
         panel1.add(timerLabel1);
-/*
-        timerLabel1.setVisible(false);
-*/
+
 
         timer1.start();
     }
@@ -41,8 +49,8 @@ public class Timer1 extends JFrame{
 
         @Override
         public void actionPerformed(ActionEvent e) {
-/*            timerLabel1.setVisible(true);*/
-            if (Main.manager.getTimersGo() == 1) {
+
+
                 countdown--;
                 int mins = countdown / 60;
                 int sec = countdown % 60;
@@ -52,7 +60,7 @@ public class Timer1 extends JFrame{
                     timer1.stop();
                 }
 
-            }
+
         }
 
     }

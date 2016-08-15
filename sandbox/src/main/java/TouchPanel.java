@@ -10,7 +10,18 @@ import java.io.IOException;
 
 
 public class TouchPanel extends JFrame{
+    public ImageComponent getComponent() {
+        return component;
+    }
+
+
+
     private ImageComponent component;
+
+    public JButton getButton1() {
+        return button1;
+    }
+
     private JButton button1;
 
 

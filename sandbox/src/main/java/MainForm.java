@@ -18,11 +18,21 @@ public class MainForm extends JFrame {
   private JButton resetQuestButton;
   private JButton startQuestButton;
   private JPanel mainPanel;
-  private JButton button1;
+
+  public JButton getPushka() {
+    return pushka;
+  }
+
+  public JButton pushka;
   private JButton flashDisk;
   private JButton button3;
   private JButton button4;
-  private JButton button5;
+
+  public JButton getPerenoska() {
+    return perenoska;
+  }
+
+  private JButton perenoska;
   private JButton button6;
   private JButton button7;
   private JButton button8;
@@ -32,12 +42,22 @@ public class MainForm extends JFrame {
   private JButton button12;
   private JButton button13;
   private JButton button14;
-  private JButton button15;
+
+  public JButton getAudio1() {
+    return audio1;
+  }
+
+  private JButton audio1;
   private JButton button16;
   private JButton button17;
   private JButton button18;
   private JButton button19;
   private JButton button20;
+
+  public JButton getDoorClose() {
+    return doorClose;
+  }
+
   private JButton doorClose;
   private JButton rubilnikSuperComp;
   private JButton button23;
@@ -123,11 +143,11 @@ public class MainForm extends JFrame {
     color27 = Color.PINK;
     color28 = Color.PINK;
     color29 = Color.PINK;
-    button1.setBackground(color1);
+    pushka.setBackground(color1);
     flashDisk.setBackground(color2);
     button3.setBackground(color3);
     button4.setBackground(color4);
-    button5.setBackground(color5);
+    perenoska.setBackground(color5);
     button6.setBackground(color6);
     button7.setBackground(color7);
     button8.setBackground(color8);
@@ -137,7 +157,7 @@ public class MainForm extends JFrame {
     button12.setBackground(color12);
     button13.setBackground(color13);
     button14.setBackground(color14);
-    button15.setBackground(color15);
+    audio1.setBackground(color15);
     button16.setBackground(color16);
     button17.setBackground(color17);
     button18.setBackground(color18);
@@ -153,9 +173,9 @@ public class MainForm extends JFrame {
     button28.setBackground(color28);
     monitorButton.setBackground(color29);
 
-    button1.setSize(100, 45);
-    button1.setLocation(705, 5);
-    add(button1);
+    pushka.setSize(100, 45);
+    pushka.setLocation(705, 5);
+    add(pushka);
     flashDisk.setSize(150, 45);
     flashDisk.setLocation(590, 380);
     add(flashDisk);
@@ -165,9 +185,9 @@ public class MainForm extends JFrame {
     button4.setSize(100, 45);
     button4.setLocation(915, 340);
     add(button4);
-    button5.setSize(100, 45);
-    button5.setLocation(750, 150);
-    add(button5);
+    perenoska.setSize(100, 45);
+    perenoska.setLocation(750, 150);
+    add(perenoska);
     button6.setSize(100, 45);
     button6.setLocation(10, 5);
     add(button6);
@@ -195,9 +215,9 @@ public class MainForm extends JFrame {
     button14.setSize(100, 45);
     button14.setLocation(520, 5);
     add(button14);
-    button15.setSize(100, 45);
-    button15.setLocation(1150, 50);
-    add(button15);
+    audio1.setSize(100, 45);
+    audio1.setLocation(1150, 50);
+    add(audio1);
     button16.setSize(100, 45);
     button16.setLocation(1150, 120);
     add(button16);
@@ -267,12 +287,6 @@ public class MainForm extends JFrame {
         Main.manager.setKartaActivate(1);
       }
     });
-/*    flashDisk.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        Main.manager.setRadioStation(1);
-      }
-    });*/
     button4.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
@@ -288,7 +302,7 @@ public class MainForm extends JFrame {
         Main.manager.setSvetVezdeOn(1);
       }
     });
-    button5.addActionListener(new ActionListener() {
+    perenoska.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
         Main.manager.setPerenoskaOn(1);
@@ -318,38 +332,15 @@ public class MainForm extends JFrame {
         Main.manager.setEmergeSvetOk(1);
       }
     });
-/*    superCompModules.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        Main.manager.setSuperComputersModulesOk(1);
-      }
-    });*/
-/*    shitokButton.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        Main.manager.setShitokButton(1);
-      }
-    });*/
-/*    lasers.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        Main.manager.setLasersOK(1);
-      }
-    });*/
-/*    button1.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        Main.manager.setPushkaTurnOn(1);
-      }
-    });*/
 
 
 
 
-    button1.addChangeListener(new ChangeListener() {
+
+    pushka.addChangeListener(new ChangeListener() {
       @Override
       public void stateChanged(ChangeEvent evt) {
-          if (button1.getModel().isPressed()) {
+          if (pushka.getModel().isPressed()) {
           if (color1 == Color.GREEN) {
             color1 = Color.PINK;
           } else if (color1 == Color.PINK) {
@@ -363,7 +354,7 @@ public class MainForm extends JFrame {
             color1 = Color.GREEN;
             Main.manager.setPushkaTurnOn(1);
           }
-          button1.setBackground(color1);
+          pushka.setBackground(color1);
         }
       }
     });
@@ -409,16 +400,16 @@ public class MainForm extends JFrame {
         }
       }
     });
-    button5.addChangeListener(new ChangeListener() {
+    perenoska.addChangeListener(new ChangeListener() {
       @Override
       public void stateChanged(ChangeEvent evt) {
-        if (button5.getModel().isPressed()) {
+        if (perenoska.getModel().isPressed()) {
           if (color5 == Color.GREEN) {
             color5 = Color.PINK;
           } else if (color5 == Color.PINK) {
             color5 = Color.GREEN;
           }
-          button5.setBackground(color5);
+          perenoska.setBackground(color5);
         }
       }
     });
@@ -546,16 +537,16 @@ public class MainForm extends JFrame {
         }
       }
     });
-    button15.addChangeListener(new ChangeListener() {
+    audio1.addChangeListener(new ChangeListener() {
       @Override
       public void stateChanged(ChangeEvent evt) {
-        if (button15.getModel().isPressed()) {
+        if (audio1.getModel().isPressed()) {
           if (color15 == Color.GREEN) {
             color15 = Color.PINK;
           } else if (color15 == Color.PINK) {
             color15 = Color.GREEN;
           }
-          button15.setBackground(color15);
+          audio1.setBackground(color15);
         }
       }
     });

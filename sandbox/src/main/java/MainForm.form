@@ -26,7 +26,7 @@
           <text value="Запуск"/>
         </properties>
       </component>
-      <component id="9d4de" class="javax.swing.JButton" binding="button1" default-binding="true">
+      <component id="9d4de" class="javax.swing.JButton" binding="pushka" default-binding="true">
         <constraints>
           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -59,7 +59,7 @@
           <toolTipText value=""/>
         </properties>
       </component>
-      <component id="15692" class="javax.swing.JButton" binding="button5" default-binding="true">
+      <component id="15692" class="javax.swing.JButton" binding="perenoska" default-binding="true">
         <constraints>
           <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -142,7 +142,7 @@
           <text value="Таймеры"/>
         </properties>
       </component>
-      <component id="3e58a" class="javax.swing.JButton" binding="button15" default-binding="true">
+      <component id="3e58a" class="javax.swing.JButton" binding="audio1" default-binding="true">
         <constraints>
           <grid row="20" column="0" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
