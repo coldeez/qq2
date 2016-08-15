@@ -71,6 +71,7 @@ public class Main {
           e.printStackTrace();
         }*/
         try {
+          testwerwerwer
           DverClose(serialPort, "j");
         } catch (SerialPortException e) {
           e.printStackTrace();
