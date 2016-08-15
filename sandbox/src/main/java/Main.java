@@ -156,6 +156,7 @@ public class Main {
         } catch (IOException e) {
           e.printStackTrace();
         }
+        myWindow.getImage3().setBackground(Color.GREEN);
         try {
           WaitForVentils(serialPort, "a");
         } catch (InterruptedException e) {
@@ -163,30 +164,25 @@ public class Main {
         }
         try {
           SvetVezdeOff(serialPort, "a", "b");
-        } catch (SerialPortException e) {
-          e.printStackTrace();
-        } catch (InterruptedException e) {
+        } catch (SerialPortException | InterruptedException e) {
           e.printStackTrace();
         }
         try {
           PlayAudio(3, 10000);
-        } catch (IOException e) {
-          e.printStackTrace();
-        } catch (InterruptedException e) {
+        } catch (IOException | InterruptedException e) {
           e.printStackTrace();
         }
+        myWindow.getAudio3().setBackground(Color.GREEN);
         try {
           ShowImage("2");
         } catch (IOException e) {
           e.printStackTrace();
         }
-        try {
+/*        try {
           SetTumblers(serialPort, "a", "b");
-        } catch (SerialPortException e) {
+        } catch (SerialPortException | InterruptedException e) {
           e.printStackTrace();
-        } catch (InterruptedException e) {
-          e.printStackTrace();
-        }
+        }*/
         try {
           WaitForShitokButton(serialPort, "a");
         } catch (InterruptedException e) {
@@ -194,23 +190,18 @@ public class Main {
         }
         try {
           SirenaOn(serialPort, "a", "b");
-        } catch (SerialPortException e) {
-          e.printStackTrace();
-        } catch (InterruptedException e) {
+        } catch (SerialPortException | InterruptedException e) {
           e.printStackTrace();
         }
         try {
           EmergySvet(serialPort, "a", "b");
-        } catch (SerialPortException e) {
-          e.printStackTrace();
-        } catch (InterruptedException e) {
+        } catch (SerialPortException | InterruptedException e) {
           e.printStackTrace();
         }
         try {
           PlayAudio(4, 10000);
-        } catch (IOException e) {
-          e.printStackTrace();
-        } catch (InterruptedException e) {
+          myWindow.getAudio4().setBackground(Color.GREEN);
+        } catch (IOException | InterruptedException e) {
           e.printStackTrace();
         }
         try {
@@ -218,6 +209,7 @@ public class Main {
         } catch (IOException e) {
           e.printStackTrace();
         }
+        myWindow.getImage5().setBackground(Color.GREEN);
 /*        WaitForCode();*/
         try {
           WaitForRubilnik(serialPort, "a");
@@ -226,9 +218,7 @@ public class Main {
         }
         try {
           YashikFlashOpen(serialPort, "a", "b");
-        } catch (SerialPortException e) {
-          e.printStackTrace();
-        } catch (InterruptedException e) {
+        } catch (SerialPortException | InterruptedException e) {
           e.printStackTrace();
         }
         try {
@@ -238,20 +228,17 @@ public class Main {
         }
         try {
           PlayAudio(5, 10000);
-        } catch (IOException e) {
-          e.printStackTrace();
-        } catch (InterruptedException e) {
+        } catch (IOException | InterruptedException e) {
           e.printStackTrace();
         }
+        myWindow.getAudio5().setBackground(Color.GREEN);
         try {
           OpenDoor(serialPort, "a", "b");
-        } catch (SerialPortException e) {
-          e.printStackTrace();
-        } catch (InterruptedException e) {
+        } catch (SerialPortException | InterruptedException e) {
           e.printStackTrace();
         }
 
-        }
+      }
 
 
     }).start();
@@ -265,6 +252,7 @@ public class Main {
     serialPort.writeString(disconnect);
     Thread.sleep(500);
     serialPort.writeString(zapros);
+    myWindow.getDoorClose().setBackground(Color.RED);
   }
 
   private static void OpenShluz(SerialPort serialPort, String zapros, String disconnect) throws SerialPortException, InterruptedException {
@@ -286,6 +274,7 @@ public class Main {
       }
       Thread.sleep(2000);
     }
+    myWindow.getFlashDisk().setBackground(Color.GREEN);
     
   }
 
@@ -293,6 +282,7 @@ public class Main {
     serialPort.writeString(disconnect);
     Thread.sleep(500);
     serialPort.writeString(zapros);
+    myWindow.getYashikFlash().setBackground(Color.GREEN);
   }
 
   private static void WaitForRubilnik(SerialPort serialPort, String otvet) throws InterruptedException {
@@ -308,12 +298,14 @@ public class Main {
       }
       Thread.sleep(2000);
     }
+    myWindow.getRubilnikSuperComp().setBackground(Color.GREEN);
   }
 
   private static void SirenaOn(SerialPort serialPort, String zapros, String disconnect) throws SerialPortException, InterruptedException {
     serialPort.writeString(disconnect);
     Thread.sleep(500);
     serialPort.writeString(zapros);
+    myWindow.getSirena().setBackground(Color.GREEN);
 
   }
 
@@ -330,6 +322,7 @@ public class Main {
       }
       Thread.sleep(2000);
     }
+    myWindow.getShitokButton().setBackground(Color.GREEN);
 
   }
 
@@ -353,6 +346,7 @@ public class Main {
       }
       Thread.sleep(2000);
     }
+    myWindow.getVentili().setBackground(Color.GREEN);
 
   }
 
@@ -369,6 +363,7 @@ public class Main {
       }
       Thread.sleep(2000);
     }
+    myWindow.getLasers().setBackground(Color.GREEN);
 
 
   }
@@ -512,6 +507,7 @@ public class Main {
     Thread.sleep(500);
     serialPort.writeString(zapros);
     Thread.sleep(2000);
+    myWindow.getSvetVezde().setBackground(Color.RED);
   }
 
 
@@ -550,6 +546,7 @@ public class Main {
     Thread.sleep(500);
     serialPort.writeString(zapros);
     Thread.sleep(2000);
+    myWindow.getEmergySvet().setBackground(Color.GREEN);
   }
 
   public static void ResetQuest(SerialPort serialPort, String zapros, String otvet) throws SerialPortException, InterruptedException {

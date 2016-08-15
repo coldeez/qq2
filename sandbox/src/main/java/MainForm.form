@@ -42,7 +42,7 @@
           <text value="Флэш-диск"/>
         </properties>
       </component>
-      <component id="e2b1" class="javax.swing.JButton" binding="button3" default-binding="true">
+      <component id="e2b1" class="javax.swing.JButton" binding="yashikFlash" default-binding="true">
         <constraints>
           <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -76,7 +76,7 @@
           <toolTipText value="Картинка2"/>
         </properties>
       </component>
-      <component id="5babe" class="javax.swing.JButton" binding="button7" default-binding="true">
+      <component id="5babe" class="javax.swing.JButton" binding="emergySvet" default-binding="true">
         <constraints>
           <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -118,7 +118,7 @@
           <toolTipText value="Кнопка Щиток"/>
         </properties>
       </component>
-      <component id="5af6f" class="javax.swing.JButton" binding="button12" default-binding="true">
+      <component id="5af6f" class="javax.swing.JButton" binding="svetVezde" default-binding="true">
         <constraints>
           <grid row="6" column="2" row-span="16" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -158,7 +158,7 @@
           <text value="Аудио 2"/>
         </properties>
       </component>
-      <component id="82181" class="javax.swing.JButton" binding="button17" default-binding="true">
+      <component id="82181" class="javax.swing.JButton" binding="audio3" default-binding="true">
         <constraints>
           <grid row="18" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -166,7 +166,7 @@
           <text value="Аудио 3"/>
         </properties>
       </component>
-      <component id="62633" class="javax.swing.JButton" binding="button18" default-binding="true">
+      <component id="62633" class="javax.swing.JButton" binding="audio4" default-binding="true">
         <constraints>
           <grid row="17" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -174,7 +174,7 @@
           <text value="Аудио 4"/>
         </properties>
       </component>
-      <component id="750be" class="javax.swing.JButton" binding="button19" default-binding="true">
+      <component id="750be" class="javax.swing.JButton" binding="audio5" default-binding="true">
         <constraints>
           <grid row="16" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -182,7 +182,7 @@
           <text value="Аудио 5"/>
         </properties>
       </component>
-      <component id="1b27d" class="javax.swing.JButton" binding="button20" default-binding="true">
+      <component id="1b27d" class="javax.swing.JButton" binding="image3" default-binding="true">
         <constraints>
           <grid row="21" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -223,7 +223,7 @@
           <text value="Вентили"/>
         </properties>
       </component>
-      <component id="981ec" class="javax.swing.JButton" binding="button25" default-binding="true">
+      <component id="981ec" class="javax.swing.JButton" binding="sirena" default-binding="true">
         <constraints>
           <grid row="10" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -247,7 +247,7 @@
           <text value="Картинка 4"/>
         </properties>
       </component>
-      <component id="32a32" class="javax.swing.JButton" binding="button28" default-binding="true">
+      <component id="32a32" class="javax.swing.JButton" binding="image5" default-binding="true">
         <constraints>
           <grid row="13" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
