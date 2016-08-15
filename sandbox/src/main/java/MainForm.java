@@ -36,7 +36,7 @@ public class MainForm extends JFrame {
   }
 
   private JButton yashikFlash;
-  private JButton button4;
+
 
   public JButton getPerenoska() {
     return perenoska;
@@ -246,7 +246,7 @@ public class MainForm extends JFrame {
     pushka.setBackground(color1);
     flashDisk.setBackground(color2);
     yashikFlash.setBackground(color3);
-    button4.setBackground(color4);
+
     perenoska.setBackground(color5);
     image2.setBackground(color6);
     emergySvet.setBackground(color7);
@@ -282,9 +282,7 @@ public class MainForm extends JFrame {
     yashikFlash.setSize(150, 45);
     yashikFlash.setLocation(590, 320);
     add(yashikFlash);
-    button4.setSize(100, 45);
-    button4.setLocation(915, 340);
-    add(button4);
+
     perenoska.setSize(100, 45);
     perenoska.setLocation(750, 150);
     add(perenoska);
@@ -363,92 +361,17 @@ public class MainForm extends JFrame {
     add(monitorButton);
 
 
-
-
-
-    resetQuestButton.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        Main.manager.setResetQuestOk(1);
-
-
-      }
-    });
-
-    startQuestButton.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        Main.manager.setStartQuestOk(1);
-      }
-    });
-    button13.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        Main.manager.setKartaActivate(1);
-      }
-    });
-    button4.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        Main.manager.setSvetShitok(1);
-      }
-    });
-    svetVezde.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        if (Main.manager.getSvetVezdeOn() == 1) {
-          Main.manager.setSvetVezdeOn(0);
-        }
-        Main.manager.setSvetVezdeOn(1);
-      }
-    });
-    perenoska.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        Main.manager.setPerenoskaOn(1);
-      }
-    });
-    timers.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        Main.manager.setTimersGo(1);
-      }
-    });
-    image3.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        Main.manager.setKartinka3(1);
-      }
-    });
-    image2.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        Main.manager.setKartinka2(1);
-      }
-    });
-    emergySvet.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        Main.manager.setEmergeSvetOk(1);
-      }
-    });
-
-
-
-
-
     pushka.addChangeListener(new ChangeListener() {
       @Override
       public void stateChanged(ChangeEvent evt) {
           if (pushka.getModel().isPressed()) {
           if (color1 == Color.GREEN) {
             color1 = Color.PINK;
+            Main.manager.setPushkaTurnOn(0);
           } else if (color1 == Color.PINK) {
             try {
               Main.Pushka(Main.serialPort, "r", "q");
-            } catch (SerialPortException e) {
-              e.printStackTrace();
-            } catch (InterruptedException e) {
+            } catch (SerialPortException | InterruptedException e) {
               e.printStackTrace();
             }
             color1 = Color.GREEN;
@@ -465,7 +388,6 @@ public class MainForm extends JFrame {
           if (color2 == Color.GREEN) {
             color2 = Color.PINK;
             Main.manager.setFlashOn(0);
-
           } else if (color2 == Color.PINK) {
             color2 = Color.GREEN;
             Main.manager.setFlashOn(1);
@@ -480,34 +402,40 @@ public class MainForm extends JFrame {
         if (yashikFlash.getModel().isPressed()) {
           if (color3 == Color.GREEN) {
             color3 = Color.PINK;
+            Main.manager.setYashikClose(0);
           } else if (color3 == Color.PINK) {
+            try {
+              Main.YashikFlashOpen(Main.serialPort,"a","b" );
+            } catch (SerialPortException e) {
+              e.printStackTrace();
+            } catch (InterruptedException e) {
+              e.printStackTrace();
+            }
             color3 = Color.GREEN;
+            Main.manager.setYashikClose(1);
           }
           yashikFlash.setBackground(color3);
         }
       }
     });
-    button4.addChangeListener(new ChangeListener() {
-      @Override
-      public void stateChanged(ChangeEvent evt) {
-        if (button4.getModel().isPressed()) {
-          if (color4 == Color.GREEN) {
-            color4 = Color.PINK;
-          } else if (color4 == Color.PINK) {
-            color4 = Color.GREEN;
-          }
-          button4.setBackground(color4);
-        }
-      }
-    });
+
     perenoska.addChangeListener(new ChangeListener() {
       @Override
       public void stateChanged(ChangeEvent evt) {
         if (perenoska.getModel().isPressed()) {
           if (color5 == Color.GREEN) {
             color5 = Color.PINK;
+            Main.manager.setPerenoskaOn(0);
           } else if (color5 == Color.PINK) {
             color5 = Color.GREEN;
+            try {
+              Main.Perenoska(Main.serialPort, "a", "b");
+            } catch (SerialPortException e) {
+              e.printStackTrace();
+            } catch (InterruptedException e) {
+              e.printStackTrace();
+            }
+            Main.manager.setPerenoskaOn(1);
           }
           perenoska.setBackground(color5);
         }
@@ -519,6 +447,7 @@ public class MainForm extends JFrame {
         if (image2.getModel().isPressed()) {
           if (color6 == Color.GREEN) {
             color6 = Color.PINK;
+
           } else if (color6 == Color.PINK) {
             color6 = Color.GREEN;
           }
@@ -532,8 +461,17 @@ public class MainForm extends JFrame {
         if (emergySvet.getModel().isPressed()) {
           if (color7 == Color.GREEN) {
             color7 = Color.PINK;
+            Main.manager.setEmergeSvetOk(0);
           } else if (color7 == Color.PINK) {
             color7 = Color.GREEN;
+            try {
+              Main.EmergySvet(Main.serialPort, "a", "b");
+            } catch (SerialPortException e) {
+              e.printStackTrace();
+            } catch (InterruptedException e) {
+              e.printStackTrace();
+            }
+            Main.manager.setEmergeSvetOk(1);
           }
           emergySvet.setBackground(color7);
         }
@@ -602,10 +540,18 @@ public class MainForm extends JFrame {
       public void stateChanged(ChangeEvent evt) {
         if (svetVezde.getModel().isPressed()) {
           if (color12 == Color.GREEN) {
-
             color12 = Color.PINK;
+            Main.manager.setSvetVezdeOn(0);
           } else if (color12 == Color.PINK) {
             color12 = Color.GREEN;
+            try {
+              Main.SvetVezdeOff(Main.serialPort, "a", "b");
+            } catch (SerialPortException e) {
+              e.printStackTrace();
+            } catch (InterruptedException e) {
+              e.printStackTrace();
+            }
+            Main.manager.setSvetVezdeOn(1);
           }
           svetVezde.setBackground(color12);
         }
@@ -630,6 +576,7 @@ public class MainForm extends JFrame {
         if (timers.getModel().isPressed()) {
           if (color14 == Color.GREEN) {
             color14 = Color.PINK;
+
           } else if (color14 == Color.PINK) {
             color14 = Color.GREEN;
           }
@@ -782,6 +729,13 @@ public class MainForm extends JFrame {
             color25 = Color.PINK;
           } else if (color1 == Color.PINK) {
             color25 = Color.GREEN;
+            try {
+              Main.SirenaOn(Main.serialPort, "a", "b");
+            } catch (SerialPortException e) {
+              e.printStackTrace();
+            } catch (InterruptedException e) {
+              e.printStackTrace();
+            }
           }
           sirena.setBackground(color25);
         }
@@ -795,6 +749,13 @@ public class MainForm extends JFrame {
             color26 = Color.PINK;
           } else if (color1 == Color.PINK) {
             color26 = Color.GREEN;
+            try {
+              Main.ShkafPodsvetkaOn(Main.serialPort, "a", "b");
+            } catch (SerialPortException e) {
+              e.printStackTrace();
+            } catch (InterruptedException e) {
+              e.printStackTrace();
+            }
           }
           podsvetka.setBackground(color26);
         }
