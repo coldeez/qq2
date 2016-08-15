@@ -1,3 +1,5 @@
+import jssc.SerialPortException;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -36,6 +38,15 @@ public class MainForm extends JFrame {
   private JButton button18;
   private JButton button19;
   private JButton button20;
+  private JButton button21;
+  private JButton button22;
+  private JButton button23;
+  private JButton button24;
+  private JButton button25;
+  private JButton button26;
+  private JButton button27;
+  private JButton button28;
+  private JButton button29;
   private Color color1;
   private Color color2;
   private Color color3;
@@ -56,6 +67,16 @@ public class MainForm extends JFrame {
   private Color color18;
   private Color color19;
   private Color color20;
+  private Color color21;
+  private Color color22;
+  private Color color23;
+  private Color color24;
+  private Color color25;
+  private Color color26;
+  private Color color27;
+  private Color color28;
+  private Color color29;
+
 
 
   public MainForm() throws InterruptedException, IOException {
@@ -70,8 +91,9 @@ public class MainForm extends JFrame {
     startQuestButton.setSize(100, 45);
     startQuestButton.setLocation(25, 660);
     add(startQuestButton);
-    button1.setSize(100, 45);
-    button1.setLocation(600, 480);
+
+
+
     color1 = Color.PINK;
     color2 = Color.PINK;
     color3 = Color.PINK;
@@ -92,6 +114,15 @@ public class MainForm extends JFrame {
     color18 = Color.PINK;
     color19 = Color.PINK;
     color20 = Color.PINK;
+    color21 = Color.PINK;
+    color22 = Color.PINK;
+    color23 = Color.PINK;
+    color24 = Color.PINK;
+    color25 = Color.PINK;
+    color26 = Color.PINK;
+    color27 = Color.PINK;
+    color28 = Color.PINK;
+    color29 = Color.PINK;
     button1.setBackground(color1);
     button2.setBackground(color2);
     button3.setBackground(color3);
@@ -112,22 +143,33 @@ public class MainForm extends JFrame {
     button18.setBackground(color18);
     button19.setBackground(color19);
     button20.setBackground(color20);
+    button21.setBackground(color21);
+    button22.setBackground(color22);
+    button23.setBackground(color23);
+    button24.setBackground(color24);
+    button25.setBackground(color25);
+    button26.setBackground(color26);
+    button27.setBackground(color27);
+    button28.setBackground(color28);
+    button29.setBackground(color29);
 
+    button1.setSize(100, 45);
+    button1.setLocation(705, 5);
     add(button1);
     button2.setSize(150, 45);
     button2.setLocation(590, 380);
     add(button2);
-    button3.setSize(100, 45);
-    button3.setLocation(915, 410);
+    button3.setSize(150, 45);
+    button3.setLocation(590, 320);
     add(button3);
     button4.setSize(100, 45);
     button4.setLocation(915, 340);
     add(button4);
     button5.setSize(100, 45);
-    button5.setLocation(705, 5);
+    button5.setLocation(750, 150);
     add(button5);
     button6.setSize(100, 45);
-    button6.setLocation(100, 5);
+    button6.setLocation(10, 5);
     add(button6);
     button7.setSize(100, 45);
     button7.setLocation(350, 240);
@@ -139,17 +181,17 @@ public class MainForm extends JFrame {
     button9.setLocation(230, 450);
     add(button9);
     button10.setSize(100, 45);
-    button10.setLocation(160, 330);
+    button10.setLocation(120, 330);
     add(button10);
     button11.setSize(100, 45);
-    button11.setLocation(50, 330);
+    button11.setLocation(10, 330);
     add(button11);
     button12.setSize(100, 45);
     button12.setLocation(630, 210);
     add(button12);
-    button13.setSize(100, 45);
+/*    button13.setSize(100, 45);
     button13.setLocation(750, 480);
-    add(button13);
+    add(button13);*/
     button14.setSize(100, 45);
     button14.setLocation(520, 5);
     add(button14);
@@ -169,8 +211,36 @@ public class MainForm extends JFrame {
     button19.setLocation(1150, 330);
     add(button19);
     button20.setSize(100, 45);
-    button20.setLocation(100, 60);
+    button20.setLocation(130, 5);
     add(button20);
+
+    button21.setSize(100, 45);
+    button21.setLocation(470, 530);
+    add(button21);
+    button22.setSize(100, 45);
+    button22.setLocation(470, 330);
+    add(button22);
+    button23.setSize(100, 45);
+    button23.setLocation(360, 330);
+    add(button23);
+    button24.setSize(100, 45);
+    button24.setLocation(245, 330);
+    add(button24);
+    button25.setSize(100, 45);
+    button25.setLocation(460, 240);
+    add(button25);
+    button26.setSize(100, 45);
+    button26.setLocation(10, 450);
+    add(button26);
+    button27.setSize(100, 45);
+    button27.setLocation(10, 60);
+    add(button27);
+    button28.setSize(100, 45);
+    button28.setLocation(130, 60);
+    add(button28);
+    button29.setSize(100, 45);
+    button29.setLocation(350, 5);
+    add(button29);
 
 
 
@@ -283,6 +353,13 @@ public class MainForm extends JFrame {
           if (color1 == Color.GREEN) {
             color1 = Color.PINK;
           } else if (color1 == Color.PINK) {
+            try {
+              Main.Pushka(Main.serialPort, "r", "q");
+            } catch (SerialPortException e) {
+              e.printStackTrace();
+            } catch (InterruptedException e) {
+              e.printStackTrace();
+            }
             color1 = Color.GREEN;
             Main.manager.setPushkaTurnOn(1);
           }
@@ -537,6 +614,124 @@ public class MainForm extends JFrame {
             color20 = Color.GREEN;
           }
           button20.setBackground(color20);
+        }
+      }
+    });
+
+    button21.addChangeListener(new ChangeListener() {
+      @Override
+      public void stateChanged(ChangeEvent evt) {
+        if (button21.getModel().isPressed()) {
+          if (color21 == Color.GREEN) {
+            color21 = Color.PINK;
+          } else if (color1 == Color.PINK) {
+            color21 = Color.GREEN;
+          }
+          button21.setBackground(color21);
+        }
+      }
+    });
+    button22.addChangeListener(new ChangeListener() {
+      @Override
+      public void stateChanged(ChangeEvent evt) {
+        if (button22.getModel().isPressed()) {
+          if (color22 == Color.GREEN) {
+            color22 = Color.PINK;
+          } else if (color1 == Color.PINK) {
+            color22 = Color.GREEN;
+          }
+          button20.setBackground(color22);
+        }
+      }
+    });
+    button23.addChangeListener(new ChangeListener() {
+      @Override
+      public void stateChanged(ChangeEvent evt) {
+        if (button23.getModel().isPressed()) {
+          if (color23 == Color.GREEN) {
+            color23 = Color.PINK;
+          } else if (color1 == Color.PINK) {
+            color23 = Color.GREEN;
+          }
+          button23.setBackground(color23);
+        }
+      }
+    });
+    button24.addChangeListener(new ChangeListener() {
+      @Override
+      public void stateChanged(ChangeEvent evt) {
+        if (button24.getModel().isPressed()) {
+          if (color24 == Color.GREEN) {
+            color24 = Color.PINK;
+          } else if (color1 == Color.PINK) {
+            color24 = Color.GREEN;
+          }
+          button24.setBackground(color24);
+        }
+      }
+    });
+    button25.addChangeListener(new ChangeListener() {
+      @Override
+      public void stateChanged(ChangeEvent evt) {
+        if (button25.getModel().isPressed()) {
+          if (color25 == Color.GREEN) {
+            color25 = Color.PINK;
+          } else if (color1 == Color.PINK) {
+            color25 = Color.GREEN;
+          }
+          button25.setBackground(color25);
+        }
+      }
+    });
+    button26.addChangeListener(new ChangeListener() {
+      @Override
+      public void stateChanged(ChangeEvent evt) {
+        if (button26.getModel().isPressed()) {
+          if (color26 == Color.GREEN) {
+            color26 = Color.PINK;
+          } else if (color1 == Color.PINK) {
+            color26 = Color.GREEN;
+          }
+          button26.setBackground(color26);
+        }
+      }
+    });
+    button27.addChangeListener(new ChangeListener() {
+      @Override
+      public void stateChanged(ChangeEvent evt) {
+        if (button27.getModel().isPressed()) {
+          if (color27 == Color.GREEN) {
+            color27 = Color.PINK;
+          } else if (color1 == Color.PINK) {
+            color27 = Color.GREEN;
+          }
+          button27.setBackground(color27);
+        }
+      }
+    });
+    button28.addChangeListener(new ChangeListener() {
+      @Override
+      public void stateChanged(ChangeEvent evt) {
+        if (button28.getModel().isPressed()) {
+          if (color28 == Color.GREEN) {
+            color28 = Color.PINK;
+          } else if (color1 == Color.PINK) {
+            color28 = Color.GREEN;
+          }
+          button28.setBackground(color28);
+        }
+      }
+    });
+    button29.addChangeListener(new ChangeListener() {
+      @Override
+      public void stateChanged(ChangeEvent evt) {
+        if (button29.getModel().isPressed()) {
+          if (color29 == Color.GREEN) {
+            color29 = Color.PINK;
+          } else if (color1 == Color.PINK) {
+            color29 = Color.GREEN;
+          }
+          button29.setBackground(color29);
         }
       }
     });

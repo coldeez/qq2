@@ -19,8 +19,8 @@ public class Manager {
   private int ShkafOpen = 0;
   private int KeyOk = 0;
   private int DoorShluzOneOpen = 0;
-  private int DoorShluzOneClose = 0;
-  private int ShluzButtonOutsideOk = 0;
+
+
   private int DoorShluzOneBlock = 0;
   private int DoorShluzTwoOpen = 0;
 
@@ -33,11 +33,15 @@ public class Manager {
 
   private int DataOk = 0;
   private int RubilnikSuperCompOn = 0;
-  private int YashikSuperCompOn = 0;
+
   private int SvetMigaet = 0;
   private int HardDriveOk = 0;
   private int DoorWinOn = 0;
 
+  volatile private int doorClose = 0;
+
+  volatile private int monitorButton = 0;
+  volatile private int flashOn = 0;
   volatile private int PushkaTurnOn = 0;
   volatile private int Kartinka3 = 0;
   volatile private int Kartinka2 = 0;
@@ -51,7 +55,6 @@ public class Manager {
   volatile private int EmergeSvetOk = 0;
   volatile private int ShitokButton = 0;
   volatile private int RadioStation = 0;
-
 
   private int RukaOk = 0;
   volatile private int Audio1 = 0;
@@ -226,20 +229,20 @@ synchronized   public void setKartinka2(int kartinka2) {
     DoorShluzOneOpen = doorShluzOneOpen;
   }
 
-  public int getDoorShluzOneClose() {
-    return DoorShluzOneClose;
+synchronized   public int getDoorClose() {
+    return doorClose;
   }
 
-  public void setDoorShluzOneClose(int doorShluzOneClose) {
-    DoorShluzOneClose = doorShluzOneClose;
+synchronized   public void setDoorClose(int doorClose) {
+    this.doorClose = doorClose;
   }
 
-  public int getShluzButtonOutsideOk() {
-    return ShluzButtonOutsideOk;
+  synchronized public int getMonitorButton() {
+    return monitorButton;
   }
 
-  public void setShluzButtonOutsideOk(int shluzButtonOutsideOk) {
-    ShluzButtonOutsideOk = shluzButtonOutsideOk;
+  synchronized public void setMonitorButton(int monitorButton) {
+    this.monitorButton = monitorButton;
   }
 
   public int getDoorShluzOneBlock() {
@@ -338,12 +341,12 @@ synchronized   public void setTimers(int timers) {
     RubilnikSuperCompOn = rubilnikSuperCompOn;
   }
 
-  public int getYashikSuperCompOn() {
-    return YashikSuperCompOn;
+synchronized   public int getFlashOn() {
+    return flashOn;
   }
 
-  public void setYashikSuperCompOn(int yashikSuperCompOn) {
-    YashikSuperCompOn = yashikSuperCompOn;
+synchronized   public void setFlashOn(int flashOn) {
+    this.flashOn = flashOn;
   }
 
   public int getSvetMigaet() {
