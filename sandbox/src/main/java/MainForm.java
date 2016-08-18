@@ -389,6 +389,7 @@ public class MainForm extends JFrame {
               Main.Pushka(Main.serialPort, "r", "q");
             } catch (SerialPortException | InterruptedException e) {
               e.printStackTrace();
+              Main.log.info(e);
             }
             color1 = Color.GREEN;
             Main.manager.setPushkaTurnOn(1);
@@ -428,6 +429,7 @@ public class MainForm extends JFrame {
               Main.YashikFlashOpen(Main.serialPort,"a","b" );
             } catch (SerialPortException | InterruptedException e) {
               e.printStackTrace();
+              Main.log.info(e);
             }
             color3 = Color.GREEN;
             Main.manager.setYashikClose(1);
@@ -453,6 +455,7 @@ public class MainForm extends JFrame {
               Main.Perenoska(Main.serialPort, "a", "b");
             } catch (SerialPortException | InterruptedException e) {
               e.printStackTrace();
+              Main.log.info(e);
             }
             Main.manager.setPerenoskaOn(1);
             Main.log.info("perenoska ON UI");
@@ -477,6 +480,7 @@ public class MainForm extends JFrame {
               Main.log.info("image2 ONN UI");
             } catch (IOException e) {
               e.printStackTrace();
+              Main.log.info(e);
             }
           }
           image2.setBackground(color6);
@@ -497,6 +501,7 @@ public class MainForm extends JFrame {
               Main.EmergySvet(Main.serialPort, "a", "b");
             } catch (SerialPortException | InterruptedException e) {
               e.printStackTrace();
+              Main.log.info(e);
             }
             Main.manager.setEmergeSvetOk(1);
             Main.log.info("emergySvet ON UI");
@@ -583,6 +588,7 @@ public class MainForm extends JFrame {
               Main.SvetVezdeOff(Main.serialPort, "a", "b");
             } catch (SerialPortException | InterruptedException e) {
               e.printStackTrace();
+              Main.log.info(e);
             }
             Main.manager.setSvetVezdeOn(1);
             Main.log.info("svetVezde ON UI");
@@ -718,6 +724,7 @@ public class MainForm extends JFrame {
               Main.log.info("image3 ON UI");
             } catch (IOException e) {
               e.printStackTrace();
+              Main.log.info(e);
             }
           }
           image3.setBackground(color20);
@@ -802,6 +809,7 @@ public class MainForm extends JFrame {
               Main.SirenaOn(Main.serialPort, "a", "b");
             } catch (SerialPortException | InterruptedException e) {
               e.printStackTrace();
+              Main.log.info(e);
 
             } Main.log.info("sirena ON UI");
           }
@@ -823,6 +831,7 @@ public class MainForm extends JFrame {
               Main.ShkafPodsvetkaOn(Main.serialPort, "a", "b");
             } catch (SerialPortException | InterruptedException e) {
               e.printStackTrace();
+              Main.log.info(e);
             } Main.log.info("podsvetka ON UI");
           }
           podsvetka.setBackground(color26);
@@ -844,6 +853,7 @@ public class MainForm extends JFrame {
               Main.log.info("image4 ON UI");
             } catch (IOException e) {
               e.printStackTrace();
+              Main.log.info(e);
             }
           }
           image4.setBackground(color27);
@@ -865,6 +875,7 @@ public class MainForm extends JFrame {
               Main.log.info("image5 ON UI");
             } catch (IOException e) {
               e.printStackTrace();
+              Main.log.info(e);
             }
           }
           image5.setBackground(color28);

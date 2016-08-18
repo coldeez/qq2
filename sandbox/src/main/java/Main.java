@@ -337,7 +337,7 @@ public class Main {
       public void run() {
         try{
 
-          FileInputStream fis5 = new FileInputStream("C:\\test\\test5.mp3");
+          FileInputStream fis5 = new FileInputStream("C:\\test\\audio\\test5.mp3");
           Player playMP35 = new Player(fis5);
 
           playMP35.play();
@@ -357,7 +357,7 @@ synchronized public static void PlayAudio4() {
       public void run() {
         try{
 
-          FileInputStream fis4 = new FileInputStream("C:\\test\\test4.mp3");
+          FileInputStream fis4 = new FileInputStream("C:\\test\\audio\\test4.mp3");
           Player playMP34 = new Player(fis4);
 
           playMP34.play();
@@ -377,7 +377,7 @@ synchronized public static void PlayAudio4() {
       public void run() {
         try{
 
-          FileInputStream fis3 = new FileInputStream("C:\\test\\test3.mp3");
+          FileInputStream fis3 = new FileInputStream("C:\\test\\audio\\test3.mp3");
           Player playMP33 = new Player(fis3);
 
           playMP33.play();
@@ -397,7 +397,7 @@ synchronized public static void PlayAudio4() {
       public void run() {
         try{
 
-          FileInputStream fis2 = new FileInputStream("C:\\test\\test2.mp3");
+          FileInputStream fis2 = new FileInputStream("C:\\test\\audio\\test2.mp3");
           Player playMP32 = new Player(fis2);
 
           playMP32.play();
@@ -604,7 +604,7 @@ synchronized public static void ShowImage(String s) throws IOException {
       public void run() {
         try{
 
-          FileInputStream fis = new FileInputStream("C:\\test\\test1.mp3");
+          FileInputStream fis = new FileInputStream("C:\\test\\audio\\test1.mp3");
           Player playMP3 = new Player(fis);
 
           playMP3.play();
@@ -624,7 +624,7 @@ synchronized public static void ShowImage(String s) throws IOException {
       public void run() {
         try{
 
-          FileInputStream fism = new FileInputStream("C:\\test\\maintheme.mp3");
+          FileInputStream fism = new FileInputStream("C:\\test\\audio\\maintheme.mp3");
           Player playMP3m = new Player(fism);
 
           playMP3m.play();

@@ -53,6 +53,7 @@ public class TouchPanel extends JFrame{
                     System.out.println("after");
                 } catch (IOException e1) {
                     e1.printStackTrace();
+                    Main.log.info(e);
                 }
 
 
@@ -73,6 +74,7 @@ public class TouchPanel extends JFrame{
             catch(IOException e)
             {
                 e.printStackTrace();
+                Main.log.info(e);
             }
         }
 
