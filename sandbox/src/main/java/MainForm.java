@@ -609,6 +609,7 @@ public class MainForm extends JFrame {
             color15 = Color.PINK;
           } else if (color15 == Color.PINK) {
             color15 = Color.GREEN;
+            Main.PlayAudio1();
           }
           audio1.setBackground(color15);
         }
@@ -622,6 +623,7 @@ public class MainForm extends JFrame {
             color16 = Color.PINK;
           } else if (color16 == Color.PINK) {
             color16 = Color.GREEN;
+            Main.PlayAudio2();
           }
           audio2.setBackground(color16);
         }
@@ -635,6 +637,7 @@ public class MainForm extends JFrame {
             color17 = Color.PINK;
           } else if (color17 == Color.PINK) {
             color17 = Color.GREEN;
+            Main.PlayAudio3();
           }
           audio3.setBackground(color17);
         }
@@ -648,6 +651,7 @@ public class MainForm extends JFrame {
             color18 = Color.PINK;
           } else if (color18 == Color.PINK) {
             color18 = Color.GREEN;
+            Main.PlayAudio4();
           }
           audio4.setBackground(color18);
         }
@@ -661,6 +665,7 @@ public class MainForm extends JFrame {
             color19 = Color.PINK;
           } else if (color19 == Color.PINK) {
             color19 = Color.GREEN;
+            Main.PlayAudio5();
           }
           audio5.setBackground(color19);
         }

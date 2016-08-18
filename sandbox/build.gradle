@@ -8,4 +8,5 @@ repositories{
 
 dependencies {
     compile 'org.scream3r:jssc:2.8.0'
+    compile 'javazoom:jlayer:1.0.1'
 }

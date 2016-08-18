@@ -1,11 +1,11 @@
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
+import javazoom.jl.player.Player;
 import jssc.SerialPort;
 import jssc.SerialPortException;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.Set;
@@ -53,6 +53,25 @@ public class Main {
 
 
 
+
+    new Thread(new Runnable() {
+      @Override
+      public void run() {
+        try{
+
+          FileInputStream fis2 = new FileInputStream("C:\\test\\test3.mp3");
+          Player playMP32 = new Player(fis2);
+
+          playMP32.play();
+
+        } catch(Exception e) {
+          System.out.println(e);
+        }
+      }
+    }).start();
+
+
+
     new Thread(new Runnable() {
       @Override
       public void run() {
@@ -68,6 +87,7 @@ public class Main {
         } catch (SerialPortException ex) {
           System.out.println(ex);
         }
+
 
 /*        try {
           ResetQuest(serialPort, "ResetQuest", "ResetQuest");
@@ -106,11 +126,7 @@ public class Main {
           e.printStackTrace();
         }
 
-        try {
-          PlayAudio(1, 10000);
-        } catch (IOException | InterruptedException e) {
-          e.printStackTrace();
-        }
+        PlayAudio1();
         myWindow.getAudio1().setBackground(Color.GREEN);
 
 
@@ -146,11 +162,7 @@ public class Main {
           e.printStackTrace();
         }
         myWindow.getImage2().setBackground(Color.GREEN);
-        try {
-          PlayAudio(2, 10000);
-        } catch (IOException | InterruptedException e) {
-          e.printStackTrace();
-        }
+        PlayAudio2();
         myWindow.getAudio2().setBackground(Color.GREEN);
 
         try {
@@ -179,11 +191,7 @@ public class Main {
         } catch (SerialPortException | InterruptedException e) {
           e.printStackTrace();
         }
-        try {
-          PlayAudio(3, 10000);
-        } catch (IOException | InterruptedException e) {
-          e.printStackTrace();
-        }
+        PlayAudio3();
         myWindow.getAudio3().setBackground(Color.GREEN);
         try {
           ShowImage("2");
@@ -210,12 +218,8 @@ public class Main {
         } catch (SerialPortException | InterruptedException e) {
           e.printStackTrace();
         }
-        try {
-          PlayAudio(4, 10000);
-          myWindow.getAudio4().setBackground(Color.GREEN);
-        } catch (IOException | InterruptedException e) {
-          e.printStackTrace();
-        }
+        PlayAudio4();
+        myWindow.getAudio4().setBackground(Color.GREEN);
         try {
           ShowImage("5");
         } catch (IOException e) {
@@ -240,11 +244,7 @@ public class Main {
         } catch (InterruptedException e) {
           e.printStackTrace();
         }
-        try {
-          PlayAudio(5, 10000);
-        } catch (IOException | InterruptedException e) {
-          e.printStackTrace();
-        }
+        PlayAudio5();
         myWindow.getAudio5().setBackground(Color.GREEN);
         try {
           OpenDoor(serialPort, "a", "b");
@@ -256,6 +256,82 @@ public class Main {
 
 
     }).start();
+  }
+
+ synchronized public static void PlayAudio5() {
+    new Thread(new Runnable() {
+      @Override
+      public void run() {
+        try{
+
+          FileInputStream fis5 = new FileInputStream("C:\\test\\test5.mp3");
+          Player playMP35 = new Player(fis5);
+
+          playMP35.play();
+
+        } catch(Exception e) {
+          System.out.println(e);
+        }
+      }
+    }).start();
+
+  }
+
+synchronized public static void PlayAudio4() {
+    new Thread(new Runnable() {
+      @Override
+      public void run() {
+        try{
+
+          FileInputStream fis4 = new FileInputStream("C:\\test\\test4.mp3");
+          Player playMP34 = new Player(fis4);
+
+          playMP34.play();
+
+        } catch(Exception e) {
+          System.out.println(e);
+        }
+      }
+    }).start();
+
+  }
+
+ synchronized public static void PlayAudio3() {
+    new Thread(new Runnable() {
+      @Override
+      public void run() {
+        try{
+
+          FileInputStream fis3 = new FileInputStream("C:\\test\\test3.mp3");
+          Player playMP33 = new Player(fis3);
+
+          playMP33.play();
+
+        } catch(Exception e) {
+          System.out.println(e);
+        }
+      }
+    }).start();
+
+  }
+
+  synchronized public static void PlayAudio2() {
+    new Thread(new Runnable() {
+      @Override
+      public void run() {
+        try{
+
+          FileInputStream fis2 = new FileInputStream("C:\\test\\test2.mp3");
+          Player playMP32 = new Player(fis2);
+
+          playMP32.play();
+
+        } catch(Exception e) {
+          System.out.println(e);
+        }
+      }
+    }).start();
+
   }
 
   private static void WaitForCode() {
@@ -439,14 +515,42 @@ public class Main {
 
   }
 
-  synchronized public static void PlayAudio(int s, int n) throws IOException, InterruptedException {
+  synchronized public static void PlayAudio1() {
+    new Thread(new Runnable() {
+      @Override
+      public void run() {
+        try{
 
-    Runtime.getRuntime().exec("cmd /c start C:\\test\\bats\\audio"+ s + ".bat");
-    Thread.sleep(n);
+          FileInputStream fis = new FileInputStream("C:\\test\\test1.mp3");
+          Player playMP3 = new Player(fis);
+
+          playMP3.play();
+
+        } catch(Exception e) {
+          System.out.println(e);
+        }
+      }
+    }).start();
+
   }
 
-  private static void PlayMainTheme() throws IOException {
-    Runtime.getRuntime().exec("cmd /c start C:\\test\\bats\\mainaudio.bat");
+  synchronized public static void PlayMainTheme() throws IOException {
+    new Thread(new Runnable() {
+      @Override
+      public void run() {
+        try{
+
+          FileInputStream fism = new FileInputStream("C:\\test\\maintheme.mp3");
+          Player playMP3m = new Player(fism);
+
+          playMP3m.play();
+
+        } catch(Exception e) {
+          System.out.println(e);
+        }
+      }
+    }).start();
+
   }
 
 
