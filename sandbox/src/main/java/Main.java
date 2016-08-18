@@ -46,6 +46,7 @@ public class Main {
           touchPanel = new TouchPanel();
         } catch (IOException e) {
           e.printStackTrace();
+          Main.log.info(e);
         }
         touchPanel.setVisible(true);
       }
@@ -58,6 +59,7 @@ public class Main {
           timer1 = new Timer1();
         } catch (IOException e) {
           e.printStackTrace();
+          Main.log.info(e);
         }
         timer1.setVisible(true);
         timer1.timer1.stop();
@@ -85,6 +87,7 @@ public class Main {
 
         } catch (SerialPortException ex) {
           System.out.println(ex);
+          Main.log.info(ex);
         }
         log.info("Serial OUT");
 
@@ -102,6 +105,7 @@ public class Main {
           StartQuest();
         } catch (IOException e) {
           e.printStackTrace();
+          Main.log.info(e);
         }
         log.info("StartQuest OUT");
 
@@ -110,12 +114,14 @@ public class Main {
           Thread.sleep(2000);
         } catch (InterruptedException e) {
           e.printStackTrace();
+          Main.log.info(e);
         }
         log.info("Dver IN");
         try {
           WaitForDverClose(serialPort, "j");
         } catch (SerialPortException | InterruptedException e) {
           e.printStackTrace();
+          Main.log.info(e);
         }
         log.info("Dver OUT");
         log.info("Pushka IN");
@@ -123,12 +129,14 @@ public class Main {
           Pushka(serialPort, "r", "q");
         } catch (SerialPortException | InterruptedException e) {
           e.printStackTrace();
+          Main.log.info(e);
         }
         log.info("Pushka OUT");
         try {
           Thread.sleep(3500);
         } catch (InterruptedException e) {
           e.printStackTrace();
+          Main.log.info(e);
         }
         log.info("Audio1 IN");
         PlayAudio1();
@@ -139,6 +147,7 @@ public class Main {
           Perenoska(serialPort, "r", "s");
         } catch (SerialPortException | InterruptedException e) {
           e.printStackTrace();
+          Main.log.info(e);
         }
         log.info("Perenoska OUT");
         log.info("Timers IN");
@@ -151,6 +160,7 @@ public class Main {
           WaitForMonitorButton();
         } catch (InterruptedException e) {
           e.printStackTrace();
+          Main.log.info(e);
         }
         log.info("MonitorButton OUT");
 /*        try {
@@ -163,6 +173,7 @@ public class Main {
           WaitForSuperComp(serialPort, "a");
         } catch (InterruptedException e) {
           e.printStackTrace();
+          Main.log.info(e);
         }
         log.info("SuperComp OUT");
         log.info("ShowImage2 IN");
@@ -170,6 +181,7 @@ public class Main {
           ShowImage("2");
         } catch (IOException e) {
           e.printStackTrace();
+          Main.log.info(e);
         }
         log.info("ShowImage2 OUT");
         myWindow.getImage2().setBackground(Color.GREEN);
@@ -183,6 +195,7 @@ public class Main {
           ShkafPodsvetkaOn(serialPort, "a", "b");
         } catch (SerialPortException | InterruptedException e) {
           e.printStackTrace();
+          Main.log.info(e);
         }
         log.info("ShkafPodsvetka OUT");
         log.info("Lasers IN");
@@ -190,6 +203,7 @@ public class Main {
           WaitForLasers(serialPort, "a");
         } catch (InterruptedException e) {
           e.printStackTrace();
+          Main.log.info(e);
         }
         log.info("Lasers OUT");
         log.info("Image3 IN");
@@ -197,6 +211,7 @@ public class Main {
           ShowImage("3");
         } catch (IOException e) {
           e.printStackTrace();
+          Main.log.info(e);
         }
         log.info("Image3 OUT");
         myWindow.getImage3().setBackground(Color.GREEN);
@@ -205,6 +220,7 @@ public class Main {
           WaitForVentils(serialPort, "a");
         } catch (InterruptedException e) {
           e.printStackTrace();
+          Main.log.info(e);
         }
         log.info("Ventils OUT");
         log.info("SvetVezdeOff IN");
@@ -212,6 +228,7 @@ public class Main {
           SvetVezdeOff(serialPort, "a", "b");
         } catch (SerialPortException | InterruptedException e) {
           e.printStackTrace();
+          Main.log.info(e);
         }
         log.info("SvetVezdeOff OUT");
         log.info("Audio3 IN");
@@ -223,6 +240,7 @@ public class Main {
           ShowImage("2");
         } catch (IOException e) {
           e.printStackTrace();
+          Main.log.info(e);
         }
         log.info("Image2 OUT");
 /*        try {
@@ -235,6 +253,7 @@ public class Main {
           WaitForShitokButton(serialPort, "a");
         } catch (InterruptedException e) {
           e.printStackTrace();
+          Main.log.info(e);
         }
         log.info("ShitokButton OUT");
         log.info("Sirena IN");
@@ -242,6 +261,7 @@ public class Main {
           SirenaOn(serialPort, "a", "b");
         } catch (SerialPortException | InterruptedException e) {
           e.printStackTrace();
+          Main.log.info(e);
         }
         log.info("Sirena OUT");
         log.info("EmergySvet IN");
@@ -249,6 +269,7 @@ public class Main {
           EmergySvet(serialPort, "a", "b");
         } catch (SerialPortException | InterruptedException e) {
           e.printStackTrace();
+          Main.log.info(e);
         }
         log.info("EmergySvet OUT");
         log.info("Audio4 IN");
@@ -260,6 +281,7 @@ public class Main {
           ShowImage("5");
         } catch (IOException e) {
           e.printStackTrace();
+          Main.log.info(e);
         }
         log.info("Image5 OUT");
         myWindow.getImage5().setBackground(Color.GREEN);
@@ -271,6 +293,7 @@ public class Main {
           WaitForRubilnik(serialPort, "a");
         } catch (InterruptedException e) {
           e.printStackTrace();
+          Main.log.info(e);
         }
         log.info("Rubilnik OUT");
         log.info("YashikFlash IN");
@@ -278,6 +301,7 @@ public class Main {
           YashikFlashOpen(serialPort, "a", "b");
         } catch (SerialPortException | InterruptedException e) {
           e.printStackTrace();
+          Main.log.info(e);
         }
         log.info("YashikFlash OUT");
         log.info("Flash IN");
@@ -285,6 +309,7 @@ public class Main {
           WaitForFlash(serialPort, "a");
         } catch (InterruptedException e) {
           e.printStackTrace();
+          Main.log.info(e);
         }
         log.info("Flash OUT");
         log.info("Audio5 IN");
@@ -296,6 +321,7 @@ public class Main {
           OpenDoor(serialPort, "a", "b");
         } catch (SerialPortException | InterruptedException e) {
           e.printStackTrace();
+          Main.log.info(e);
         }
         log.info("OpenDoor OUT");
 
@@ -318,6 +344,7 @@ public class Main {
 
         } catch(Exception e) {
           System.out.println(e);
+          Main.log.info(e);
         }
       }
     }).start();
@@ -337,6 +364,7 @@ synchronized public static void PlayAudio4() {
 
         } catch(Exception e) {
           System.out.println(e);
+          Main.log.info(e);
         }
       }
     }).start();
@@ -356,6 +384,7 @@ synchronized public static void PlayAudio4() {
 
         } catch(Exception e) {
           System.out.println(e);
+          Main.log.info(e);
         }
       }
     }).start();
@@ -375,6 +404,7 @@ synchronized public static void PlayAudio4() {
 
         } catch(Exception e) {
           System.out.println(e);
+          Main.log.info(e);
         }
       }
     }).start();
@@ -412,6 +442,7 @@ synchronized public static void ShowImage(String s) throws IOException {
         }
       } catch (NullPointerException | SerialPortException e) {
         e.printStackTrace();
+        Main.log.info(e);
       }
       Thread.sleep(2000);
     }
@@ -436,6 +467,7 @@ synchronized public static void ShowImage(String s) throws IOException {
         }
       } catch (NullPointerException | SerialPortException e) {
         e.printStackTrace();
+        Main.log.info(e);
       }
       Thread.sleep(2000);
     }
@@ -460,6 +492,7 @@ synchronized public static void ShowImage(String s) throws IOException {
         }
       } catch (NullPointerException | SerialPortException e) {
         e.printStackTrace();
+        Main.log.info(e);
       }
       Thread.sleep(2000);
     }
@@ -484,6 +517,7 @@ synchronized public static void ShowImage(String s) throws IOException {
         }
       } catch (NullPointerException | SerialPortException e) {
         e.printStackTrace();
+        Main.log.info(e);
       }
       Thread.sleep(2000);
     }
@@ -501,6 +535,7 @@ synchronized public static void ShowImage(String s) throws IOException {
         }
       } catch (NullPointerException | SerialPortException e) {
         e.printStackTrace();
+        Main.log.info(e);
       }
       Thread.sleep(2000);
     }
@@ -526,6 +561,7 @@ synchronized public static void ShowImage(String s) throws IOException {
         }
       } catch (NullPointerException | SerialPortException e) {
         e.printStackTrace();
+        Main.log.info(e);
       }
       Thread.sleep(2000);
     }
@@ -575,6 +611,7 @@ synchronized public static void ShowImage(String s) throws IOException {
 
         } catch(Exception e) {
           System.out.println(e);
+          Main.log.info(e);
         }
       }
     }).start();
@@ -594,6 +631,7 @@ synchronized public static void ShowImage(String s) throws IOException {
 
         } catch(Exception e) {
           System.out.println(e);
+          Main.log.info(e);
         }
       }
     }).start();
@@ -619,6 +657,7 @@ synchronized public static void ShowImage(String s) throws IOException {
         }
       } catch (NullPointerException e) {
         e.printStackTrace();
+        Main.log.info(e);
       }
       Thread.sleep(2000);
     }
@@ -635,7 +674,9 @@ synchronized public static void ShowImage(String s) throws IOException {
         }
       } catch (NullPointerException e) {
         e.printStackTrace();
+        Main.log.info(e);
       }
+
       serialPort.writeString(zapros);
       Thread.sleep(2000);
     }
@@ -666,6 +707,7 @@ synchronized public static void ShowImage(String s) throws IOException {
         }
       } catch (NullPointerException e) {
         e.printStackTrace();
+        Main.log.info(e);
       }
       serialPort.writeString(zapros);
       Thread.sleep(2000);
@@ -690,6 +732,7 @@ synchronized public static void ShowImage(String s) throws IOException {
         }
       } catch (NullPointerException e) {
         e.printStackTrace();
+        Main.log.info(e);
       }
       Thread.sleep(2000);
     }
@@ -704,6 +747,7 @@ synchronized public static void ShowImage(String s) throws IOException {
         }
       } catch (NullPointerException e) {
         e.printStackTrace();
+        Main.log.info(e);
       }
       Thread.sleep(2000);
     }
@@ -744,6 +788,7 @@ synchronized public static void ShowImage(String s) throws IOException {
      Thread.sleep(n);
    } catch (InterruptedException e) {
      e.printStackTrace();
+     Main.log.info(e);
    }
  return true;}
 
