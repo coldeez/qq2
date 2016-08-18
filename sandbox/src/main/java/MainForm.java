@@ -5,6 +5,8 @@ import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -165,6 +167,9 @@ public class MainForm extends JFrame {
   }
 
   private JButton monitorButton;
+  private JButton openAll;
+  private JLabel timerMain;
+  public Timer timer2;
   private Color color1;
   private Color color2;
   private Color color3;
@@ -209,6 +214,16 @@ public class MainForm extends JFrame {
     startQuestButton.setSize(100, 45);
     startQuestButton.setLocation(25, 660);
     add(startQuestButton);
+    openAll.setSize(200, 45);
+    openAll.setLocation(400, 660);
+    add(openAll);
+/*    timer2 = new Timer(1000, new MainForm.TimerTick());
+    timerMain.setForeground(Color.RED);
+    timerMain.setFont(new Font("Tahoma", Font.PLAIN, 80));
+    timerMain.setSize(200, 200);
+    timerMain.setLocation(400, 660);
+    add(timerMain);
+    timer2.start();*/
 
 
 
@@ -366,12 +381,30 @@ public class MainForm extends JFrame {
             color1 = Color.PINK;
             Main.manager.setStartQuestOk(0);
             Main.log.info("start OFF UI");
+            timer2.stop();
           } else if (color1 == Color.PINK) {
             color1 = Color.GREEN;
             Main.manager.setStartQuestOk(1);
             Main.log.info("start ON UI");
+            timer2.start();
           }
           startQuestButton.setBackground(color1);
+        }
+      }
+    });
+
+    openAll.addChangeListener(new ChangeListener() {
+      @Override
+      public void stateChanged(ChangeEvent evt) {
+        if (openAll.getModel().isPressed()) {
+          Main.log.info("OpenALL UI IN");
+          try {
+            Main.OpenAllDoors(Main.serialPort);
+          } catch (SerialPortException | InterruptedException e) {
+            e.printStackTrace();
+            Main.log.info(e);
+          }
+          Main.log.info("OpenALL UI OUT");
         }
       }
     });
@@ -904,6 +937,7 @@ public class MainForm extends JFrame {
 
   }
 
+
   class ImagePanel extends JComponent {
     private Image image;
     public ImagePanel(Image image) {
@@ -914,6 +948,28 @@ public class MainForm extends JFrame {
       super.paintComponent(g);
       g.drawImage(image, 0, 0, this);
     }
+  }
+
+  class TimerTick implements ActionListener {
+
+    int countdown = 3600;
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+
+      countdown--;
+      int mins = countdown / 60;
+      int sec = countdown % 60;
+
+      timerMain.setText(Integer.toString(mins) + ":" + Integer.toString(sec));
+      if (countdown == 0) {
+        timer2.stop();
+      }
+
+
+    }
+
   }
 
 

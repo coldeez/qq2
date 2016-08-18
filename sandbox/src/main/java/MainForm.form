@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="MainForm">
-  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="23" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="25" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="658" height="826"/>
+      <xy x="20" y="20" width="658" height="888"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -20,7 +20,7 @@
       </component>
       <component id="50a17" class="javax.swing.JButton" binding="startQuestButton" default-binding="true">
         <constraints>
-          <grid row="22" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="24" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Запуск"/>
@@ -36,7 +36,7 @@
       </component>
       <component id="1fa6d" class="javax.swing.JButton" binding="flashDisk" default-binding="true">
         <constraints>
-          <grid row="15" column="1" row-span="6" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="15" column="1" row-span="7" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Флэш-диск"/>
@@ -111,7 +111,7 @@
       </component>
       <component id="5af6f" class="javax.swing.JButton" binding="svetVezde" default-binding="true">
         <constraints>
-          <grid row="6" column="2" row-span="16" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="6" column="2" row-span="18" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Свет"/>
@@ -135,7 +135,7 @@
       </component>
       <component id="3e58a" class="javax.swing.JButton" binding="audio1" default-binding="true">
         <constraints>
-          <grid row="20" column="0" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="21" column="0" row-span="3" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Аудио 1"/>
@@ -175,7 +175,7 @@
       </component>
       <component id="1b27d" class="javax.swing.JButton" binding="image3" default-binding="true">
         <constraints>
-          <grid row="21" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="23" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Картинка3"/>
@@ -252,6 +252,22 @@
         </constraints>
         <properties>
           <text value="Кнопка М"/>
+        </properties>
+      </component>
+      <component id="6965b" class="javax.swing.JButton" binding="openAll">
+        <constraints>
+          <grid row="22" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Открыть все двери"/>
+        </properties>
+      </component>
+      <component id="70239" class="javax.swing.JLabel" binding="timerMain">
+        <constraints>
+          <grid row="20" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="00:00:00"/>
         </properties>
       </component>
     </children>

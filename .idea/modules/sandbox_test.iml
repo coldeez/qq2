@@ -11,6 +11,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="sandbox_main" />
     <orderEntry type="library" name="Gradle: org.scream3r:jssc:2.8.0" level="project" />
+    <orderEntry type="library" name="Gradle: javazoom:jlayer:1.0.1" level="project" />
+    <orderEntry type="library" name="Gradle: log4j:log4j:1.2.17" level="project" />
   </component>
   <component name="TestModuleProperties" production-module="sandbox_main" />
 </module>

@@ -77,7 +77,7 @@ public class Main {
       @Override
       public void run() {
         log.info("Serial IN");
-        serialPort = new SerialPort("COM4");
+        serialPort = new SerialPort("COM1");
         try {
           serialPort.getPortName();
           serialPort.openPort();//Open serial port
@@ -145,7 +145,7 @@ public class Main {
         log.info("Audio1 OUT");
         log.info("Perenoska IN");
         try {
-          Perenoska(serialPort, "r", "s");
+          Perenoska(serialPort, "t", "s");
         } catch (SerialPortException | InterruptedException e) {
           e.printStackTrace();
           Main.log.info(e);
@@ -164,14 +164,17 @@ public class Main {
           Main.log.info(e);
         }
         log.info("MonitorButton OUT");
-/*        try {
-          OpenShkaf(serialPort, "a", "b");
+        log.info("OpenShkaf IN");
+        try {
+          OpenShkaf(serialPort, "4", "3");
         } catch (InterruptedException | SerialPortException e) {
           e.printStackTrace();
-        }*/
+          log.info(e);
+        }
+        log.info("OpenShkaf OUT");
         log.info("SuperComp IN");
         try {
-          WaitForSuperComp(serialPort, "a");
+          WaitForSuperComp(serialPort, "d");
         } catch (InterruptedException e) {
           e.printStackTrace();
           Main.log.info(e);
@@ -191,14 +194,14 @@ public class Main {
         log.info("Audio2 OUT");
         myWindow.getAudio2().setBackground(Color.GREEN);
 
-        log.info("ShkafPodsvetka IN");
+/*        log.info("ShkafPodsvetka IN");
         try {
           ShkafPodsvetkaOn(serialPort, "a", "b");
         } catch (SerialPortException | InterruptedException e) {
           e.printStackTrace();
           Main.log.info(e);
         }
-        log.info("ShkafPodsvetka OUT");
+        log.info("ShkafPodsvetka OUT");*/
         log.info("Lasers IN");
         try {
           WaitForLasers(serialPort, "a");
@@ -218,7 +221,7 @@ public class Main {
         myWindow.getImage3().setBackground(Color.GREEN);
         log.info("Ventils IN");
         try {
-          WaitForVentils(serialPort, "a");
+          WaitForVentils(serialPort, "v");
         } catch (InterruptedException e) {
           e.printStackTrace();
           Main.log.info(e);
@@ -226,7 +229,7 @@ public class Main {
         log.info("Ventils OUT");
         log.info("SvetVezdeOff IN");
         try {
-          SvetVezdeOff(serialPort, "a", "b");
+          SvetVezdeOff(serialPort, "f", "e");
         } catch (SerialPortException | InterruptedException e) {
           e.printStackTrace();
           Main.log.info(e);
@@ -236,6 +239,7 @@ public class Main {
         PlayAudio3();
         log.info("Audio3 OUT");
         myWindow.getAudio3().setBackground(Color.GREEN);
+/*
         log.info("Image2 IN");
         try {
           ShowImage("2");
@@ -244,6 +248,7 @@ public class Main {
           Main.log.info(e);
         }
         log.info("Image2 OUT");
+*/
 /*        try {
           SetTumblers(serialPort, "a", "b");
         } catch (SerialPortException | InterruptedException e) {
@@ -251,23 +256,23 @@ public class Main {
         }*/
         log.info("ShitokButton IN");
         try {
-          WaitForShitokButton(serialPort, "a");
+          WaitForShitokButton(serialPort, "f");
         } catch (InterruptedException e) {
           e.printStackTrace();
           Main.log.info(e);
         }
         log.info("ShitokButton OUT");
-        log.info("Sirena IN");
+/*        log.info("Sirena IN");
         try {
-          SirenaOn(serialPort, "a", "b");
+          SirenaOn(serialPort, "z", "y");
         } catch (SerialPortException | InterruptedException e) {
           e.printStackTrace();
           Main.log.info(e);
         }
-        log.info("Sirena OUT");
+        log.info("Sirena OUT");*/
         log.info("EmergySvet IN");
         try {
-          EmergySvet(serialPort, "a", "b");
+          EmergySvet(serialPort, "z", "y");
         } catch (SerialPortException | InterruptedException e) {
           e.printStackTrace();
           Main.log.info(e);
@@ -307,7 +312,7 @@ public class Main {
         log.info("YashikFlash OUT");
         log.info("Flash IN");
         try {
-          WaitForFlash(serialPort, "a");
+          WaitForFlash(serialPort, "h");
         } catch (InterruptedException e) {
           e.printStackTrace();
           Main.log.info(e);
@@ -319,7 +324,7 @@ public class Main {
         myWindow.getAudio5().setBackground(Color.GREEN);
         log.info("OpenDoor IN");
         try {
-          OpenDoor(serialPort, "a", "b");
+          OpenDoor(serialPort, "i", "j");
         } catch (SerialPortException | InterruptedException e) {
           e.printStackTrace();
           Main.log.info(e);
@@ -718,6 +723,14 @@ synchronized public static void ShowImage(String s) throws IOException {
     serialPort.writeString(disconnect);
     Thread.sleep(500);
     serialPort.writeString(zapros);
+    Thread.sleep(2000);
+    myWindow.getSvetVezde().setBackground(Color.RED);
+  }
+
+  synchronized  public static void OpenAllDoors(SerialPort serialPort) throws SerialPortException, InterruptedException {
+    serialPort.writeString("i");
+    Thread.sleep(500);
+    serialPort.writeString("5"); /*or 4*/
     Thread.sleep(2000);
     myWindow.getSvetVezde().setBackground(Color.RED);
   }
