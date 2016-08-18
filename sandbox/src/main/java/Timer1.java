@@ -33,7 +33,7 @@ public class Timer1 extends JFrame{
     public Timer timer1;
 
     public Timer1() throws IOException {
-        BufferedImage myImage = ImageIO.read(new File("C:\\test\\bg_timer.jpg"));
+        BufferedImage myImage = ImageIO.read(new File("C:\\test\\img\\bg_timer.jpg"));
         setContentPane(panel1);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new Dimension(1300, 1000));

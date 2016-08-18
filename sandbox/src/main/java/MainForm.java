@@ -198,7 +198,7 @@ public class MainForm extends JFrame {
 
 
   public MainForm() throws InterruptedException, IOException {
-    BufferedImage myImage = ImageIO.read(new File("C:\\test\\plan.jpg"));
+    BufferedImage myImage = ImageIO.read(new File("C:\\test\\img\\plan.jpg"));
     setContentPane(mainPanel);
     setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     setSize(1300, 800);
