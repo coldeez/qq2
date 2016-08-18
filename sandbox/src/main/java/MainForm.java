@@ -365,9 +365,11 @@ public class MainForm extends JFrame {
           if (color1 == Color.GREEN) {
             color1 = Color.PINK;
             Main.manager.setStartQuestOk(0);
+            Main.log.info("start OFF UI");
           } else if (color1 == Color.PINK) {
             color1 = Color.GREEN;
             Main.manager.setStartQuestOk(1);
+            Main.log.info("start ON UI");
           }
           startQuestButton.setBackground(color1);
         }
@@ -380,6 +382,7 @@ public class MainForm extends JFrame {
           if (pushka.getModel().isPressed()) {
           if (color1 == Color.GREEN) {
             color1 = Color.PINK;
+            Main.log.info("pushka OFF UI");
             Main.manager.setPushkaTurnOn(0);
           } else if (color1 == Color.PINK) {
             try {
@@ -389,6 +392,7 @@ public class MainForm extends JFrame {
             }
             color1 = Color.GREEN;
             Main.manager.setPushkaTurnOn(1);
+            Main.log.info("pushka ON UI");
           }
           pushka.setBackground(color1);
         }
@@ -401,9 +405,11 @@ public class MainForm extends JFrame {
           if (color2 == Color.GREEN) {
             color2 = Color.PINK;
             Main.manager.setFlashOn(0);
+            Main.log.info("flashDisk OFF UI");
           } else if (color2 == Color.PINK) {
             color2 = Color.GREEN;
             Main.manager.setFlashOn(1);
+            Main.log.info("flashDisk ON UI");
           }
           flashDisk.setBackground(color2);
         }
@@ -415,17 +421,17 @@ public class MainForm extends JFrame {
         if (yashikFlash.getModel().isPressed()) {
           if (color3 == Color.GREEN) {
             color3 = Color.PINK;
+            Main.log.info("yashikFlash OFF UI");
             Main.manager.setYashikClose(0);
           } else if (color3 == Color.PINK) {
             try {
               Main.YashikFlashOpen(Main.serialPort,"a","b" );
-            } catch (SerialPortException e) {
-              e.printStackTrace();
-            } catch (InterruptedException e) {
+            } catch (SerialPortException | InterruptedException e) {
               e.printStackTrace();
             }
             color3 = Color.GREEN;
             Main.manager.setYashikClose(1);
+            Main.log.info("yashikFlash ON UI");
           }
           yashikFlash.setBackground(color3);
         }
@@ -438,17 +444,18 @@ public class MainForm extends JFrame {
         if (perenoska.getModel().isPressed()) {
           if (color5 == Color.GREEN) {
             color5 = Color.PINK;
+
             Main.manager.setPerenoskaOn(0);
+            Main.log.info("perenoska OFF UI");
           } else if (color5 == Color.PINK) {
             color5 = Color.GREEN;
             try {
               Main.Perenoska(Main.serialPort, "a", "b");
-            } catch (SerialPortException e) {
-              e.printStackTrace();
-            } catch (InterruptedException e) {
+            } catch (SerialPortException | InterruptedException e) {
               e.printStackTrace();
             }
             Main.manager.setPerenoskaOn(1);
+            Main.log.info("perenoska ON UI");
           }
           perenoska.setBackground(color5);
         }
@@ -460,12 +467,14 @@ public class MainForm extends JFrame {
         if (image2.getModel().isPressed()) {
           if (color6 == Color.GREEN) {
             color6 = Color.PINK;
+            Main.log.info("image2 OFF UI");
 
           } else if (color6 == Color.PINK) {
             color6 = Color.GREEN;
             try {
               Main.touchPanel.getButton1().setVisible(false);
               Main.ShowImage("2");
+              Main.log.info("image2 ONN UI");
             } catch (IOException e) {
               e.printStackTrace();
             }
@@ -481,16 +490,16 @@ public class MainForm extends JFrame {
           if (color7 == Color.GREEN) {
             color7 = Color.PINK;
             Main.manager.setEmergeSvetOk(0);
+            Main.log.info("emergySvet OFF UI");
           } else if (color7 == Color.PINK) {
             color7 = Color.GREEN;
             try {
               Main.EmergySvet(Main.serialPort, "a", "b");
-            } catch (SerialPortException e) {
-              e.printStackTrace();
-            } catch (InterruptedException e) {
+            } catch (SerialPortException | InterruptedException e) {
               e.printStackTrace();
             }
             Main.manager.setEmergeSvetOk(1);
+            Main.log.info("emergySvet ON UI");
           }
           emergySvet.setBackground(color7);
         }
@@ -515,10 +524,12 @@ public class MainForm extends JFrame {
         if (lasers.getModel().isPressed()) {
           if (color9 == Color.GREEN) {
             color9 = Color.PINK;
+            Main.log.info("lasers OFF UI");
             Main.manager.setLasersOK(0);
           } else if (color9 == Color.PINK) {
             color9 = Color.GREEN;
             Main.manager.setLasersOK(1);
+            Main.log.info("lasers ON UI");
           }
           lasers.setBackground(color9);
         }
@@ -530,10 +541,12 @@ public class MainForm extends JFrame {
         if (superCompModules.getModel().isPressed()) {
           if (color10 == Color.GREEN) {
             color10 = Color.PINK;
+            Main.log.info("superComp OFF UI");
             Main.manager.setSuperComputersModulesOk(0);
           } else if (color10 == Color.PINK) {
             color10 = Color.GREEN;
             Main.manager.setSuperComputersModulesOk(1);
+            Main.log.info("superComp ON UI");
           }
           superCompModules.setBackground(color10);
         }
@@ -546,9 +559,11 @@ public class MainForm extends JFrame {
           if (color11 == Color.GREEN) {
             color11 = Color.PINK;
             Main.manager.setShitokButton(0);
+            Main.log.info("shitokButton OFF UI");
           } else if (color11 == Color.PINK) {
             color11 = Color.GREEN;
             Main.manager.setShitokButton(1);
+            Main.log.info("shitokButton ON UI");
           }
           shitokButton.setBackground(color11);
         }
@@ -561,16 +576,16 @@ public class MainForm extends JFrame {
           if (color12 == Color.GREEN) {
             color12 = Color.PINK;
             Main.manager.setSvetVezdeOn(0);
+            Main.log.info("svetVezde OFF UI");
           } else if (color12 == Color.PINK) {
             color12 = Color.GREEN;
             try {
               Main.SvetVezdeOff(Main.serialPort, "a", "b");
-            } catch (SerialPortException e) {
-              e.printStackTrace();
-            } catch (InterruptedException e) {
+            } catch (SerialPortException | InterruptedException e) {
               e.printStackTrace();
             }
             Main.manager.setSvetVezdeOn(1);
+            Main.log.info("svetVezde ON UI");
           }
           svetVezde.setBackground(color12);
         }
@@ -596,9 +611,12 @@ public class MainForm extends JFrame {
           if (color14 == Color.GREEN) {
             color14 = Color.PINK;
             Main.timer1.timer1.stop();
+            Main.log.info("timers OFF UI");
 
           } else if (color14 == Color.PINK) {
             color14 = Color.GREEN;
+            Main.timer1.timer1.start();
+            Main.log.info("timers ON UI");
 
           }
           timers.setBackground(color14);
@@ -611,9 +629,11 @@ public class MainForm extends JFrame {
         if (audio1.getModel().isPressed()) {
           if (color15 == Color.GREEN) {
             color15 = Color.PINK;
+            Main.log.info("audio1 OFF UI");
           } else if (color15 == Color.PINK) {
             color15 = Color.GREEN;
             Main.PlayAudio1();
+            Main.log.info("audio1 ON UI");
           }
           audio1.setBackground(color15);
         }
@@ -625,9 +645,11 @@ public class MainForm extends JFrame {
         if (audio2.getModel().isPressed()) {
           if (color16 == Color.GREEN) {
             color16 = Color.PINK;
+            Main.log.info("audio2 OFF UI");
           } else if (color16 == Color.PINK) {
             color16 = Color.GREEN;
             Main.PlayAudio2();
+            Main.log.info("audio2 ON UI");
           }
           audio2.setBackground(color16);
         }
@@ -639,9 +661,11 @@ public class MainForm extends JFrame {
         if (audio3.getModel().isPressed()) {
           if (color17 == Color.GREEN) {
             color17 = Color.PINK;
+            Main.log.info("audio3 OFF UI");
           } else if (color17 == Color.PINK) {
             color17 = Color.GREEN;
             Main.PlayAudio3();
+            Main.log.info("audio3 ON UI");
           }
           audio3.setBackground(color17);
         }
@@ -653,9 +677,11 @@ public class MainForm extends JFrame {
         if (audio4.getModel().isPressed()) {
           if (color18 == Color.GREEN) {
             color18 = Color.PINK;
+            Main.log.info("audio4 OFF UI");
           } else if (color18 == Color.PINK) {
             color18 = Color.GREEN;
             Main.PlayAudio4();
+            Main.log.info("audio4 ON UI");
           }
           audio4.setBackground(color18);
         }
@@ -667,9 +693,11 @@ public class MainForm extends JFrame {
         if (audio5.getModel().isPressed()) {
           if (color19 == Color.GREEN) {
             color19 = Color.PINK;
+            Main.log.info("audio5 OFF UI");
           } else if (color19 == Color.PINK) {
             color19 = Color.GREEN;
             Main.PlayAudio5();
+            Main.log.info("audio5 ON UI");
           }
           audio5.setBackground(color19);
         }
@@ -681,11 +709,13 @@ public class MainForm extends JFrame {
         if (image3.getModel().isPressed()) {
           if (color20 == Color.GREEN) {
             color20 = Color.PINK;
+            Main.log.info("image3 OFF UI");
           } else if (color1 == Color.PINK) {
             color20 = Color.GREEN;
             Main.touchPanel.getButton1().setVisible(false);
             try {
               Main.ShowImage("3");
+              Main.log.info("image3 ON UI");
             } catch (IOException e) {
               e.printStackTrace();
             }
@@ -702,9 +732,11 @@ public class MainForm extends JFrame {
           if (color21 == Color.GREEN) {
             color21 = Color.PINK;
             Main.manager.setDoorClose(0);
+            Main.log.info("doorClose OFF UI");
           } else if (color1 == Color.PINK) {
             color21 = Color.GREEN;
             Main.manager.setDoorClose(1);
+            Main.log.info("doorClose ON UI");
           }
           doorClose.setBackground(color21);
         }
@@ -717,9 +749,11 @@ public class MainForm extends JFrame {
           if (color22 == Color.GREEN) {
             color22 = Color.PINK;
             Main.manager.setRubilnikSuperCompOn(0);
+            Main.log.info("rubilnikSuperComp OFF UI");
           } else if (color1 == Color.PINK) {
             color22 = Color.GREEN;
             Main.manager.setRubilnikSuperCompOn(1);
+            Main.log.info("rubilnikSuperComp ON UI");
           }
           image3.setBackground(color22);
         }
@@ -745,9 +779,11 @@ public class MainForm extends JFrame {
           if (color24 == Color.GREEN) {
             color24 = Color.PINK;
             Main.manager.setVentiliOk(0);
+            Main.log.info("ventili OFF UI");
           } else if (color1 == Color.PINK) {
             color24 = Color.GREEN;
             Main.manager.setVentiliOk(1);
+            Main.log.info("ventili ON UI");
           }
           ventili.setBackground(color24);
         }
@@ -759,15 +795,15 @@ public class MainForm extends JFrame {
         if (sirena.getModel().isPressed()) {
           if (color25 == Color.GREEN) {
             color25 = Color.PINK;
+            Main.log.info("sirena OFF UI");
           } else if (color1 == Color.PINK) {
             color25 = Color.GREEN;
             try {
               Main.SirenaOn(Main.serialPort, "a", "b");
-            } catch (SerialPortException e) {
+            } catch (SerialPortException | InterruptedException e) {
               e.printStackTrace();
-            } catch (InterruptedException e) {
-              e.printStackTrace();
-            }
+
+            } Main.log.info("sirena ON UI");
           }
           sirena.setBackground(color25);
         }
@@ -779,15 +815,15 @@ public class MainForm extends JFrame {
         if (podsvetka.getModel().isPressed()) {
           if (color26 == Color.GREEN) {
             color26 = Color.PINK;
+            Main.log.info("podsvetka OFF UI");
           } else if (color1 == Color.PINK) {
             color26 = Color.GREEN;
+
             try {
               Main.ShkafPodsvetkaOn(Main.serialPort, "a", "b");
-            } catch (SerialPortException e) {
+            } catch (SerialPortException | InterruptedException e) {
               e.printStackTrace();
-            } catch (InterruptedException e) {
-              e.printStackTrace();
-            }
+            } Main.log.info("podsvetka ON UI");
           }
           podsvetka.setBackground(color26);
         }
@@ -799,11 +835,13 @@ public class MainForm extends JFrame {
         if (image4.getModel().isPressed()) {
           if (color27 == Color.GREEN) {
             color27 = Color.PINK;
+            Main.log.info("image4 OFF UI");
           } else if (color1 == Color.PINK) {
             color27 = Color.GREEN;
             Main.touchPanel.getButton1().setVisible(false);
             try {
               Main.ShowImage("4");
+              Main.log.info("image4 ON UI");
             } catch (IOException e) {
               e.printStackTrace();
             }
@@ -818,11 +856,13 @@ public class MainForm extends JFrame {
         if (image5.getModel().isPressed()) {
           if (color28 == Color.GREEN) {
             color28 = Color.PINK;
+            Main.log.info("image5 OFF UI");
           } else if (color1 == Color.PINK) {
             color28 = Color.GREEN;
             Main.touchPanel.getButton1().setVisible(false);
             try {
               Main.ShowImage("5");
+              Main.log.info("image5 ON UI");
             } catch (IOException e) {
               e.printStackTrace();
             }
@@ -837,10 +877,12 @@ public class MainForm extends JFrame {
         if (monitorButton.getModel().isPressed()) {
           if (color29 == Color.GREEN) {
             color29 = Color.PINK;
+            Main.log.info("monitorButton OFF UI");
             Main.manager.setMonitorButton(0);
           } else if (color1 == Color.PINK) {
             color29 = Color.GREEN;
             Main.manager.setMonitorButton(1);
+            Main.log.info("monitorButton ON UI");
 
           }
           monitorButton.setBackground(color29);
