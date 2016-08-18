@@ -33,7 +33,11 @@ public class Main {
     new Thread(new Runnable() {
       @Override
       public void run() {
-        touchPanel = new TouchPanel();
+        try {
+          touchPanel = new TouchPanel();
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
         touchPanel.setVisible(true);
       }
     }).start();
@@ -54,21 +58,6 @@ public class Main {
 
 
 
-    new Thread(new Runnable() {
-      @Override
-      public void run() {
-        try{
-
-          FileInputStream fis2 = new FileInputStream("C:\\test\\test3.mp3");
-          Player playMP32 = new Player(fis2);
-
-          playMP32.play();
-
-        } catch(Exception e) {
-          System.out.println(e);
-        }
-      }
-    }).start();
 
 
 
@@ -338,8 +327,8 @@ synchronized public static void PlayAudio4() {
     timer1.getCode().requestFocus();
   }
 
-  private static void ShowImage(String s) throws IOException {
-    touchPanel.getComponent().setPic(ImageIO.read(new File("C:\\test\\test" + s + ".png")));
+synchronized public static void ShowImage(String s) throws IOException {
+    touchPanel.getComponent().setPic(ImageIO.read(new File("C:\\test\\img\\" + s + ".jpg")));
   }
 
   private static void OpenDoor(SerialPort serialPort, String zapros, String disconnect) throws SerialPortException, InterruptedException {

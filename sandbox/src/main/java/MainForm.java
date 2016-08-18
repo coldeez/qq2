@@ -5,8 +5,6 @@ import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -154,7 +152,7 @@ public class MainForm extends JFrame {
   }
 
   private JButton podsvetka;
-  private JButton button27;
+  private JButton image4;
 
   public JButton getImage5() {
     return image5;
@@ -269,7 +267,7 @@ public class MainForm extends JFrame {
     ventili.setBackground(color24);
     sirena.setBackground(color25);
     podsvetka.setBackground(color26);
-    button27.setBackground(color27);
+    image4.setBackground(color27);
     image5.setBackground(color28);
     monitorButton.setBackground(color29);
 
@@ -350,9 +348,9 @@ public class MainForm extends JFrame {
     podsvetka.setSize(100, 45);
     podsvetka.setLocation(10, 450);
     add(podsvetka);
-    button27.setSize(100, 45);
-    button27.setLocation(10, 60);
-    add(button27);
+    image4.setSize(100, 45);
+    image4.setLocation(10, 60);
+    add(image4);
     image5.setSize(100, 45);
     image5.setLocation(130, 60);
     add(image5);
@@ -465,6 +463,12 @@ public class MainForm extends JFrame {
 
           } else if (color6 == Color.PINK) {
             color6 = Color.GREEN;
+            try {
+              Main.touchPanel.getButton1().setVisible(false);
+              Main.ShowImage("2");
+            } catch (IOException e) {
+              e.printStackTrace();
+            }
           }
           image2.setBackground(color6);
         }
@@ -679,6 +683,12 @@ public class MainForm extends JFrame {
             color20 = Color.PINK;
           } else if (color1 == Color.PINK) {
             color20 = Color.GREEN;
+            Main.touchPanel.getButton1().setVisible(false);
+            try {
+              Main.ShowImage("3");
+            } catch (IOException e) {
+              e.printStackTrace();
+            }
           }
           image3.setBackground(color20);
         }
@@ -783,16 +793,22 @@ public class MainForm extends JFrame {
         }
       }
     });
-    button27.addChangeListener(new ChangeListener() {
+    image4.addChangeListener(new ChangeListener() {
       @Override
       public void stateChanged(ChangeEvent evt) {
-        if (button27.getModel().isPressed()) {
+        if (image4.getModel().isPressed()) {
           if (color27 == Color.GREEN) {
             color27 = Color.PINK;
           } else if (color1 == Color.PINK) {
             color27 = Color.GREEN;
+            Main.touchPanel.getButton1().setVisible(false);
+            try {
+              Main.ShowImage("4");
+            } catch (IOException e) {
+              e.printStackTrace();
+            }
           }
-          button27.setBackground(color27);
+          image4.setBackground(color27);
         }
       }
     });
@@ -804,6 +820,12 @@ public class MainForm extends JFrame {
             color28 = Color.PINK;
           } else if (color1 == Color.PINK) {
             color28 = Color.GREEN;
+            Main.touchPanel.getButton1().setVisible(false);
+            try {
+              Main.ShowImage("5");
+            } catch (IOException e) {
+              e.printStackTrace();
+            }
           }
           image5.setBackground(color28);
         }
@@ -819,6 +841,7 @@ public class MainForm extends JFrame {
           } else if (color1 == Color.PINK) {
             color29 = Color.GREEN;
             Main.manager.setMonitorButton(1);
+
           }
           monitorButton.setBackground(color29);
         }
