@@ -1,8 +1,9 @@
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import jssc.SerialPort;
 import jssc.SerialPortException;
 
 import javax.imageio.ImageIO;
-import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
@@ -18,6 +19,7 @@ public class Main {
   public static TouchPanel touchPanel;
   public static MainForm myWindow;
   public static Timer1 timer1;
+
 
 
 
@@ -39,11 +41,17 @@ public class Main {
     new Thread(new Runnable() {
       @Override
       public void run() {
-        timer1 = new Timer1();
+        try {
+          timer1 = new Timer1();
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
         timer1.setVisible(true);
         timer1.timer1.stop();
        }
     }).start();
+
+
 
     new Thread(new Runnable() {
       @Override
@@ -214,7 +222,9 @@ public class Main {
           e.printStackTrace();
         }
         myWindow.getImage5().setBackground(Color.GREEN);
-/*        WaitForCode();*/
+
+        WaitForCode();
+
         try {
           WaitForRubilnik(serialPort, "a");
         } catch (InterruptedException e) {
@@ -246,6 +256,10 @@ public class Main {
 
 
     }).start();
+  }
+
+  private static void WaitForCode() {
+    timer1.getCode().requestFocus();
   }
 
   private static void ShowImage(String s) throws IOException {
