@@ -9,6 +9,10 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.Set;
+
+import org.apache.log4j.Appender;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 /**
  * Created by vity on 24.07.2016.
  */
@@ -22,10 +26,12 @@ public class Main {
 
 
 
+  private static final Logger log = Logger.getLogger(Main.class);
 
 
   public static void main(String[] args) throws SerialPortException, IOException, InterruptedException {
-    System.out.println("git");
+
+
     manager = new Manager();
     myWindow = new MainForm();
     myWindow.setVisible(true);
@@ -77,7 +83,7 @@ public class Main {
           System.out.println(ex);
         }
 
-
+        log.info("test");
 /*        try {
           ResetQuest(serialPort, "ResetQuest", "ResetQuest");
         } catch (SerialPortException e) {
