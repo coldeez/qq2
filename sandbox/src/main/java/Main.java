@@ -34,7 +34,8 @@ public class Main {
 
   public static void main(String[] args) throws SerialPortException, IOException, InterruptedException {
 
-
+    System.out.println("git");
+    
     manager = new Manager();
     myWindow = new MainForm();
     myWindow.setVisible(true);
